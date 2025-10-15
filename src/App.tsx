@@ -237,7 +237,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-9 w-9 rounded-full" style={{ mixBlendMode: 'screen' }} />
+              <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-9 w-9" style={{ mixBlendMode: 'screen' }} />
               <span className="text-lg font-semibold tracking-tight">SRNC</span>
             </div>
             <div className="hidden lg:flex items-center gap-1">
@@ -793,7 +793,7 @@ function App() {
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-7 w-7 rounded-full" style={{ mixBlendMode: 'screen' }} />
+              <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-7 w-7" style={{ mixBlendMode: 'screen' }} />
               <span className="text-[15px] font-semibold">SRNC</span>
             </div>
             <button
