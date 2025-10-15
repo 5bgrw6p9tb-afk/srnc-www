@@ -17,143 +17,202 @@ function App() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-  const canvas = canvasRef.current;
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-  const updateSize = () => {
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-    return { w: rect.width, h: rect.height };
-  };
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-  let { w, h } = updateSize();
-  const grid = 45;
-  const nodes: any[] = [];
+    const updateCanvasSize = () => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      return { width: rect.width, height: rect.height };
+    };
 
-  for (let y = 0; y <= h; y += grid) {
-    for (let x = 0; x <= w; x += grid) {
-      nodes.push({ x, y, ox: x, oy: y, vx: 0, vy: 0 });
-    }
-  }
+    const { width, height } = updateCanvasSize();
 
-  let t = 0;
-  let mouse = { x: w / 2, y: h / 2, v: 0 };
-  let pm = { x: mouse.x, y: mouse.y };
+    const gridSize = 40;
+    const nodeRadius = 2;
+    const nodes: Array<{ x: number; y: number; originalX: number; originalY: number; vx: number; vy: number }> = [];
 
-  const onMove = (e: MouseEvent) => {
-    const r = canvas.getBoundingClientRect();
-    pm = { ...mouse };
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-    const dx = mouse.x - pm.x;
-    const dy = mouse.y - pm.y;
-    mouse.v = Math.sqrt(dx * dx + dy * dy);
-  };
-  window.addEventListener("mousemove", onMove);
-
-  const loop = () => {
-    t += 0.01;
-    const fade = 0.08;
-
-    // Fade background for light trails
-    ctx.fillStyle = `rgba(0,0,0,${fade})`;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.globalCompositeOperation = "lighter";
-
-    let effX = mouse.x;
-    let effY = mouse.y;
-    let vel = mouse.v * 0.5;
-
-    if (autoMode) {
-      const s = Math.min(w, h) * 0.4;
-      const cx = w / 2;
-      const cy = h / 2;
-      const bx = Math.sin(t) * Math.cos(t);
-      const by = Math.sin(2 * t) / 2;
-      const bz = Math.cos(t) * 0.8;
-      const rotY = Math.PI / 3.5;
-      const rotZ = Math.PI / 8;
-      const x2 = bx * Math.cos(rotY) + bz * Math.sin(rotY);
-      const z2 = -bx * Math.sin(rotY) + bz * Math.cos(rotY);
-      const x3 = x2 * Math.cos(rotZ) - by * Math.sin(rotZ);
-      const y3 = x2 * Math.sin(rotZ) + by * Math.cos(rotZ);
-      const p = 1 / (1 - z2 * 0.4);
-      effX = cx + s * x3 * p;
-      effY = cy + s * y3 * p;
-      vel = 1.5 + Math.sin(t * 2) * 0.5;
-    }
-
-    // update nodes
-    nodes.forEach(n => {
-      const dx = effX - n.x;
-      const dy = effY - n.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      const maxD = 400;
-
-      if (dist < maxD) {
-        const force = (maxD - dist) / maxD;
-        const ang = Math.atan2(dy, dx);
-        n.vx += Math.cos(ang) * force * 2.2 * vel * 0.05;
-        n.vy += Math.sin(ang) * force * 2.2 * vel * 0.05;
+    for (let y = 0; y <= height; y += gridSize) {
+      for (let x = 0; x <= width; x += gridSize) {
+        nodes.push({ x, y, originalX: x, originalY: y, vx: 0, vy: 0 });
       }
+    }
 
-      n.vx += (n.ox - n.x) * 0.015;
-      n.vy += (n.oy - n.y) * 0.015;
-      n.vx *= 0.92;
-      n.vy *= 0.92;
-      n.x += n.vx;
-      n.y += n.vy;
+    let mouseX = -1000;
+    let mouseY = -1000;
+    let prevMouseX = -1000;
+    let prevMouseY = -1000;
+    let mouseVelocity = 0;
 
-      const depth = Math.sin(t + n.ox * 0.03 + n.oy * 0.02);
-      const radius = 1.8 + depth * 1.3;
-      const alpha = 0.2 + (depth + 1) * 0.25;
-      const hue = 10 + depth * 10;
+    let autoMouseX = width / 2;
+    let autoMouseY = height / 2;
+    let autoMouseTargetX = width / 2;
+    let autoMouseTargetY = height / 2;
 
-      ctx.beginPath();
-      ctx.fillStyle = `hsla(${hue}, 100%, 60%, ${alpha})`;
-      ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
-      ctx.fill();
-    });
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
 
-    // connect nearby nodes
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i];
-        const b = nodes[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < grid * 1.6) {
-          const opacity = (1 - d / (grid * 1.6)) * 0.1;
-          ctx.beginPath();
-          ctx.strokeStyle = `hsla(15, 100%, 60%, ${opacity})`;
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
+      const dx = mouseX - prevMouseX;
+      const dy = mouseY - prevMouseY;
+      mouseVelocity = Math.sqrt(dx * dx + dy * dy);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    let time = 0;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.02;
+
+      mouseVelocity *= 0.95;
+
+      let effectiveMouseX = mouseX;
+      let effectiveMouseY = mouseY;
+      let effectiveVelocity = mouseVelocity;
+
+      if (autoMode) {
+        const infinityScale = Math.min(width, height) * 0.45;
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        const rotationX = Math.PI / 4.5;
+        const rotationY = Math.PI / 3.5;
+        const rotationZ = Math.PI / 12;
+
+        const baseX = Math.sin(time) * Math.cos(time);
+        const baseY = Math.sin(time * 2) / 2;
+        const baseZ = Math.cos(time) * 0.8;
+
+        const y1 = baseY * Math.cos(rotationX) - baseZ * Math.sin(rotationX);
+        const z1 = baseY * Math.sin(rotationX) + baseZ * Math.cos(rotationX);
+
+        const x2 = baseX * Math.cos(rotationY) + z1 * Math.sin(rotationY);
+        const z2 = -baseX * Math.sin(rotationY) + z1 * Math.cos(rotationY);
+
+        const x3 = x2 * Math.cos(rotationZ) - y1 * Math.sin(rotationZ);
+        const y3 = x2 * Math.sin(rotationZ) + y1 * Math.cos(rotationZ);
+
+        const perspective = 1 / (1 - z2 * 0.5);
+
+        autoMouseX = centerX + infinityScale * x3 * perspective;
+        autoMouseY = centerY + infinityScale * y3 * perspective;
+
+        const dx = infinityScale * 0.3 * Math.cos(time * 0.3) * Math.cos(time * 0.3) - infinityScale * 0.3 * Math.sin(time * 0.3) * Math.sin(time * 0.3);
+        const dy = infinityScale * 0.6 * Math.cos(time * 0.6) / 2;
+        const autoVelocity = Math.sqrt(dx * dx + dy * dy) * 0.3;
+
+        if (mouseVelocity > 1) {
+          effectiveMouseX = mouseX;
+          effectiveMouseY = mouseY;
+          effectiveVelocity = mouseVelocity;
+        } else {
+          effectiveMouseX = autoMouseX;
+          effectiveMouseY = autoMouseY;
+          effectiveVelocity = autoVelocity;
         }
       }
-    }
 
-    ctx.globalCompositeOperation = "source-over";
-    requestAnimationFrame(loop);
-  };
+      nodes.forEach(node => {
+        const dx = effectiveMouseX - node.x;
+        const dy = effectiveMouseY - node.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const maxDistance = 500;
 
-  loop();
+        if (distance > 0 && effectiveVelocity > 0.5) {
+          const force = Math.max(0, (maxDistance - distance) / maxDistance);
+          const angle = Math.atan2(dy, dx);
+          const velocityMultiplier = Math.min(1, effectiveVelocity * 0.1);
 
-  const resize = () => {
-    ({ w, h } = updateSize());
-  };
-  window.addEventListener("resize", resize);
+          node.vx += Math.cos(angle) * force * 3.5 * velocityMultiplier;
+          node.vy += Math.sin(angle) * force * 3.5 * velocityMultiplier;
+        }
 
-  return () => {
-    window.removeEventListener("mousemove", onMove);
-    window.removeEventListener("resize", resize);
-  };
-}, [autoMode]);
+        const targetX = node.originalX;
+        const targetY = node.originalY;
+
+        node.vx += (targetX - node.x) * 0.015;
+        node.vy += (targetY - node.y) * 0.015;
+
+        node.vx *= 0.95;
+        node.vy *= 0.95;
+
+        node.x += node.vx;
+        node.y += node.vy;
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+
+        const distFromMouse = Math.sqrt(Math.pow(effectiveMouseX - node.x, 2) + Math.pow(effectiveMouseY - node.y, 2));
+        const velocity = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+        const isNearMouse = distFromMouse < 200;
+
+        const waveDepth = Math.sin(time * 0.7 + node.originalX * 0.02) * 0.4 +
+                          Math.cos(time * 1.2 + node.originalY * 0.025) * 0.4 +
+                          Math.sin(time * 1.8 + (node.originalX + node.originalY) * 0.015) * 0.2;
+        const depthScale = 0.5 + waveDepth * 0.5;
+
+        const dynamicRadius = (nodeRadius + (isNearMouse ? velocity * 0.4 : 0)) * (0.7 + depthScale * 0.6);
+        const baseOpacity = 0.15 + depthScale * 0.15;
+        const distanceFactor = isNearMouse ? Math.pow(1 - (distFromMouse / 200), 2) : 0;
+        const brightnessBoost = distanceFactor * Math.min(0.6, velocity * 0.08);
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, dynamicRadius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(219, 21, 0, ${baseOpacity + brightnessBoost})`;
+        ctx.fill();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const other = nodes[j];
+          const dx = other.x - node.x;
+          const dy = other.y - node.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < gridSize * 1.8) {
+            ctx.beginPath();
+            ctx.moveTo(node.x, node.y);
+            ctx.lineTo(other.x, other.y);
+            const opacity = 0.15 * (1 - distance / (gridSize * 1.8));
+            ctx.strokeStyle = `rgba(219, 21, 0, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    const handleResize = () => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+
+      nodes.length = 0;
+      for (let y = 0; y <= canvas.height; y += gridSize) {
+        for (let x = 0; x <= canvas.width; x += gridSize) {
+          nodes.push({ x, y, originalX: x, originalY: y, vx: 0, vy: 0 });
+        }
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [autoMode]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
