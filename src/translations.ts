@@ -216,7 +216,7 @@ export const translations: Record<string, Translation> = {
       columns: {
         technology: {
           title: "Technology & Methodologies for Science",
-          description: "We provide cutting-edge technological solutions and research methodologies that enable scientific breakthroughs. Our advanced AI systems, automated research platforms, and precision measurement tools support researchers in conducting innovative studies with unprecedented accuracy and efficiency. We develop custom solutions tailored to specific research needs, integrating state-of-the-art technology with proven scientific methods."
+          description: "We provide cutting-edge technological solutions and research methodologies that enable scientific breakthroughs. Our advanced AI systems, automated research platforms, and precision measurement tools support researchers in conducting innovative studies with unprecedented accuracy and efficiency.<BR><BR> We develop custom solutions tailored to specific research needs, integrating state-of-the-art technology with proven scientific methods."
         },
         commercialization: {
           title: "Commercialization & Networking",
