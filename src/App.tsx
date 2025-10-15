@@ -505,7 +505,7 @@ function App() {
             {/* Mindcloud One */}
             <div className="group p-8 rounded-lg hover:bg-white/[0.04] transition-all duration-300 flex flex-col md:col-span-2 lg:col-span-1">
               <div className="h-16 w-full flex items-center justify-center mb-6">
-                <img src="/image.png" alt="Mindcloud One" className="max-h-12 w-auto object-contain" style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
+                <img src="/MC1 logo.png" alt="Mindcloud One" className="max-h-12 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
               </div>
               <h3 className="text-[24px] font-[700] mb-4 leading-tight">{t.services.mindcloud.title}</h3>
               <p className="text-[15px] leading-[1.7] text-zinc-400 mb-6">
