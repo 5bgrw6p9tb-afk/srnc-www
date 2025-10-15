@@ -540,13 +540,13 @@ function App() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-[900px] mx-auto text-left">
-            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.08]">
+            <div>
               <h3 className="text-[15px] font-semibold mb-3">{t.cooperation.columns.technology.title}</h3>
               <p className="text-[13px] leading-[1.6] text-zinc-400">
                 {t.cooperation.columns.technology.description}
               </p>
             </div>
-            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.08]">
+            <div>
               <h3 className="text-[15px] font-semibold mb-3">{t.cooperation.columns.commercialization.title}</h3>
               <p className="text-[13px] leading-[1.6] text-zinc-400">
                 {t.cooperation.columns.commercialization.description}
