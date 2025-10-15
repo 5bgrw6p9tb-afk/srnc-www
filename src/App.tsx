@@ -475,7 +475,7 @@ function App() {
             {/* Digital Force */}
             <div className="group p-8 rounded-lg hover:bg-white/[0.04] transition-all duration-300 flex flex-col">
               <div className="h-16 w-full flex items-center justify-center mb-6">
-                <img src="/digital-force-logo.png" alt="Digital Force" className="max-h-12 w-auto object-contain" style={{ filter: 'invert(1) grayscale(1) brightness(2) contrast(2)', mixBlendMode: 'screen' }} />
+                <img src="/df.png" alt="Digital Force" className="max-h-12 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
               </div>
               <h3 className="text-[24px] font-[700] mb-4 leading-tight">{t.services.digitalForce.title}</h3>
               <p className="text-[15px] leading-[1.7] text-zinc-400 mb-6">
