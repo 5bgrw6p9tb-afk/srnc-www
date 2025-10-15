@@ -238,7 +238,10 @@ function App() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
               <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-9 w-9" style={{ mixBlendMode: 'screen' }} />
-              <span className="text-lg font-semibold tracking-tight">SRNC</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight leading-none">SRNC</span>
+                <span className="text-[9px] text-zinc-400 tracking-wide">Inspire Science</span>
+              </div>
             </div>
             <div className="hidden lg:flex items-center gap-1">
               <a href="#about" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.about}</a>
@@ -794,7 +797,10 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-7 w-7" style={{ mixBlendMode: 'screen' }} />
-              <span className="text-[15px] font-semibold">SRNC</span>
+              <div className="flex flex-col">
+                <span className="text-base font-bold tracking-tight leading-none">SRNC</span>
+                <span className="text-[8px] text-zinc-400 tracking-wide">Inspire Science</span>
+              </div>
             </div>
             <button
               onClick={() => setAutoMode(!autoMode)}
