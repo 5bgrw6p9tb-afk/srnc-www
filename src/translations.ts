@@ -209,7 +209,7 @@ export const translations: Record<string, Translation> = {
       }
     },
     cooperation: {
-      title: "University Cooperation",
+      title: "Academic Alliance",
       subtitle: "We build bridges between science and practical application of technology, cooperating with leading universities and research and development units in Poland and abroad.",
       columns: {
         technology: {
