@@ -239,7 +239,7 @@ function App() {
             <div className="flex items-center gap-3">
               <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-9 w-9" style={{ mixBlendMode: 'screen' }} />
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight leading-none">SRNC</span>
+                <span className="text-xl font-black tracking-tight leading-none">SRNC</span>
                 <span className="text-[9px] text-zinc-400 tracking-wide">Inspire Science</span>
               </div>
             </div>
@@ -798,7 +798,7 @@ function App() {
             <div className="flex items-center gap-3">
               <img src="/SRNC O copy.jpg" alt="SRNC Logo" className="h-7 w-7" style={{ mixBlendMode: 'screen' }} />
               <div className="flex flex-col">
-                <span className="text-base font-bold tracking-tight leading-none">SRNC</span>
+                <span className="text-base font-black tracking-tight leading-none">SRNC</span>
                 <span className="text-[8px] text-zinc-400 tracking-wide">Inspire Science</span>
               </div>
             </div>
