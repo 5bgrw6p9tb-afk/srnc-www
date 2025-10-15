@@ -2,6 +2,7 @@ export interface Translation {
   nav: {
     about: string;
     services: string;
+    innovations: string;
     cooperation: string;
     contact: string;
   };
@@ -125,6 +126,7 @@ export const translations: Record<string, Translation> = {
     nav: {
       about: "About",
       services: "Services",
+      innovations: "Innovations",
       cooperation: "Cooperation",
       contact: "Contact"
     },
@@ -256,6 +258,7 @@ export const translations: Record<string, Translation> = {
     nav: {
       about: "O nas",
       services: "Usługi",
+      innovations: "Innowacje",
       cooperation: "Współpraca",
       contact: "Kontakt"
     },
@@ -387,6 +390,7 @@ export const translations: Record<string, Translation> = {
     nav: {
       about: "关于我们",
       services: "服务",
+      innovations: "创新",
       cooperation: "合作",
       contact: "联系"
     },
