@@ -73,6 +73,16 @@ export interface Translation {
   cooperation: {
     title: string;
     subtitle: string;
+    columns: {
+      technology: {
+        title: string;
+        description: string;
+      };
+      commercialization: {
+        title: string;
+        description: string;
+      };
+    };
     stats: {
       partnerships: string;
       universities: string;
@@ -201,6 +211,16 @@ export const translations: Record<string, Translation> = {
     cooperation: {
       title: "University Cooperation",
       subtitle: "We build bridges between science and practical application of technology, cooperating with leading universities and research and development units in Poland and abroad.",
+      columns: {
+        technology: {
+          title: "Technology & Methodologies for Science",
+          description: "We provide cutting-edge technological solutions and research methodologies that enable scientific breakthroughs. Our advanced AI systems, automated research platforms, and precision measurement tools support researchers in conducting innovative studies with unprecedented accuracy and efficiency. We develop custom solutions tailored to specific research needs, integrating state-of-the-art technology with proven scientific methods."
+        },
+        commercialization: {
+          title: "Commercialization & Networking",
+          description: "We transform scientific discoveries into market-ready solutions through strategic partnerships and commercialization expertise. Our extensive network connects researchers with industry leaders, investors, and implementation partners. We facilitate technology transfer, provide business development support, and create pathways from laboratory findings to real-world applications, ensuring research innovations generate tangible economic and social impact."
+        }
+      },
       stats: {
         partnerships: "Research partnerships",
         universities: "Partner universities",
@@ -322,6 +342,16 @@ export const translations: Record<string, Translation> = {
     cooperation: {
       title: "Współpraca z uczelniami",
       subtitle: "Budujemy mosty między nauką a praktycznym zastosowaniem technologii, współpracując z czołowymi uczelniami i jednostkami badawczo-rozwojowymi w Polsce i za granicą.",
+      columns: {
+        technology: {
+          title: "Technologia i metodologie na nauki",
+          description: "Dostarczamy najnowocześniejsze rozwiązania technologiczne i metodologie badawcze, które umożliwiają przełomy naukowe. Nasze zaawansowane systemy AI, zautomatyzowane platformy badawcze i precyzyjne narzędzia pomiarowe wspierają naukowców w prowadzeniu innowacyjnych badań z niespotykaną dokładnością i efektywnością. Opracowujemy niestandardowe rozwiązania dostosowane do konkretnych potrzeb badawczych, integrując najnowszą technologię ze sprawdzonymi metodami naukowymi."
+        },
+        commercialization: {
+          title: "Komercjalizacja i networking",
+          description: "Przekształcamy odkrycia naukowe w gotowe do wprowadzenia na rynek rozwiązania poprzez strategiczne partnerstwa i ekspertyzę w zakresie komercjalizacji. Nasza rozległa sieć łączy naukowców z liderami przemysłu, inwestorami i partnerami wdrożeniowymi. Ułatwiamy transfer technologii, zapewniamy wsparcie w rozwoju biznesu i tworzymy ścieżki od odkryć laboratoryjnych do zastosowań w rzeczywistym świecie, zapewniając, że innowacje badawcze generują wymierny wpływ ekonomiczny i społeczny."
+        }
+      },
       stats: {
         partnerships: "Partnerstw badawczych",
         universities: "Uczelni partnerskich",
@@ -443,6 +473,16 @@ export const translations: Record<string, Translation> = {
     cooperation: {
       title: "大学合作",
       subtitle: "我们在科学与技术实际应用之间架起桥梁，与国内外领先的大学和研发单位合作。",
+      columns: {
+        technology: {
+          title: "科学技术与方法论",
+          description: "我们提供尖端技术解决方案和研究方法论，实现科学突破。我们先进的人工智能系统、自动化研究平台和精密测量工具支持研究人员以前所未有的准确性和效率进行创新研究。我们开发针对特定研究需求的定制解决方案，将最先进的技术与经过验证的科学方法相结合。"
+        },
+        commercialization: {
+          title: "商业化与网络",
+          description: "我们通过战略合作伙伴关系和商业化专业知识将科学发现转化为市场就绪的解决方案。我们广泛的网络将研究人员与行业领袖、投资者和实施合作伙伴联系起来。我们促进技术转让，提供业务发展支持，并创建从实验室发现到实际应用的途径，确保研究创新产生切实的经济和社会影响。"
+        }
+      },
       stats: {
         partnerships: "研究合作伙伴关系",
         universities: "合作大学",

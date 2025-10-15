@@ -535,9 +535,24 @@ function App() {
       <section id="cooperation" className="relative py-32 bg-zinc-900/50 border-t border-white/[0.08]">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12 text-center">
           <h2 className="text-[48px] font-bold leading-[1.15] tracking-tight mb-6">{t.cooperation.title}</h2>
-          <p className="text-[17px] leading-[1.7] text-zinc-400 mb-16 max-w-[700px] mx-auto">
+          <p className="text-[17px] leading-[1.7] text-zinc-400 mb-10 max-w-[700px] mx-auto">
             {t.cooperation.subtitle}
           </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-[900px] mx-auto text-left">
+            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.08]">
+              <h3 className="text-[15px] font-semibold mb-3">{t.cooperation.columns.technology.title}</h3>
+              <p className="text-[13px] leading-[1.6] text-zinc-400">
+                {t.cooperation.columns.technology.description}
+              </p>
+            </div>
+            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.08]">
+              <h3 className="text-[15px] font-semibold mb-3">{t.cooperation.columns.commercialization.title}</h3>
+              <p className="text-[13px] leading-[1.6] text-zinc-400">
+                {t.cooperation.columns.commercialization.description}
+              </p>
+            </div>
+          </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.08]">
