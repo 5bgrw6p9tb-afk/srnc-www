@@ -432,7 +432,7 @@ function App() {
       </section>
 
       {/* We Inspire Science CTA Section */}
-      <section className="relative h-[500px] overflow-hidden">
+      <section className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
