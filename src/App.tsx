@@ -596,7 +596,7 @@ function App() {
 
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center max-w-[900px] mx-auto px-8">
-            <h2 className="text-[64px] sm:text-[80px] lg:text-[96px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
+            <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
               We Inspire Science
             </h2>
             <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
