@@ -460,20 +460,22 @@ function App() {
         <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-5">
+              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col1.subtitle}</h4>
               <p className="text-[14px] leading-[1.8] text-zinc-400">
-                The convergence of artificial intelligence and neuroscience research is opening unprecedented opportunities in understanding human cognition and behavior. By combining advanced AI algorithms with neuroscientific methodologies, we can now decode complex patterns in brain activity that were previously impossible to analyze. Machine learning models can process vast amounts of neurological data in real-time, identifying subtle correlations between neural activity and cognitive processes.
+                {t.aiSection.col1.p1}
               </p>
               <p className="text-[14px] leading-[1.8] text-zinc-400">
-                This synergy enables researchers to predict behavioral responses, understand decision-making mechanisms, and uncover the intricate workings of the human mind with remarkable precision. The integration of AI in neuroscience is not just accelerating research—it's fundamentally transforming our approach to understanding consciousness, memory formation, and the neural basis of learning.
+                {t.aiSection.col1.p2}
               </p>
             </div>
 
             <div className="space-y-5">
+              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col2.subtitle}</h4>
               <p className="text-[14px] leading-[1.8] text-zinc-400">
-                Artificial intelligence is revolutionizing not only how we analyze data but how we explore scientific questions. Traditional research methods are being augmented by AI-powered tools that can generate hypotheses, simulate complex scenarios, and discover patterns that human researchers might overlook.
+                {t.aiSection.col2.p1}
               </p>
               <p className="text-[14px] leading-[1.8] text-zinc-400">
-                Deep learning algorithms can navigate multi-dimensional data spaces, uncovering hidden relationships and suggesting novel research directions. These tools enable scientists to explore "what-if" scenarios at unprecedented scales, testing thousands of hypotheses simultaneously and identifying the most promising avenues for investigation. This exploratory capability transforms AI from a mere analytical instrument into a collaborative research partner, ultimately accelerating the pace of scientific discovery and innovation across all disciplines.
+                {t.aiSection.col2.p2}
               </p>
             </div>
           </div>

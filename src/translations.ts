@@ -52,6 +52,18 @@ export interface Translation {
       description: string;
     };
   };
+  aiSection: {
+    col1: {
+      subtitle: string;
+      p1: string;
+      p2: string;
+    };
+    col2: {
+      subtitle: string;
+      p1: string;
+      p2: string;
+    };
+  };
   services: {
     title: string;
     subtitle: string;
@@ -174,6 +186,18 @@ export const translations: Record<string, Translation> = {
       item9: {
         title: "Smart Experimentation Platforms",
         description: "Platforms for remote conducting and managing research experiments using AI"
+      }
+    },
+    aiSection: {
+      col1: {
+        subtitle: "AI & Neuroscience Convergence",
+        p1: "The convergence of artificial intelligence and neuroscience research is opening unprecedented opportunities in understanding human cognition and behavior. By combining advanced AI algorithms with neuroscientific methodologies, we can now decode complex patterns in brain activity that were previously impossible to analyze. Machine learning models can process vast amounts of neurological data in real-time, identifying subtle correlations between neural activity and cognitive processes.",
+        p2: "This synergy enables researchers to predict behavioral responses, understand decision-making mechanisms, and uncover the intricate workings of the human mind with remarkable precision. The integration of AI in neuroscience is not just accelerating research—it's fundamentally transforming our approach to understanding consciousness, memory formation, and the neural basis of learning."
+      },
+      col2: {
+        subtitle: "AI as Exploration Tool",
+        p1: "Artificial intelligence is revolutionizing not only how we analyze data but how we explore scientific questions. Traditional research methods are being augmented by AI-powered tools that can generate hypotheses, simulate complex scenarios, and discover patterns that human researchers might overlook.",
+        p2: "Deep learning algorithms can navigate multi-dimensional data spaces, uncovering hidden relationships and suggesting novel research directions. These tools enable scientists to explore \"what-if\" scenarios at unprecedented scales, testing thousands of hypotheses simultaneously and identifying the most promising avenues for investigation. This exploratory capability transforms AI from a mere analytical instrument into a collaborative research partner, ultimately accelerating the pace of scientific discovery and innovation across all disciplines."
       }
     },
     services: {
@@ -308,6 +332,18 @@ export const translations: Record<string, Translation> = {
         description: "Platformy do zdalnego prowadzenia i zarządzania eksperymentami badawczymi z wykorzystaniem AI"
       }
     },
+    aiSection: {
+      col1: {
+        subtitle: "Konwergencja AI i neuronauki",
+        p1: "Połączenie sztucznej inteligencji i badań neuronaukowych otwiera niespotykane możliwości w zrozumieniu ludzkiej kognitywności i zachowania. Łącząc zaawansowane algorytmy AI z metodologiami neuronaukowymi, możemy teraz dekodować złożone wzorce w aktywności mózgu, które wcześniej były niemożliwe do analizy. Modele uczenia maszynowego przetwarzają ogromne ilości danych neurologicznych w czasie rzeczywistym, identyfikując subtelne korelacje między aktywnością neuronalną a procesami poznawczymi.",
+        p2: "Ta synergia umożliwia naukowcom przewidywanie reakcji behawioralnych, zrozumienie mechanizmów podejmowania decyzji i odkrywanie zawiłości ludzkiego umysłu z niezwykłą precyzją. Integracja AI w neuronauce nie tylko przyspiesza badania—ale fundamentalnie transformuje nasze podejście do rozumienia świadomości, tworzenia pamięci i neuronalnych podstaw uczenia się."
+      },
+      col2: {
+        subtitle: "AI jako narzędzie eksploracji",
+        p1: "Sztuczna inteligencja rewolucjonizuje nie tylko sposób analizy danych, ale także sposób eksploracji pytań naukowych. Tradycyjne metody badawcze są wzmacniane przez narzędzia oparte na AI, które mogą generować hipotezy, symulować złożone scenariusze i odkrywać wzorce, które badacze mogliby przeoczyć.",
+        p2: "Algorytmy głębokiego uczenia mogą nawigować po wielowymiarowych przestrzeniach danych, odkrywając ukryte relacje i sugerując nowe kierunki badań. Te narzędzia umożliwiają naukowcom eksplorację scenariuszy \"co jeśli\" na bezprecedensową skalę, testując tysiące hipotez jednocześnie i identyfikując najbardziej obiecujące kierunki badań. Ta zdolność eksploracyjna przekształca AI z prostego instrumentu analitycznego w partnera badawczego, ostatecznie przyspieszając tempo odkryć naukowych i innowacji we wszystkich dyscyplinach."
+      }
+    },
     services: {
       title: "Jednostki biznesowe",
       subtitle: "Trzy wyspecjalizowane jednostki tworzące kompletną ofertę badawczą",
@@ -438,6 +474,18 @@ export const translations: Record<string, Translation> = {
       item9: {
         title: "智能实验平台",
         description: "使用AI进行远程研究实验的平台"
+      }
+    },
+    aiSection: {
+      col1: {
+        subtitle: "AI与神经科学的融合",
+        p1: "人工智能与神经科学研究的融合正在为理解人类认知和行为开辟前所未有的机会。通过将先进的AI算法与神经科学方法论相结合，我们现在可以解码以前无法分析的大脑活动中的复杂模式。机器学习模型可以实时处理大量神经数据，识别神经活动与认知过程之间的微妙相关性。",
+        p2: "这种协同作用使研究人员能够预测行为反应，理解决策机制，并以惊人的精度揭示人类思维的复杂运作。AI在神经科学中的整合不仅加速了研究——它从根本上改变了我们理解意识、记忆形成和学习神经基础的方法。"
+      },
+      col2: {
+        subtitle: "AI作为探索工具",
+        p1: "人工智能不仅革新了我们分析数据的方式，也革新了我们探索科学问题的方式。传统的研究方法正在被AI驱动的工具增强，这些工具可以生成假设、模拟复杂场景并发现人类研究人员可能忽略的模式。",
+        p2: "深度学习算法可以导航多维数据空间，发现隐藏的关系并建议新的研究方向。这些工具使科学家能够以前所未有的规模探索\"假设\"场景，同时测试数千个假设并识别最有前途的研究途径。这种探索能力将AI从单纯的分析工具转变为协作研究伙伴，最终加速所有学科的科学发现和创新步伐。"
       }
     },
     services: {
