@@ -455,6 +455,43 @@ function App() {
         </div>
       </section>
 
+      {/* AI & Neuroscience Section */}
+      <section className="relative py-32 border-t border-white/[0.08]">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div className="space-y-6">
+              <h3 className="text-[32px] font-[700] leading-[1.2] tracking-tight mb-6">
+                AI Meets Neuroscience: New Frontiers in Research
+              </h3>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                The convergence of artificial intelligence and neuroscience research is opening unprecedented opportunities in understanding human cognition and behavior. By combining advanced AI algorithms with neuroscientific methodologies, we can now decode complex patterns in brain activity that were previously impossible to analyze.
+              </p>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                Machine learning models can process vast amounts of neurological data in real-time, identifying subtle correlations between neural activity and cognitive processes. This synergy enables researchers to predict behavioral responses, understand decision-making mechanisms, and uncover the intricate workings of the human mind with remarkable precision.
+              </p>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                The integration of AI in neuroscience is not just accelerating research—it's fundamentally transforming our approach to understanding consciousness, memory formation, and the neural basis of learning. This revolutionary combination is paving the way for breakthroughs in cognitive enhancement, neurological disorder treatment, and human-computer interaction.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-[32px] font-[700] leading-[1.2] tracking-tight mb-6">
+                Beyond Analysis: AI as an Exploration Tool
+              </h3>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                Artificial intelligence is revolutionizing not only how we analyze data but how we explore scientific questions. Traditional research methods are being augmented by AI-powered tools that can generate hypotheses, simulate complex scenarios, and discover patterns that human researchers might overlook.
+              </p>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                Deep learning algorithms can navigate multi-dimensional data spaces, uncovering hidden relationships and suggesting novel research directions. These tools enable scientists to explore "what-if" scenarios at unprecedented scales, testing thousands of hypotheses simultaneously and identifying the most promising avenues for investigation.
+              </p>
+              <p className="text-[16px] leading-[1.8] text-zinc-400">
+                This exploratory capability transforms AI from a mere analytical instrument into a collaborative research partner. By automating routine analysis and hypothesis generation, AI frees researchers to focus on creative problem-solving and strategic thinking, ultimately accelerating the pace of scientific discovery and innovation across all disciplines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="relative py-32 border-t border-white/[0.08]">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
