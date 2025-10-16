@@ -431,6 +431,30 @@ function App() {
         </div>
       </section>
 
+      {/* We Inspire Science CTA Section */}
+      <section className="relative h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
+            alt="We Inspire Science"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        </div>
+
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center max-w-[900px] mx-auto px-8">
+            <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
+              We Inspire Science
+            </h2>
+            <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
+              {t.hero.cta1}
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="relative py-32 border-t border-white/[0.08]">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
@@ -580,30 +604,6 @@ function App() {
           <button className="px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px]">
             {t.cooperation.cta}
           </button>
-        </div>
-      </section>
-
-      {/* We Inspire Science CTA Section */}
-      <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
-            alt="We Inspire Science"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
-        </div>
-
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center max-w-[900px] mx-auto px-8">
-            <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
-              We Inspire Science
-            </h2>
-            <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
-              {t.hero.cta1}
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-          </div>
         </div>
       </section>
 
