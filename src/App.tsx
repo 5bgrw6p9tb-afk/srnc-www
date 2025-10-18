@@ -247,6 +247,7 @@ function App() {
               <a href="#about" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.about}</a>
               <a href="#services" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
               <a href="#innovations" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.innovations}</a>
+              <a href="#knowledge-models" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.knowledgeModels}</a>
               <a href="#cooperation" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.cooperation}</a>
               <a href="#contact" className="ml-3 px-5 py-2 text-[15px] font-semibold bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full">{t.nav.contact}</a>
               <div className="flex items-center gap-1 ml-4 pl-4 border-l border-white/10">
@@ -631,6 +632,37 @@ function App() {
           <button className="px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px]">
             {t.cooperation.cta}
           </button>
+        </div>
+      </section>
+
+      {/* Knowledge Models Section */}
+      <section id="knowledge-models" className="relative py-32 border-t border-white/[0.08]">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-[48px] font-[700] leading-[1.15] tracking-tight mb-6">{t.knowledgeModels.title}</h2>
+            <p className="text-[17px] leading-[1.7] text-zinc-400 max-w-[800px] mx-auto">
+              {t.knowledgeModels.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => {
+              const item = t.knowledgeModels[`item${num}` as keyof typeof t.knowledgeModels] as { title: string; description: string };
+              return (
+                <div key={num} className="group relative p-8 rounded-lg bg-white/[0.02] border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.15] transition-all">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#DB1500]/10 flex items-center justify-center">
+                      <span className="text-[#DB1500] font-bold text-[15px]">{num}</span>
+                    </div>
+                    <h3 className="text-[17px] font-[600] leading-[1.3] pt-2">{item.title}</h3>
+                  </div>
+                  <p className="text-[14px] leading-[1.7] text-zinc-400">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
