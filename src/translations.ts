@@ -211,7 +211,7 @@ export const translations: Record<string, Translation> = {
       },
       item5: {
         title: "Custom Model Fine-Tuning",
-        description: "Training large language models on your organizational data to create AI that speaks your company's language, understands your methodologies, and follows your specific rules and terminology. Domain-specific intelligence tailored to your business context."
+        description: "Training AI models on organizational data to understand company-specific language and methodologies"
       },
       item6: {
         title: "Neuromarketing Intelligence",
@@ -223,7 +223,7 @@ export const translations: Record<string, Translation> = {
       },
       item8: {
         title: "Model Evaluation & Validation",
-        description: "Rigorous testing frameworks ensuring cognitive model consistency, context understanding, and accurate domain comprehension. We validate that models maintain logical coherence and don't confuse concepts like POS with UX in your specific context."
+        description: "Testing frameworks ensuring model accuracy, consistency, and domain-specific understanding"
       },
       item9: {
         title: "Smart Experimentation Platforms",
@@ -396,7 +396,7 @@ export const translations: Record<string, Translation> = {
       },
       item5: {
         title: "Fine-tuning dedykowanych modeli",
-        description: "Trenowanie dużych modeli językowych na danych organizacyjnych w celu stworzenia AI mówiącego językiem firmy, rozumiejącego metodologie i przestrzegającego specyficznych reguł i terminologii. Inteligencja domenowa dostosowana do kontekstu biznesowego."
+        description: "Trenowanie modeli AI na danych organizacyjnych w celu zrozumienia języka i metodologii firmy"
       },
       item6: {
         title: "Neuromarketing Intelligence",
@@ -408,7 +408,7 @@ export const translations: Record<string, Translation> = {
       },
       item8: {
         title: "Ewaluacja i walidacja modeli",
-        description: "Rygorystyczne frameworki testowe zapewniające spójność modelu kognitywnego, rozumienie kontekstu i dokładną kompresję domeny. Weryfikujemy, że modele zachowują logiczną koherencję i nie mylą pojęć jak POS z UX w Twoim specyficznym kontekście."
+        description: "Frameworki testowe zapewniające dokładność, spójność i domenowe zrozumienie modeli"
       },
       item9: {
         title: "Smart Experimentation Platforms",
@@ -569,7 +569,7 @@ export const translations: Record<string, Translation> = {
       },
       item5: {
         title: "定制模型微调",
-        description: "在组织数据上训练大型语言模型，创建AI说公司语言，理解方法论，遵循特定规则和术语。针对业务上下文量身定制的领域智能。"
+        description: "在组织数据上训练AI模型以理解公司特定语言和方法论"
       },
       item6: {
         title: "神经营销智能",
@@ -581,7 +581,7 @@ export const translations: Record<string, Translation> = {
       },
       item8: {
         title: "模型评估与验证",
-        description: "严格的测试框架确保认知模型的一致性、上下文理解和准确的领域理解。我们验证模型保持逻辑连贯性，不在特定上下文中混淆POS和UX等概念。"
+        description: "测试框架确保模型准确性、一致性和领域特定理解"
       },
       item9: {
         title: "智能实验平台",
