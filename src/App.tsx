@@ -646,7 +646,7 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => {
+            {[1, 2, 3, 4, 5, 6].map((num) => {
               const item = t.knowledgeModels[`item${num}` as keyof typeof t.knowledgeModels] as { title: string; description: string };
               return (
                 <div key={num} className="group relative p-8 rounded-lg bg-white/[0.02] border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.15] transition-all">

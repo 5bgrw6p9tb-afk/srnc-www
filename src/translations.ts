@@ -465,40 +465,28 @@ export const translations: Record<string, Translation> = {
       title: "Organizacyjne modele wiedzy",
       subtitle: "Budowa architektur kognitywnych, które transformują sposób, w jaki organizacje przechwytują, przetwarzają i wykorzystują swoją zbiorową inteligencję",
       item1: {
-        title: "Architektura ontologii korporacyjnej",
-        description: "Budowa strukturalnych modeli wiedzy organizacyjnej definiujących byty, relacje i logikę biznesową. Tworzymy semantyczne frameworki przechwytujące unikalną wiedzę domenową firmy, wzorce decyzyjne i reguły operacyjne."
+        title: "Ontologia korporacyjna i ekstrakcja wiedzy",
+        description: "Budowa strukturalnych modeli wiedzy organizacyjnej definiujących byty, relacje i logikę biznesową. Przekształcamy nieustrukturyzowane materiały firmowe w struktury semantyczne – fakty, decyzje, reguły i procesy. Nasze frameworki semantyczne przechwytują unikalną wiedzę domenową, wzorce decyzyjne i reguły operacyjne, przetwarzając dokumentację i komunikację w maszynowo czytelną wiedzę organizacyjną."
       },
       item2: {
-        title: "Ekstrakcja i strukturyzacja wiedzy",
-        description: "Przekształcanie nieustrukturyzowanych materiałów firmowych w struktury semantyczne – fakty, decyzje, reguły i procesy. Przetwarzamy dokumentację, komunikację i dane operacyjne w maszynowo czytelną wiedzę organizacyjną."
+        title: "Organizacyjne modele kognitywne",
+        description: "Hybrydowe modele symboliczno-językowe funkcjonujące jako cyfrowy mózg organizacji. Nie chatbot, lecz kompleksowa architektura kognitywna rozumiejąca kontekst, relacje i wzorce rozumowania organizacyjnego. Te modele integrują struktury ontologiczne z zaawansowaną wiedzą językową, tworząc prawdziwie inteligentne systemy."
       },
       item3: {
-        title: "Organizacyjne modele kognitywne",
-        description: "Hybrydowe modele symboliczno-językowe funkcjonujące jako cyfrowy mózg organizacji. Nie chatbot, lecz kompleksowa architektura kognitywna rozumiejąca kontekst, relacje i wzorce rozumowania organizacyjnego."
+        title: "Fine-tuning i trening dedykowanych modeli",
+        description: "Trenowanie dużych modeli językowych na danych organizacyjnych w celu stworzenia AI mówiącego językiem firmy, rozumiejącego metodologie i przestrzegającego specyficznych reguł i terminologii. Inteligencja domenowa dostosowana do kontekstu biznesowego, zapewniająca prawdziwe zrozumienie unikalnego środowiska operacyjnego."
       },
       item4: {
-        title: "Fine-tuning dedykowanych modeli",
-        description: "Trenowanie dużych modeli językowych na danych organizacyjnych w celu stworzenia AI mówiącego językiem firmy, rozumiejącego metodologie i przestrzegającego specyficznych reguł i terminologii. Inteligencja domenowa dostosowana do kontekstu biznesowego."
+        title: "Ewaluacja i walidacja modeli",
+        description: "Rygorystyczne frameworki testowe zapewniające spójność modelu kognitywnego, rozumienie kontekstu i dokładną kompresję domeny. Weryfikujemy, że modele zachowują logiczną koherencję i nie mylą pojęć jak POS z UX w Twoim specyficznym kontekście. Kompleksowe procesy ewaluacji gwarantują niezawodność i precyzję."
       },
       item5: {
-        title: "Ewaluacja i walidacja modeli",
-        description: "Rygorystyczne frameworki testowe zapewniające spójność modelu kognitywnego, rozumienie kontekstu i dokładną kompresję domeny. Weryfikujemy, że modele zachowują logiczną koherencję i nie mylą pojęć jak POS z UX w Twoim specyficznym kontekście."
+        title: "Adaptacyjne uczenie i wersjonowanie",
+        description: "Architektury kognitywne z warstwami pamięci (tokenową i długoterminową), które nieustannie uczą się z nowych przypadków, adaptując się do ewoluującej wiedzy organizacyjnej. Kontrola wersji klasy enterprise śledzi zmiany, zarządza aktualizacjami i utrzymuje spójność w infrastrukturze AI w miarę ewolucji wiedzy biznesowej."
       },
       item6: {
-        title: "Adaptacyjne systemy uczące się",
-        description: "Architektury kognitywne z warstwami pamięci (tokenową i długoterminową), które nieustannie uczą się z nowych przypadków, adaptując się do ewoluującej wiedzy organizacyjnej i doskonaląc się poprzez interakcje w rzeczywistym świecie."
-      },
-      item7: {
-        title: "Wersjonowanie modeli wiedzy",
-        description: "Kontrola wersji klasy enterprise dla organizacyjnych modeli kognitywnych. Śledź zmiany, zarządzaj aktualizacjami, cofaj gdy potrzeba i utrzymuj spójność w infrastrukturze AI w miarę ewolucji wiedzy biznesowej."
-      },
-      item8: {
-        title: "Automatyzacja badań wspierana AI",
-        description: "Inteligentne systemy optymalizujące i przyspieszające przepływy badawcze – od projektowania eksperymentów po analizę danych. Autonomiczni agenci obsługują złożone zadania analityczne zachowując rygor naukowy i spójność metodologiczną."
-      },
-      item9: {
-        title: "Zintegrowana infrastruktura naukowa",
-        description: "Własne laboratoria i nowoczesne zaplecze technologiczne wyposażone w systemy pomiarowe wspomagane AI, automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym do prowadzenia zaawansowanych eksperymentów neuropsychologicznych."
+        title: "Infrastruktura badań AI",
+        description: "Zintegrowana infrastruktura naukowa i technologiczna łącząca inteligentną automatyzację badań z zaawansowanymi systemami pomiarowymi. Nasze laboratoria i platformy optymalizują przepływy badawcze od projektowania eksperymentów po analizę danych, oferując automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym dla prowadzenia najnowocześniejszych eksperymentów neuropsychologicznych."
       }
     },
     cooperation: {
