@@ -152,40 +152,40 @@ export const translations: Record<string, Translation> = {
       title: "Tomorrow comes today",
       subtitle: "We use language models, AI agents and broadly understood artificial intelligence to revolutionize scientific research and marketing processes.",
       item1: {
-        title: "AI-Driven Research",
-        description: "Application of artificial intelligence to optimize and accelerate research processes"
+        title: "Corporate Ontology Architecture",
+        description: "Building structured organizational knowledge models that define entities, relationships, and business logic. We create semantic frameworks that capture your company's unique domain expertise, decision patterns, and operational rules."
       },
       item2: {
-        title: "Automated Research Workflows",
-        description: "Intelligent automation of complex research and laboratory procedures"
+        title: "Knowledge Extraction & Structuring",
+        description: "Transforming unstructured company materials into semantic structures – facts, decisions, rules, and processes. We process documentation, communications, and operational data into machine-readable organizational knowledge."
       },
       item3: {
-        title: "Integrated Scientific Infrastructure",
-        description: "Our own laboratories and modern technological facilities for conducting advanced experiments"
+        title: "Organizational Cognitive Models",
+        description: "Hybrid symbolic-linguistic models that function as your organization's digital brain. Not a chatbot, but a comprehensive cognitive architecture that understands context, relationships, and organizational reasoning patterns."
       },
       item4: {
-        title: "Collaborative Innovation Networks",
-        description: "Cooperation with universities, research institutes and industrial partners"
+        title: "Custom Model Fine-Tuning",
+        description: "Training large language models on your organizational data to create AI that speaks your company's language, understands your methodologies, and follows your specific rules and terminology. Domain-specific intelligence tailored to your business context."
       },
       item5: {
-        title: "Predictive Analytics & Modeling",
-        description: "Predictive models supporting business decisions and forecasting consumer behaviors"
+        title: "Model Evaluation & Validation",
+        description: "Rigorous testing frameworks ensuring cognitive model consistency, context understanding, and accurate domain comprehension. We validate that models maintain logical coherence and don't confuse concepts like POS with UX in your specific context."
       },
       item6: {
-        title: "Neuromarketing Intelligence",
-        description: "AI-powered neuromarketing research – deep analysis of consumer reactions"
+        title: "Adaptive Learning Systems",
+        description: "Cognitive architectures with memory layers (token-based and long-term) that continuously learn from new cases, adapting to evolving organizational knowledge and improving over time through real-world interactions."
       },
       item7: {
-        title: "Cognitive Agent Teams",
-        description: "Teams of autonomous AI agents performing research and analytical tasks"
+        title: "Knowledge Model Versioning",
+        description: "Enterprise-grade version control for your organizational cognitive models. Track changes, manage updates, roll back when needed, and maintain consistency across your AI infrastructure as business knowledge evolves."
       },
       item8: {
-        title: "Data-Centric Research Design",
-        description: "Data-driven research approach – from experiment design to result analysis"
+        title: "AI-Driven Research Automation",
+        description: "Intelligent systems that optimize and accelerate research workflows – from experiment design to data analysis. Autonomous agents handle complex analytical tasks while maintaining scientific rigor and methodological consistency."
       },
       item9: {
-        title: "Smart Experimentation Platforms",
-        description: "Platforms for remote conducting and managing research experiments using AI"
+        title: "Integrated Scientific Infrastructure",
+        description: "Our own laboratories and modern technological facilities equipped with AI-enhanced measurement systems, automated data collection, and real-time analysis capabilities for conducting advanced neuropsychological experiments."
       }
     },
     aiSection: {
@@ -296,40 +296,40 @@ export const translations: Record<string, Translation> = {
       title: "Jutro zaczyna się dziś",
       subtitle: "Wykorzystujemy modele językowe, agentów AI i szeroko pojętą sztuczną inteligencję do rewolucjonizacji badań naukowych i procesów marketingowych.",
       item1: {
-        title: "AI-Driven Research",
-        description: "Zastosowanie sztucznej inteligencji do optymalizacji i przyspieszania procesów badawczych"
+        title: "Architektura ontologii korporacyjnej",
+        description: "Budowa strukturalnych modeli wiedzy organizacyjnej definiujących byty, relacje i logikę biznesową. Tworzymy semantyczne frameworki przechwytujące unikalną wiedzę domenową firmy, wzorce decyzyjne i reguły operacyjne."
       },
       item2: {
-        title: "Automated Research Workflows",
-        description: "Inteligentna automatyzacja złożonych procedur badawczych i laboratoryjnych"
+        title: "Ekstrakcja i strukturyzacja wiedzy",
+        description: "Przekształcanie nieustrukturyzowanych materiałów firmowych w struktury semantyczne – fakty, decyzje, reguły i procesy. Przetwarzamy dokumentację, komunikację i dane operacyjne w maszynowo czytelną wiedzę organizacyjną."
       },
       item3: {
-        title: "Integrated Scientific Infrastructure",
-        description: "Własne laboratoria i nowoczesne zaplecze technologiczne do prowadzenia zaawansowanych eksperymentów"
+        title: "Organizacyjne modele kognitywne",
+        description: "Hybrydowe modele symboliczno-językowe funkcjonujące jako cyfrowy mózg organizacji. Nie chatbot, lecz kompleksowa architektura kognitywna rozumiejąca kontekst, relacje i wzorce rozumowania organizacyjnego."
       },
       item4: {
-        title: "Collaborative Innovation Networks",
-        description: "Współpraca z uczelniami, instytutami badawczymi i partnerami przemysłowymi"
+        title: "Fine-tuning dedykowanych modeli",
+        description: "Trenowanie dużych modeli językowych na danych organizacyjnych w celu stworzenia AI mówiącego językiem firmy, rozumiejącego metodologie i przestrzegającego specyficznych reguł i terminologii. Inteligencja domenowa dostosowana do kontekstu biznesowego."
       },
       item5: {
-        title: "Predictive Analytics & Modeling",
-        description: "Modele predykcyjne wspierające decyzje biznesowe i prognozujące zachowania konsumenckie"
+        title: "Ewaluacja i walidacja modeli",
+        description: "Rygorystyczne frameworki testowe zapewniające spójność modelu kognitywnego, rozumienie kontekstu i dokładną kompresję domeny. Weryfikujemy, że modele zachowują logiczną koherencję i nie mylą pojęć jak POS z UX w Twoim specyficznym kontekście."
       },
       item6: {
-        title: "Neuromarketing Intelligence",
-        description: "Badania neuromarketingowe wspierane przez AI – głęboka analiza reakcji konsumenckich"
+        title: "Adaptacyjne systemy uczące się",
+        description: "Architektury kognitywne z warstwami pamięci (tokenową i długoterminową), które nieustannie uczą się z nowych przypadków, adaptując się do ewoluującej wiedzy organizacyjnej i doskonaląc się poprzez interakcje w rzeczywistym świecie."
       },
       item7: {
-        title: "Cognitive Agent Teams",
-        description: "Zespoły autonomicznych agentów AI realizujących zadania badawcze i analityczne"
+        title: "Wersjonowanie modeli wiedzy",
+        description: "Kontrola wersji klasy enterprise dla organizacyjnych modeli kognitywnych. Śledź zmiany, zarządzaj aktualizacjami, cofaj gdy potrzeba i utrzymuj spójność w infrastrukturze AI w miarę ewolucji wiedzy biznesowej."
       },
       item8: {
-        title: "Data-Centric Research Design",
-        description: "Podejście badawcze oparte na danych – od projektowania eksperymentów po analizę wyników"
+        title: "Automatyzacja badań wspierana AI",
+        description: "Inteligentne systemy optymalizujące i przyspieszające przepływy badawcze – od projektowania eksperymentów po analizę danych. Autonomiczni agenci obsługują złożone zadania analityczne zachowując rygor naukowy i spójność metodologiczną."
       },
       item9: {
-        title: "Smart Experimentation Platforms",
-        description: "Platformy do zdalnego prowadzenia i zarządzania eksperymentami badawczymi z wykorzystaniem AI"
+        title: "Zintegrowana infrastruktura naukowa",
+        description: "Własne laboratoria i nowoczesne zaplecze technologiczne wyposażone w systemy pomiarowe wspomagane AI, automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym do prowadzenia zaawansowanych eksperymentów neuropsychologicznych."
       }
     },
     aiSection: {
@@ -440,40 +440,40 @@ export const translations: Record<string, Translation> = {
       title: "明天今天到来",
       subtitle: "我们使用语言模型、AI代理和广义人工智能来革命化科学研究和营销流程。",
       item1: {
-        title: "AI驱动研究",
-        description: "应用人工智能优化和加速研究流程"
+        title: "企业本体架构",
+        description: "构建结构化组织知识模型，定义实体、关系和业务逻辑。我们创建语义框架，捕捉公司独特的领域专业知识、决策模式和运营规则。"
       },
       item2: {
-        title: "自动化研究工作流",
-        description: "复杂研究和实验室程序的智能自动化"
+        title: "知识提取与结构化",
+        description: "将非结构化公司材料转化为语义结构——事实、决策、规则和流程。我们将文档、沟通和运营数据处理成机器可读的组织知识。"
       },
       item3: {
-        title: "综合科学基础设施",
-        description: "用于开展高级实验的自有实验室和现代技术设施"
+        title: "组织认知模型",
+        description: "混合符号-语言模型，作为组织的数字大脑。不是聊天机器人，而是理解上下文、关系和组织推理模式的综合认知架构。"
       },
       item4: {
-        title: "协作创新网络",
-        description: "与大学、研究机构和工业合作伙伴的合作"
+        title: "定制模型微调",
+        description: "在组织数据上训练大型语言模型，创建AI说公司语言，理解方法论，遵循特定规则和术语。针对业务上下文量身定制的领域智能。"
       },
       item5: {
-        title: "预测分析与建模",
-        description: "支持商业决策和预测消费者行为的预测模型"
+        title: "模型评估与验证",
+        description: "严格的测试框架确保认知模型的一致性、上下文理解和准确的领域理解。我们验证模型保持逻辑连贯性，不在特定上下文中混淆POS和UX等概念。"
       },
       item6: {
-        title: "神经营销智能",
-        description: "AI支持的神经营销研究 - 深入分析消费者反应"
+        title: "自适应学习系统",
+        description: "具有记忆层（基于令牌和长期）的认知架构，从新案例中持续学习，适应不断发展的组织知识，并通过真实世界的互动不断改进。"
       },
       item7: {
-        title: "认知代理团队",
-        description: "执行研究和分析任务的自主AI代理团队"
+        title: "知识模型版本控制",
+        description: "企业级组织认知模型的版本控制。跟踪更改，管理更新，必要时回滚，并在业务知识演变时保持AI基础设施的一致性。"
       },
       item8: {
-        title: "数据中心研究设计",
-        description: "数据驱动的研究方法 - 从实验设计到结果分析"
+        title: "AI驱动研究自动化",
+        description: "优化和加速研究工作流的智能系统——从实验设计到数据分析。自主代理处理复杂分析任务，同时保持科学严谨性和方法论一致性。"
       },
       item9: {
-        title: "智能实验平台",
-        description: "使用AI进行远程研究实验的平台"
+        title: "集成科学基础设施",
+        description: "我们自有的实验室和现代技术设施，配备AI增强的测量系统、自动数据收集和实时分析能力，用于开展高级神经心理学实验。"
       }
     },
     aiSection: {
