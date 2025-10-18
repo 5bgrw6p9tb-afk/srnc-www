@@ -323,7 +323,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-32 bg-zinc-950">
+      <section id="about" className="relative py-32 pb-40 bg-zinc-950">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
           <div className="max-w-[800px] mx-auto text-center mb-20">
             <h2 className="text-[48px] font-[700] leading-[1.15] tracking-tight mb-6">{t.about.title}</h2>
@@ -433,7 +433,7 @@ function App() {
       </section>
 
       {/* We Inspire Science CTA Section */}
-      <section className="relative h-[50vh] overflow-hidden">
+      <section className="relative h-[65vh] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
