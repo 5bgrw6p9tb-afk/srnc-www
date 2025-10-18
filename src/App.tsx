@@ -332,9 +332,9 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Bot className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item1.title}</h3>
@@ -343,8 +343,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Microscope className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item2.title}</h3>
@@ -353,8 +353,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Building2 className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item3.title}</h3>
@@ -363,8 +363,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item4.title}</h3>
@@ -373,8 +373,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
                 </svg>
@@ -385,8 +385,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Eye className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item6.title}</h3>
@@ -395,8 +395,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V11h2.5c.83 0 1.5.67 1.5 1.5V18h2v-5.5c0-1.1-.9-2-2-2H13v-.5c0-1.93-1.57-3.5-3.5-3.5S6 8.07 6 10v8h-2z"/>
                 </svg>
@@ -407,8 +407,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
@@ -419,8 +419,8 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-8 rounded-lg border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
-              <div className="h-12 w-12 flex items-center justify-center mb-5">
+            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+              <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Cloud className="h-6 w-6 text-[#2E455C]" />
               </div>
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item9.title}</h3>
