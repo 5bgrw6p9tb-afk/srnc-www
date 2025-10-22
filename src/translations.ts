@@ -333,7 +333,7 @@ export const translations: Record<string, Translation> = {
         },
         commercialization: {
           title: "Commercialization & Networking",
-          description: "We transform scientific discoveries into market-ready solutions through strategic partnerships and commercialization expertise. Our extensive network connects researchers with industry leaders, investors, and implementation partners. We facilitate technology transfer, provide business development support, and create pathways from laboratory findings to real-world applications, ensuring research innovations generate tangible economic and social impact."
+          description: "We transform scientific discoveries into market-ready solutions through strategic partnerships and commercialization expertise. Our extensive network connects researchers with industry leaders, investors, and implementation partners. We facilitate technology transfer, provide business development support, and create pathways from laboratory findings to real-world applications."
         }
       },
       stats: {
@@ -513,7 +513,7 @@ export const translations: Record<string, Translation> = {
         },
         commercialization: {
           title: "Komercjalizacja i networking",
-          description: "Przekształcamy odkrycia naukowe w gotowe do wprowadzenia na rynek rozwiązania poprzez strategiczne partnerstwa i ekspertyzę w zakresie komercjalizacji. Nasza rozległa sieć łączy naukowców z liderami przemysłu, inwestorami i partnerami wdrożeniowymi. Ułatwiamy transfer technologii, zapewniamy wsparcie w rozwoju biznesu i tworzymy ścieżki od odkryć laboratoryjnych do zastosowań w rzeczywistym świecie, zapewniając, że innowacje badawcze generują wymierny wpływ ekonomiczny i społeczny."
+          description: "Przekształcamy odkrycia naukowe w gotowe do wprowadzenia na rynek rozwiązania poprzez strategiczne partnerstwa i ekspertyzę w zakresie komercjalizacji. Nasza rozległa sieć łączy naukowców z liderami przemysłu, inwestorami i partnerami wdrożeniowymi. Ułatwiamy transfer technologii, zapewniamy wsparcie w rozwoju biznesu i tworzymy ścieżki od odkryć laboratoryjnych do zastosowań w rzeczywistym świecie."
         }
       },
       stats: {
@@ -705,7 +705,7 @@ export const translations: Record<string, Translation> = {
         },
         commercialization: {
           title: "商业化与网络",
-          description: "我们通过战略合作伙伴关系和商业化专业知识将科学发现转化为市场就绪的解决方案。我们广泛的网络将研究人员与行业领袖、投资者和实施合作伙伴联系起来。我们促进技术转让，提供业务发展支持，并创建从实验室发现到实际应用的途径，确保研究创新产生切实的经济和社会影响。"
+          description: "我们通过战略合作伙伴关系和商业化专业知识将科学发现转化为市场就绪的解决方案。我们广泛的网络将研究人员与行业领袖、投资者和实施合作伙伴联系起来。我们促进技术转让，提供业务发展支持，并创建从实验室发现到实际应用的途径。"
         }
       },
       stats: {
