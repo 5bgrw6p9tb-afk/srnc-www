@@ -779,39 +779,47 @@ function App() {
       </section>
 
       {/* Our Story Section */}
-      <section id="our-story" className="relative py-32 bg-zinc-900/30 border-t border-white/[0.08]">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
-          <div className="max-w-[900px] mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-[48px] font-[700] leading-[1.15] tracking-tight mb-6">{t.ourStory.title}</h2>
-              <p className="text-[19px] leading-[1.6] text-zinc-400 font-normal">
+      <section id="our-story" className="relative py-24 border-t border-white/[0.08]">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="mb-20">
+              <h2 className="text-[56px] font-[800] leading-[1.1] tracking-tight mb-5">{t.ourStory.title}</h2>
+              <p className="text-[22px] leading-[1.4] text-[#DB1500] font-medium">
                 {t.ourStory.subtitle}
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                <p className="text-[16px] leading-[1.8] text-zinc-300">
-                  {t.ourStory.paragraph1}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="text-[64px] font-[900] text-[#DB1500]/20 leading-none">2005</div>
+                </div>
+                <p className="text-[17px] leading-[1.7] text-zinc-300">
+                  {t.ourStory.milestone1}
                 </p>
               </div>
 
-              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                <p className="text-[16px] leading-[1.8] text-zinc-300">
-                  {t.ourStory.paragraph2}
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="text-[64px] font-[900] text-[#DB1500]/20 leading-none">300+</div>
+                </div>
+                <p className="text-[17px] leading-[1.7] text-zinc-300">
+                  {t.ourStory.milestone2}
                 </p>
               </div>
+            </div>
 
-              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
-                <p className="text-[16px] leading-[1.8] text-zinc-300">
-                  {t.ourStory.paragraph3}
-                </p>
-              </div>
-
-              <div className="p-8 rounded-lg bg-gradient-to-br from-[#2E455C]/20 to-[#DB1500]/10 border border-white/[0.08]">
-                <p className="text-[16px] leading-[1.8] text-zinc-300">
-                  {t.ourStory.paragraph4}
-                </p>
+            <div className="p-10 rounded-2xl bg-gradient-to-br from-[#2E455C]/30 via-zinc-900/50 to-[#DB1500]/20 border border-white/[0.1] backdrop-blur-sm">
+              <div className="flex items-start gap-6 mb-6">
+                <div className="h-14 w-14 rounded-xl bg-[#DB1500]/20 flex items-center justify-center flex-shrink-0">
+                  <Bot className="h-7 w-7 text-[#DB1500]" />
+                </div>
+                <div>
+                  <h3 className="text-[24px] font-[700] mb-3 leading-tight">AI-Powered Innovation</h3>
+                  <p className="text-[17px] leading-[1.7] text-zinc-300">
+                    {t.ourStory.aiHighlight}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
