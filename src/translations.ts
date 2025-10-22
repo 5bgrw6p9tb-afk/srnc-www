@@ -194,7 +194,7 @@ export const translations: Record<string, Translation> = {
       contact: "Contact"
     },
     hero: {
-      title: "Innovations in neuropsychological research",
+      title: "Innovations in Neurocognitive Research",
       subtitle: "We combine the latest AI technologies with scientific research, automating research and marketing processes for the future of science.",
       cta1: "Discover our solutions",
       cta2: "Contact us"
@@ -322,7 +322,7 @@ export const translations: Record<string, Translation> = {
       },
       item9: {
         title: "Integrated Scientific Infrastructure",
-        description: "Our own laboratories and modern technological facilities equipped with AI-enhanced measurement systems, automated data collection, and real-time analysis capabilities for conducting advanced neuropsychological experiments."
+        description: "Our own laboratories and modern technological facilities equipped with AI-enhanced measurement systems, automated data collection, and real-time analysis capabilities for conducting advanced neurocognitive experiments."
       }
     },
     cooperation: {
@@ -348,7 +348,7 @@ export const translations: Record<string, Translation> = {
     },
     contact: {
       title: "Contact us",
-      subtitle: "Start cooperation with the leader in neuropsychological research and AI",
+      subtitle: "Start cooperation with the leader in Neurocognitive Research and AI",
       address: "Address",
       phone: "Phone",
       email: "Email",
@@ -387,7 +387,7 @@ export const translations: Record<string, Translation> = {
       contact: "Kontakt"
     },
     hero: {
-      title: "Innowacje w badaniach neuropsychologicznych",
+      title: "Innowacje w badaniach neurokognitywnych",
       subtitle: "Łączymy najnowsze technologie AI z badaniami naukowymi, automatyzując procesy badawcze i marketingowe dla przyszłości nauki.",
       cta1: "Poznaj nasze rozwiązania",
       cta2: "Skontaktuj się z nami"
@@ -503,7 +503,7 @@ export const translations: Record<string, Translation> = {
       },
       item6: {
         title: "Infrastruktura badań AI",
-        description: "Zintegrowana infrastruktura naukowa i technologiczna łącząca inteligentną automatyzację badań z zaawansowanymi systemami pomiarowymi. Nasze laboratoria i platformy optymalizują przepływy badawcze od projektowania eksperymentów po analizę danych, oferując automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym dla prowadzenia najnowocześniejszych eksperymentów neuropsychologicznych."
+        description: "Zintegrowana infrastruktura naukowa i technologiczna łącząca inteligentną automatyzację badań z zaawansowanymi systemami pomiarowymi. Nasze laboratoria i platformy optymalizują przepływy badawcze od projektowania eksperymentów po analizę danych, oferując automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym dla prowadzenia najnowocześniejszych eksperymentów neurokognitywnych."
       }
     },
     cooperation: {
@@ -529,7 +529,7 @@ export const translations: Record<string, Translation> = {
     },
     contact: {
       title: "Skontaktuj się z nami",
-      subtitle: "Rozpocznij współpracę z liderem w dziedzinie badań neuropsychologicznych i AI",
+      subtitle: "Rozpocznij współpracę z liderem w dziedzinie badań neurokognitywnych i AI",
       address: "Adres",
       phone: "Telefon",
       email: "Email",
@@ -568,7 +568,7 @@ export const translations: Record<string, Translation> = {
       contact: "联系"
     },
     hero: {
-      title: "神经心理学研究创新",
+      title: "神经认知研究创新",
       subtitle: "我们将最新的人工智能技术与科学研究相结合，为科学的未来自动化研究和营销流程。",
       cta1: "了解我们的解决方案",
       cta2: "联系我们"
@@ -696,7 +696,7 @@ export const translations: Record<string, Translation> = {
       },
       item9: {
         title: "集成科学基础设施",
-        description: "我们自有的实验室和现代技术设施，配备AI增强的测量系统、自动数据收集和实时分析能力，用于开展高级神经心理学实验。"
+        description: "我们自有的实验室和现代技术设施，配备AI增强的测量系统、自动数据收集和实时分析能力，用于开展高级神经认知实验。"
       }
     },
     cooperation: {
@@ -722,7 +722,7 @@ export const translations: Record<string, Translation> = {
     },
     contact: {
       title: "联系我们",
-      subtitle: "与神经心理学研究和AI领域的领导者开始合作",
+      subtitle: "与神经认知研究和AI领域的领导者开始合作",
       address: "地址",
       phone: "电话",
       email: "邮箱",
