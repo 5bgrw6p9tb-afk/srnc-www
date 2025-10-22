@@ -322,6 +322,57 @@ function App() {
         </div>
       </section>
 
+      {/* We Inspire Science CTA Section */}
+      <section className="relative h-[65vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
+            alt="We Inspire Science"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        </div>
+
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center max-w-[900px] mx-auto px-8">
+            <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
+              We Inspire Science
+            </h2>
+            <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
+              {t.hero.cta1}
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* AI & Neuroscience Section */}
+      <section className="relative py-24 border-t border-white/[0.08]">
+        <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="space-y-5">
+              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col1.subtitle}</h4>
+              <p className="text-[14px] leading-[1.8] text-zinc-400">
+                {t.aiSection.col1.p1}
+              </p>
+              <p className="text-[14px] leading-[1.8] text-zinc-400">
+                {t.aiSection.col1.p2}
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col2.subtitle}</h4>
+              <p className="text-[14px] leading-[1.8] text-zinc-400">
+                {t.aiSection.col2.p1}
+              </p>
+              <p className="text-[14px] leading-[1.8] text-zinc-400">
+                {t.aiSection.col2.p2}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="relative py-32 pb-40 bg-zinc-950">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
@@ -426,57 +477,6 @@ function App() {
               <h3 className="text-[19px] font-semibold mb-3 leading-tight">{t.about.item9.title}</h3>
               <p className="text-[15px] leading-[1.6] text-zinc-400">
                 {t.about.item9.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* We Inspire Science CTA Section */}
-      <section className="relative h-[65vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
-            alt="We Inspire Science"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
-        </div>
-
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center max-w-[900px] mx-auto px-8">
-            <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
-              We Inspire Science
-            </h2>
-            <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
-              {t.hero.cta1}
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* AI & Neuroscience Section */}
-      <section className="relative py-24 border-t border-white/[0.08]">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-5">
-              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col1.subtitle}</h4>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
-                {t.aiSection.col1.p1}
-              </p>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
-                {t.aiSection.col1.p2}
-              </p>
-            </div>
-
-            <div className="space-y-5">
-              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col2.subtitle}</h4>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
-                {t.aiSection.col2.p1}
-              </p>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
-                {t.aiSection.col2.p2}
               </p>
             </div>
           </div>
