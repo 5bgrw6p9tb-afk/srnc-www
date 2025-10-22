@@ -371,9 +371,9 @@ export const translations: Record<string, Translation> = {
     ourStory: {
       title: "Our Story",
       subtitle: "From research pioneers to AI innovation leaders",
-      milestone1: "The breakthrough came with creating an eyetracking lab for Telekomunikacja Polska. Since then, we've grown into a comprehensive research solutions provider — from consulting and infrastructure to implementation and training.",
-      milestone2: "Eyetracking systems delivered since 2006, alongside 400+ studies for companies and institutions across Poland. From prisons to cockpits, special forces to forestry ergonomics — challenging projects are our specialty.",
-      aiHighlight: "Since 2017, we've integrated AI into research workflows. Today, our specialized agents handle research quotes, UX analysis, and function as full project team members. We help clients implement AI across scientific research, consumer studies, marketing, and sales processes."
+      milestone1: "The breakthrough came in 2005 with creating an eyetracking laboratory for Telekomunikacja Polska, which opened entirely new possibilities for us. This experience transformed our approach to research and sparked systematic expansion of our offerings. Since then, we've evolved into a comprehensive research solutions provider, delivering everything from strategic consulting and infrastructure design to full implementation and professional training programs.",
+      milestone2: "Eyetracking systems delivered since 2006 to universities and companies across Poland, alongside over 400 research studies conducted for diverse clients. We've tackled extraordinary projects in unconventional environments: correctional facilities, airline cockpits, with special forces operators, air traffic controllers, and analyzing forestry machinery ergonomics. These challenging, non-standard projects have become our trademark — we eagerly anticipate the next ones.",
+      aiHighlight: "Since 2017, we've been progressively integrating artificial intelligence into research workflows, and since 2023, we've been developing our own specialized AI tools for analysis, modeling, and business process management. Today, our AI agents — handling everything from research quotations to complex UX problem analysis — function as full-fledged project team members. We're now helping clients successfully implement AI solutions across scientific research, consumer studies, marketing automation, and sales optimization processes."
     }
   },
   pl: {
@@ -552,9 +552,9 @@ export const translations: Record<string, Translation> = {
     ourStory: {
       title: "Nasza Historia",
       subtitle: "Od pionierów badań do liderów innowacji AI",
-      milestone1: "Przełom nastąpił wraz z laboratorium eyetrackingowym dla TP. Od tego czasu rozwinęliśmy się w kompleksowego partnera — od doradztwa i infrastruktury, po wdrożenia i szkolenia.",
-      milestone2: "Systemów eyetrackingowych dostarczonych od 2006 roku, wraz z 400+ badań dla firm i instytucji w całej Polsce. Od zakładów karnych po kokpity, siły specjalne i ergonomię leśną — trudne projekty to nasza specjalność.",
-      aiHighlight: "Od 2017 integrujemy AI z procesami badawczymi. Dziś nasze wyspecjalizowane agenty obsługują wyceny badań, analizy UX i funkcjonują jako pełnoprawni członkowie zespołów projektowych. Pomagamy klientom wdrażać AI w badaniach naukowych, konsumenckich, marketingu i sprzedaży."
+      milestone1: "Przełom nastąpił w 2005 roku wraz ze stworzeniem laboratorium eyetrackingowego dla Telekomunikacji Polskiej, które otworzyło przed nami zupełnie nowe możliwości. To doświadczenie przekształciło nasze podejście do badań i zapoczątkowało systematyczny rozwój naszej oferty. Od tego czasu rozwinęliśmy się w kompleksowego partnera badawczego, dostarczającego wszystko — od doradztwa strategicznego i projektowania infrastruktury, po pełne wdrożenia i profesjonalne programy szkoleniowe.",
+      milestone2: "Systemów eyetrackingowych dostarczonych od 2006 roku dla uczelni i firm w całej Polsce, wraz z ponad 400 przeprowadzonymi badaniami dla różnorodnych klientów. Realizowaliśmy niezwykłe projekty w nietypowych środowiskach: zakładach karnych, kokpitach pilotów liniowych, z operatorami sił specjalnych, kontrolerami lotów oraz przy analizie ergonomii maszyn leśnych. Te trudne, niestandardowe projekty stały się naszą wizytówką — z niecierpliwością czekamy na kolejne wyzwania.",
+      aiHighlight: "Od 2017 roku stopniowo integrujemy sztuczną inteligencję z procesami badawczymi, a od 2023 roku rozwijamy własne, wyspecjalizowane narzędzia AI do analiz, modelowania i zarządzania procesami biznesowymi. Dziś nasze agenty AI — obsługujące wszystko od wycen badań po złożone analizy problemów UX — funkcjonują jako pełnoprawni członkowie zespołów projektowych. Obecnie pomagamy klientom z sukcesem wdrażać rozwiązania AI w badaniach naukowych, konsumenckich, automatyzacji marketingu oraz optymalizacji procesów sprzedaży."
     }
   },
   zh: {
@@ -745,9 +745,9 @@ export const translations: Record<string, Translation> = {
     ourStory: {
       title: "我们的故事",
       subtitle: "从研究先驱到AI创新领导者",
-      milestone1: "突破来自为波兰电信创建的眼动追踪实验室。从那时起，我们成长为综合研究解决方案提供商——从咨询和基础设施到实施和培训。",
-      milestone2: "自2006年以来交付的眼动追踪系统，以及在波兰为公司和机构进行的400多项研究。从监狱到驾驶舱，特种部队到林业人体工程学——具有挑战性的项目是我们的专长。",
-      aiHighlight: "自2017年以来，我们将AI集成到研究工作流程中。今天，我们的专业代理处理研究报价、UX分析，并作为完整的项目团队成员运作。我们帮助客户在科学研究、消费者研究、营销和销售流程中实施AI。"
+      milestone1: "2005年的突破来自为波兰电信创建的眼动追踪实验室，这为我们打开了全新的可能性。这一经验改变了我们的研究方法，并引发了我们产品的系统性扩展。从那时起，我们已发展成为综合研究解决方案提供商，提供从战略咨询和基础设施设计到完整实施和专业培训计划的一切服务。",
+      milestone2: "自2006年以来为波兰各地的大学和公司交付的眼动追踪系统，以及为不同客户进行的400多项研究。我们在非常规环境中处理了非凡的项目：惩教设施、航空公司驾驶舱、与特种部队操作员、空中交通管制员合作，以及分析林业机械的人体工程学。这些具有挑战性的非标准项目已成为我们的标志——我们热切期待下一个项目。",
+      aiHighlight: "自2017年以来，我们一直在逐步将人工智能集成到研究工作流程中，自2023年以来，我们一直在开发自己的专业AI工具用于分析、建模和业务流程管理。今天，我们的AI代理——处理从研究报价到复杂UX问题分析的一切——作为完整的项目团队成员运作。我们现在帮助客户成功实施AI解决方案，涵盖科学研究、消费者研究、营销自动化和销售优化流程。"
     }
   }
 };
