@@ -624,7 +624,7 @@ function App() {
               <div className="text-[14px] text-zinc-400 font-medium">{t.cooperation.stats.projects}</div>
             </div>
             <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.08]">
-              <div className="text-[48px] font-[800] text-[#DB1500] mb-2">25</div>
+              <div className="text-[48px] font-[800] text-[#DB1500] mb-2">250+</div>
               <div className="text-[14px] text-zinc-400 font-medium">{t.cooperation.stats.publications}</div>
             </div>
           </div>
