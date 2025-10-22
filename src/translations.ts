@@ -285,7 +285,7 @@ export const translations: Record<string, Translation> = {
       },
       item2: {
         title: "Data Sourcing and Labeling",
-        description: "We provide data sourcing and labeling for training custom AI models. High-quality training data services for computer vision, NLP, and generative AI."
+        description: "Professional data sourcing and annotation services for training custom AI models. We provide high-quality, domain-specific training datasets for computer vision, natural language processing, and generative AI applications. Expert labeling ensures accuracy and consistency across diverse data types."
       },
       item3: {
         title: "Organizational Cognitive Models",
@@ -470,7 +470,7 @@ export const translations: Record<string, Translation> = {
       },
       item2: {
         title: "Data Sourcing and Labeling",
-        description: "Zapewniamy pozyskiwanie i etykietowanie danych do trenowania niestandardowych modeli AI. Wysokiej jakości usługi danych treningowych dla computer vision, NLP i generatywnego AI."
+        description: "Profesjonalne usługi pozyskiwania i anotacji danych do trenowania niestandardowych modeli AI. Dostarczamy wysokiej jakości, domenowo-specyficzne zbiory treningowe dla computer vision, przetwarzania języka naturalnego i aplikacji generatywnego AI. Eksperckie etykietowanie zapewnia dokładność i spójność dla różnorodnych typów danych."
       },
       item3: {
         title: "Fine-tuning i trening dedykowanych modeli",
@@ -643,7 +643,7 @@ export const translations: Record<string, Translation> = {
       },
       item2: {
         title: "数据采购与标注",
-        description: "我们提供用于训练定制AI模型的数据采购和标注服务。为计算机视觉、NLP和生成式AI提供高质量的训练数据服务。"
+        description: "为训练定制AI模型提供专业的数据采购和标注服务。我们为计算机视觉、自然语言处理和生成式AI应用提供高质量、特定领域的训练数据集。专家标注确保各种数据类型的准确性和一致性。"
       },
       item3: {
         title: "组织认知模型",
