@@ -5,7 +5,6 @@ export interface Translation {
     innovations: string;
     knowledgeModels: string;
     cooperation: string;
-    ourStory: string;
     contact: string;
   };
   hero: {
@@ -190,7 +189,6 @@ export const translations: Record<string, Translation> = {
       innovations: "Innovations",
       knowledgeModels: "Knowledge Models",
       cooperation: "Cooperation",
-      ourStory: "Our Story",
       contact: "Contact"
     },
     hero: {
@@ -383,7 +381,6 @@ export const translations: Record<string, Translation> = {
       innovations: "Innowacje",
       knowledgeModels: "Modele wiedzy",
       cooperation: "Współpraca",
-      ourStory: "Nasza Historia",
       contact: "Kontakt"
     },
     hero: {
@@ -564,7 +561,6 @@ export const translations: Record<string, Translation> = {
       innovations: "创新",
       knowledgeModels: "知识模型",
       cooperation: "合作",
-      ourStory: "我们的故事",
       contact: "联系"
     },
     hero: {
