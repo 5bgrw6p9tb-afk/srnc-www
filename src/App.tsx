@@ -249,6 +249,7 @@ function App() {
               <a href="#innovations" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.innovations}</a>
               <a href="#knowledge-models" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.knowledgeModels}</a>
               <a href="#cooperation" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.cooperation}</a>
+              <a href="#our-story" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.ourStory}</a>
               <a href="#contact" className="ml-3 px-5 py-2 text-[15px] font-semibold bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full">{t.nav.contact}</a>
               <div className="flex items-center gap-1 ml-4 pl-4 border-l border-white/10">
                 <button
@@ -771,6 +772,46 @@ function App() {
               {/* Uniwersytet Ekonomiczny we Wrocławiu */}
               <div className="w-full h-24 flex items-center justify-center p-4 border border-white/10 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] transition-all">
                 <span className="text-sm font-medium text-zinc-400 text-center">Uniwersytet Ekonomiczny we Wrocławiu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story Section */}
+      <section id="our-story" className="relative py-32 bg-zinc-900/30 border-t border-white/[0.08]">
+        <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
+          <div className="max-w-[900px] mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-[48px] font-[700] leading-[1.15] tracking-tight mb-6">{t.ourStory.title}</h2>
+              <p className="text-[19px] leading-[1.6] text-zinc-400 font-normal">
+                {t.ourStory.subtitle}
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
+                <p className="text-[16px] leading-[1.8] text-zinc-300">
+                  {t.ourStory.paragraph1}
+                </p>
+              </div>
+
+              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
+                <p className="text-[16px] leading-[1.8] text-zinc-300">
+                  {t.ourStory.paragraph2}
+                </p>
+              </div>
+
+              <div className="p-8 rounded-lg bg-white/[0.02] border border-white/[0.06]">
+                <p className="text-[16px] leading-[1.8] text-zinc-300">
+                  {t.ourStory.paragraph3}
+                </p>
+              </div>
+
+              <div className="p-8 rounded-lg bg-gradient-to-br from-[#2E455C]/20 to-[#DB1500]/10 border border-white/[0.08]">
+                <p className="text-[16px] leading-[1.8] text-zinc-300">
+                  {t.ourStory.paragraph4}
+                </p>
               </div>
             </div>
           </div>

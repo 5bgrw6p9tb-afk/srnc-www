@@ -5,6 +5,7 @@ export interface Translation {
     innovations: string;
     knowledgeModels: string;
     cooperation: string;
+    ourStory: string;
     contact: string;
   };
   hero: {
@@ -172,6 +173,14 @@ export interface Translation {
     business: string;
     academic: string;
   };
+  ourStory: {
+    title: string;
+    subtitle: string;
+    paragraph1: string;
+    paragraph2: string;
+    paragraph3: string;
+    paragraph4: string;
+  };
 }
 
 export const translations: Record<string, Translation> = {
@@ -182,6 +191,7 @@ export const translations: Record<string, Translation> = {
       innovations: "Innovations",
       knowledgeModels: "Knowledge Models",
       cooperation: "Cooperation",
+      ourStory: "Our Story",
       contact: "Contact"
     },
     hero: {
@@ -358,6 +368,14 @@ export const translations: Record<string, Translation> = {
       title: "Our Partners",
       business: "Business Partners",
       academic: "Academic Partners"
+    },
+    ourStory: {
+      title: "Our Story",
+      subtitle: "From research pioneers to AI innovation leaders",
+      paragraph1: "The company was founded by professionals working at the intersection of marketing, advertising, and research. Initially, we focused primarily on research projects, but the breakthrough moment came in 2005 when we created an eyetracking laboratory for Telekomunikacja Polska. This experience opened new possibilities – since then, we have systematically expanded our offerings to include comprehensive research solutions: from consulting, through infrastructure development, to implementation and training.",
+      paragraph2: "In 2006, we completed our first delivery of research equipment and training for Maria Curie-Skłodowska University in Lublin. Since then, we have delivered over 300 eyetracking systems and conducted over 400 studies for companies, scientific institutions, and research agencies throughout Poland.",
+      paragraph3: "Beyond typical consumer and psychological research, we have also undertaken fascinating projects in unusual environments: correctional facilities, airline cockpits, with special forces operators, air traffic controllers, and in analyzing the ergonomics of forestry machinery. Challenging, non-standard projects are our specialty – we eagerly await the next ones.",
+      paragraph4: "Since 2017, we have been introducing artificial intelligence into research processes, and since 2023, we have been using and developing our own tools for both analysis and modeling, as well as managing company processes including marketing and sales. Today, specialized agents – for example, those creating research quotes or analyzing specific UX problems – function as members of project teams. We currently help clients implement AI solutions in both scientific and consumer research, as well as in marketing and sales processes."
     }
   },
   pl: {
@@ -367,6 +385,7 @@ export const translations: Record<string, Translation> = {
       innovations: "Innowacje",
       knowledgeModels: "Modele wiedzy",
       cooperation: "Współpraca",
+      ourStory: "Nasza Historia",
       contact: "Kontakt"
     },
     hero: {
@@ -531,6 +550,14 @@ export const translations: Record<string, Translation> = {
       title: "Nasi Partnerzy",
       business: "Partnerzy Biznesowi",
       academic: "Partnerzy Naukowi"
+    },
+    ourStory: {
+      title: "Nasza Historia",
+      subtitle: "Od pionierów badań do liderów innowacji AI",
+      paragraph1: "Spółka powstała z inicjatywy osób działających na styku marketingu, reklamy i badań. Na początku koncentrowaliśmy się głównie na realizacji projektów badawczych, jednak przełomowym momentem było stworzenie laboratorium eyetrackingowego dla Telekomunikacji Polskiej w 2005 roku. To doświadczenie otworzyło przed nami nowe możliwości – od tego czasu systematycznie rozwijamy ofertę o kompleksowe rozwiązania badawcze: od doradztwa, przez budowę infrastruktury, aż po wdrożenia i szkolenia.",
+      paragraph2: "Już w 2006 roku zrealizowaliśmy pierwszą dostawę sprzętu badawczego i szkolenie dla Uniwersytetu Marii Curie-Skłodowskiej w Lublinie. Od tamtej pory dostarczyliśmy ponad 300 systemów eyetrackingowych i przeprowadziliśmy ponad 400 badań dla firm, instytucji naukowych i agencji badawczych w całej Polsce.",
+      paragraph3: "Poza typowymi badaniami konsumenckimi czy psychologicznymi, realizowaliśmy też niezwykle ciekawe projekty w nietypowych środowiskach: zakładach karnych, kokpitach pilotów liniowych, z operatorami sił specjalnych, kontrolerami lotów i przy analizie ergonomii maszyn leśnych. Trudne, niestandardowe projekty to nasza specjalność – z ciekawością czekamy na kolejne.",
+      paragraph4: "Od 2017 roku wprowadzamy sztuczną inteligencję do procesów badawczych, a od 2023 roku korzystamy i rozwijamy własne narzędzia zarówno do analiz, jak i modelowania oraz zarządzania procesami w firmie, w tym marketingiem i sprzedażą. Obecnie agenci wyspecjalizowani np. w tworzeniu wycen badań lub analiz konkretnych problemów UX, są bytami funkcjonującymi jak członkowie zespołów projektowych. Obecnie pomagamy klientom w implementacji rozwiązań AI zarówno w badaniach naukowych i konsumenckich, jak i procesach marketingowych i sprzedaży."
     }
   },
   zh: {
@@ -540,6 +567,7 @@ export const translations: Record<string, Translation> = {
       innovations: "创新",
       knowledgeModels: "知识模型",
       cooperation: "合作",
+      ourStory: "我们的故事",
       contact: "联系"
     },
     hero: {
@@ -716,6 +744,14 @@ export const translations: Record<string, Translation> = {
       title: "我们的合作伙伴",
       business: "商业合作伙伴",
       academic: "学术合作伙伴"
+    },
+    ourStory: {
+      title: "我们的故事",
+      subtitle: "从研究先驱到AI创新领导者",
+      paragraph1: "公司由在营销、广告和研究交叉领域工作的专业人士创立。最初，我们主要专注于研究项目，但突破时刻发生在2005年，当时我们为波兰电信创建了眼动追踪实验室。这一经验为我们打开了新的可能性——从那时起，我们系统地扩展了我们的产品，包括全面的研究解决方案：从咨询、基础设施建设到实施和培训。",
+      paragraph2: "2006年，我们完成了第一次为卢布林玛丽亚·居里-斯克沃多夫斯卡大学提供研究设备和培训的交付。从那时起，我们在整个波兰为公司、科研机构和研究机构交付了300多个眼动追踪系统，进行了400多项研究。",
+      paragraph3: "除了典型的消费者和心理研究，我们还在不寻常的环境中进行了令人着迷的项目：惩教设施、航空公司驾驶舱、与特种部队操作员、空中交通管制员以及分析林业机械的人体工程学。具有挑战性的非标准项目是我们的专长——我们热切期待下一个项目。",
+      paragraph4: "自2017年以来，我们一直在将人工智能引入研究过程，自2023年以来，我们一直在使用和开发自己的工具进行分析和建模，以及管理公司流程，包括营销和销售。今天，专门的代理——例如创建研究报价或分析特定UX问题的代理——作为项目团队成员发挥作用。我们目前帮助客户在科学和消费者研究以及营销和销售流程中实施AI解决方案。"
     }
   }
 };
