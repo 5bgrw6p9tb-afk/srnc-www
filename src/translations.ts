@@ -284,8 +284,8 @@ export const translations: Record<string, Translation> = {
         description: "Building structured organizational knowledge models that define entities, relationships, and business logic. We create semantic frameworks that capture your company's unique domain expertise, decision patterns, and operational rules."
       },
       item2: {
-        title: "Knowledge Extraction & Structuring",
-        description: "Transforming unstructured company materials into semantic structures – facts, decisions, rules, and processes. We process documentation, communications, and operational data into machine-readable organizational knowledge."
+        title: "Data Sourcing and Labeling",
+        description: "We provide data sourcing and labeling for training custom AI models. High-quality training data services for computer vision, NLP, and generative AI."
       },
       item3: {
         title: "Organizational Cognitive Models",
@@ -469,8 +469,8 @@ export const translations: Record<string, Translation> = {
         description: "Budowa strukturalnych modeli wiedzy organizacyjnej definiujących byty, relacje i logikę biznesową. Przekształcamy nieustrukturyzowane materiały firmowe w struktury semantyczne – fakty, decyzje, reguły i procesy. Nasze frameworki semantyczne przechwytują unikalną wiedzę domenową, wzorce decyzyjne i reguły operacyjne, przetwarzając dokumentację i komunikację w maszynowo czytelną wiedzę organizacyjną."
       },
       item2: {
-        title: "Organizacyjne modele kognitywne",
-        description: "Hybrydowe modele symboliczno-językowe funkcjonujące jako cyfrowy mózg organizacji. Nie chatbot, lecz kompleksowa architektura kognitywna rozumiejąca kontekst, relacje i wzorce rozumowania organizacyjnego. Te modele integrują struktury ontologiczne z zaawansowaną wiedzą językową, tworząc prawdziwie inteligentne systemy."
+        title: "Data Sourcing and Labeling",
+        description: "Zapewniamy pozyskiwanie i etykietowanie danych do trenowania niestandardowych modeli AI. Wysokiej jakości usługi danych treningowych dla computer vision, NLP i generatywnego AI."
       },
       item3: {
         title: "Fine-tuning i trening dedykowanych modeli",
@@ -642,8 +642,8 @@ export const translations: Record<string, Translation> = {
         description: "构建结构化组织知识模型，定义实体、关系和业务逻辑。我们创建语义框架，捕捉公司独特的领域专业知识、决策模式和运营规则。"
       },
       item2: {
-        title: "知识提取与结构化",
-        description: "将非结构化公司材料转化为语义结构——事实、决策、规则和流程。我们将文档、沟通和运营数据处理成机器可读的组织知识。"
+        title: "数据采购与标注",
+        description: "我们提供用于训练定制AI模型的数据采购和标注服务。为计算机视觉、NLP和生成式AI提供高质量的训练数据服务。"
       },
       item3: {
         title: "组织认知模型",
