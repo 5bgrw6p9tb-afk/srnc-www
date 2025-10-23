@@ -13,6 +13,9 @@ function App() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
   const [autoMode, setAutoMode] = useState<boolean>(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -221,9 +224,40 @@ function App() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const changeLanguage = (lang: string) => {
@@ -914,10 +948,21 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px]"
+                disabled={isSubmitting}
+                className="w-full px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t.contact.form.submit}
+                {isSubmitting ? 'Sending...' : t.contact.form.submit}
               </button>
+              {submitStatus === 'success' && (
+                <div className="text-green-500 text-[14px] text-center">
+                  Message sent successfully!
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="text-red-500 text-[14px] text-center">
+                  Failed to send message. Please try again.
+                </div>
+              )}
             </form>
           </div>
         </div>
