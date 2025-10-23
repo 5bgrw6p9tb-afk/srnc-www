@@ -13,6 +13,9 @@ function App() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
   const [autoMode, setAutoMode] = useState<boolean>(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -221,9 +224,55 @@ function App() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const emailMessage = `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
+        <h3>Message:</h3>
+        <p>${formData.message.replace(/\n/g, '<br>')}</p>
+      `;
+
+      const response = await fetch('https://api.srnc.pl/API_srnc_mailer.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': import.meta.env.VITE_SRNC_MAILER_API_KEY
+        },
+        body: JSON.stringify({
+          to: 'jarek@srnc.pl',
+          subject: `New Contact Form Submission from ${formData.name}`,
+          message: emailMessage,
+          html: true,
+          replyTo: formData.email
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const changeLanguage = (lang: string) => {
@@ -914,10 +963,21 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px]"
+                disabled={isSubmitting}
+                className="w-full px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t.contact.form.submit}
+                {isSubmitting ? 'Sending...' : t.contact.form.submit}
               </button>
+              {submitStatus === 'success' && (
+                <div className="text-green-500 text-[14px] text-center">
+                  Message sent successfully!
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="text-red-500 text-[14px] text-center">
+                  Failed to send message. Please try again.
+                </div>
+              )}
             </form>
           </div>
         </div>
