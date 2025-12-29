@@ -246,7 +246,7 @@ function App() {
           'X-API-Key': import.meta.env.VITE_SRNC_MAILER_API_KEY
         },
         body: JSON.stringify({
-          to: 'jarek@srnc.pl',
+          to: 'j@srnc.pl',
           subject: `New Contact Form Submission from ${formData.name}`,
           message: emailMessage,
           html: true,
