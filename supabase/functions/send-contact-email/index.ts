@@ -1,5 +1,4 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import { createClient } from "npm:@supabase/supabase-js@2.57.4";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -37,37 +36,11 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const supabaseUrl = Deno.env.get("SUPABASE_URL");
-    const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    const apiKey = Deno.env.get("SRNC_MAILER_API_KEY");
 
-    if (!supabaseUrl || !supabaseServiceRoleKey) {
+    if (!apiKey) {
       return new Response(
-        JSON.stringify({ error: "Missing Supabase configuration" }),
-        {
-          status: 500,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
-      );
-    }
-
-    const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
-
-    const { data, error } = await supabase
-      .from("contact_messages")
-      .insert([
-        {
-          name,
-          email,
-          company: company || null,
-          message,
-        },
-      ])
-      .select();
-
-    if (error) {
-      console.error("Database error:", error);
-      return new Response(
-        JSON.stringify({ error: "Failed to save message" }),
+        JSON.stringify({ error: "Missing API key configuration" }),
         {
           status: 500,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -76,48 +49,61 @@ Deno.serve(async (req: Request) => {
     }
 
     const emailBody = `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Company:</strong> ${company || "Not provided"}</p>
-      <h3>Message:</h3>
-      <p>${message.replace(/\n/g, "<br>")}</p>
+<h2>Nowa wiadomość z formularza kontaktowego SRNC</h2>
+<p><strong>Imię i nazwisko:</strong> ${name}</p>
+<p><strong>Email:</strong> ${email}</p>
+<p><strong>Firma:</strong> ${company || "Nie podano"}</p>
+<h3>Wiadomość:</h3>
+<p>${message.replace(/\n/g, "<br>")}</p>
     `;
 
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    const emailResponse = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-API-Key": apiKey,
+      },
+      body: JSON.stringify({
+        to: "j@srnc.pl",
+        subject: `Nowa wiadomość z SRNC.pl od: ${name}`,
+        message: emailBody,
+        fromName: "SRNC Website",
+        replyTo: email,
+        html: true,
+      }),
+    });
 
-    if (resendApiKey) {
-      try {
-        const emailResponse = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${resendApiKey}`,
-          },
-          body: JSON.stringify({
-            from: "noreply@srnc.pl",
-            to: "j@srnc.pl",
-            subject: `New Contact Form Submission from ${name}`,
-            html: emailBody,
-            reply_to: email,
-          }),
-        });
-
-        if (!emailResponse.ok) {
-          console.error("Email sending failed:", await emailResponse.text());
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text();
+      console.error("Email API error:", errorText);
+      return new Response(
+        JSON.stringify({ error: "Failed to send email" }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
         }
-      } catch (emailError) {
-        console.error("Error sending email:", emailError);
-      }
+      );
     }
 
-    return new Response(
-      JSON.stringify({ success: true, message: "Message saved successfully" }),
-      {
-        status: 200,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
-    );
+    const result = await emailResponse.json();
+
+    if (result.success) {
+      return new Response(
+        JSON.stringify({ success: true, message: "Message sent successfully" }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    } else {
+      return new Response(
+        JSON.stringify({ error: "Failed to send email" }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
   } catch (error) {
     console.error("Error:", error);
     return new Response(
