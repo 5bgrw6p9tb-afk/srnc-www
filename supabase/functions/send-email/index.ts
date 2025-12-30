@@ -16,7 +16,20 @@ Deno.serve(async (req: Request) => {
 
   try {
     const body = await req.json();
-    const apiKey = "twoj-bardzo-tajny-klucz-api-2024";
+    const apiKey = Deno.env.get("SRNC_Mail");
+    
+    if (!apiKey) {
+      return new Response(
+        JSON.stringify({ success: false, error: "API key not configured" }),
+        {
+          status: 500,
+          headers: {
+            ...corsHeaders,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
     
     const response = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
       method: "POST",
