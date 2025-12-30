@@ -16,13 +16,13 @@ Deno.serve(async (req: Request) => {
 
   try {
     const body = await req.json();
-    const apiKey = Deno.env.get("VITE_SRNC_MAILER_API_KEY");
+    const apiKey = "twoj-bardzo-tajny-klucz-api-2024";
     
     const response = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-API-Key": apiKey || "",
+        "X-API-Key": apiKey,
       },
       body: JSON.stringify(body),
     });
