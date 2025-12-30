@@ -57,7 +57,7 @@ Deno.serve(async (req: Request) => {
 <p>${message.replace(/\n/g, "<br>")}</p>
     `;
 
-    const emailResponse = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
+    const emailResponse = await fetch("https://api.srnc.pl/API_srnc_mailer.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
