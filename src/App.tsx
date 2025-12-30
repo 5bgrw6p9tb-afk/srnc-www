@@ -239,11 +239,12 @@ function App() {
 <p>${formData.message.replace(/\n/g, "<br>")}</p>
       `;
 
-      const response = await fetch("https://api.srnc.pl/API_srnc_mailer.php", {
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`;
+
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": import.meta.env.VITE_SRNC_MAILER_API_KEY,
         },
         body: JSON.stringify({
           to: "j@srnc.pl",
