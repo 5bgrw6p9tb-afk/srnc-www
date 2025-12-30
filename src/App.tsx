@@ -239,7 +239,7 @@ function App() {
 <p>${formData.message.replace(/\n/g, "<br>")}</p>
       `;
 
-      const response = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
+      const response = await fetch("https://api.srnc.pl/API_srnc_mailer.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
