@@ -230,20 +230,29 @@ function App() {
     setSubmitStatus(null);
 
     try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
+      const emailBody = `
+<h2>Nowa wiadomość z formularza kontaktowego SRNC</h2>
+<p><strong>Imię i nazwisko:</strong> ${formData.name}</p>
+<p><strong>Email:</strong> ${formData.email}</p>
+<p><strong>Firma:</strong> ${formData.company || "Nie podano"}</p>
+<h3>Wiadomość:</h3>
+<p>${formData.message.replace(/\n/g, "<br>")}</p>
+      `;
 
-      const response = await fetch(apiUrl, {
-        method: 'POST',
+      const response = await fetch("https://api.srnc.pl/API_srnc_mailer.php", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          "Content-Type": "application/json",
+          "X-API-Key": import.meta.env.VITE_SRNC_MAILER_API_KEY,
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || null,
-          message: formData.message
-        })
+          to: "j@srnc.pl",
+          subject: `Nowa wiadomość z SRNC.pl od: ${formData.name}`,
+          message: emailBody,
+          fromName: "SRNC Website",
+          replyTo: formData.email,
+          html: true,
+        }),
       });
 
       const result = await response.json();
