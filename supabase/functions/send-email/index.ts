@@ -17,7 +17,7 @@ Deno.serve(async (req: Request) => {
   try {
     const body = await req.json();
     const apiKey = Deno.env.get("SRNC_Mail");
-    
+
     if (!apiKey) {
       return new Response(
         JSON.stringify({ success: false, error: "API key not configured" }),
@@ -30,7 +30,7 @@ Deno.serve(async (req: Request) => {
         }
       );
     }
-    
+
     const response = await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
       method: "POST",
       headers: {
@@ -41,6 +41,36 @@ Deno.serve(async (req: Request) => {
     });
 
     const result = await response.json();
+
+    if (response.ok && result.success && body.replyTo) {
+      const confirmationBody = `
+<h2>Dziękujemy za kontakt!</h2>
+<p>Otrzymaliśmy Twoją wiadomość i skontaktujemy się z Tobą wkrótce.</p>
+<h3>Twoja wiadomość:</h3>
+<p><strong>Imię i nazwisko:</strong> ${body.fromName || "Nie podano"}</p>
+<p><strong>Email:</strong> ${body.replyTo}</p>
+<p><strong>Wiadomość:</strong></p>
+<p>${body.message}</p>
+<br>
+<p>Pozdrawiamy,<br>Zespół SRNC</p>
+      `;
+
+      await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": apiKey,
+        },
+        body: JSON.stringify({
+          to: body.replyTo,
+          subject: "Potwierdzenie otrzymania wiadomości - SRNC",
+          message: confirmationBody,
+          fromName: "SRNC Group",
+          replyTo: "hello@srnc.pl",
+          html: true,
+        }),
+      });
+    }
 
     return new Response(
       JSON.stringify(result),
