@@ -43,16 +43,56 @@ Deno.serve(async (req: Request) => {
     const result = await response.json();
 
     if (response.ok && result.success && body.replyTo) {
+      const language = body.language || "en";
+
+      const confirmationMessages = {
+        en: {
+          subject: "Message confirmation - SRNC",
+          title: "Thank you for contacting us!",
+          text: "We have received your message and will contact you shortly.",
+          yourMessage: "Your message:",
+          name: "Name:",
+          email: "Email:",
+          message: "Message:",
+          notProvided: "Not provided",
+          regards: "Best regards,<br>SRNC Team"
+        },
+        pl: {
+          subject: "Potwierdzenie otrzymania wiadomo\u015bci - SRNC",
+          title: "Dzi\u0119kujemy za kontakt!",
+          text: "Otrzymali\u015bmy Twoj\u0105 wiadomo\u015b\u0107 i skontaktujemy si\u0119 z Tob\u0105 wkr\u00f3tce.",
+          yourMessage: "Twoja wiadomo\u015b\u0107:",
+          name: "Imi\u0119 i nazwisko:",
+          email: "Email:",
+          message: "Wiadomo\u015b\u0107:",
+          notProvided: "Nie podano",
+          regards: "Pozdrawiamy,<br>Zesp\u00f3\u0142 SRNC"
+        },
+        zh: {
+          subject: "\u6d88\u606f\u786e\u8ba4 - SRNC",
+          title: "\u611f\u8c22\u60a8\u4e0e\u6211\u4eec\u8054\u7cfb\uff01",
+          text: "\u6211\u4eec\u5df2\u6536\u5230\u60a8\u7684\u6d88\u606f\uff0c\u5e76\u5c06\u5c3d\u5feb\u4e0e\u60a8\u8054\u7cfb\u3002",
+          yourMessage: "\u60a8\u7684\u6d88\u606f\uff1a",
+          name: "\u59d3\u540d\uff1a",
+          email: "\u90ae\u7bb1\uff1a",
+          message: "\u6d88\u606f\uff1a",
+          notProvided: "\u672a\u63d0\u4f9b",
+          regards: "\u6b64\u81f4\uff0c<br>SRNC\u56e2\u961f"
+        }
+      };
+
+      const t = confirmationMessages[language];
+
       const confirmationBody = `
-<h2>Dziękujemy za kontakt!</h2>
-<p>Otrzymaliśmy Twoją wiadomość i skontaktujemy się z Tobą wkrótce.</p>
-<h3>Twoja wiadomość:</h3>
-<p><strong>Imię i nazwisko:</strong> ${body.fromName || "Nie podano"}</p>
-<p><strong>Email:</strong> ${body.replyTo}</p>
-<p><strong>Wiadomość:</strong></p>
+<h2>${t.title}</h2>
+<p>${t.text}</p>
+<h3>${t.yourMessage}</h3>
+<p><strong>${t.name}</strong> ${body.fromName || t.notProvided}</p>
+<p><strong>${t.email}</strong> ${body.replyTo}</p>
+<p><strong>${t.message}</strong></p>
 <p>${body.message}</p>
 <br>
-<p>Pozdrawiamy,<br>Zespół SRNC</p>
+<p>${t.regards}</p>
       `;
 
       await fetch("http://api.srnc.pl/API_srnc_mailer.php", {
@@ -63,7 +103,7 @@ Deno.serve(async (req: Request) => {
         },
         body: JSON.stringify({
           to: body.replyTo,
-          subject: "Potwierdzenie otrzymania wiadomości - SRNC",
+          subject: t.subject,
           message: confirmationBody,
           fromName: "SRNC Group",
           replyTo: "hello@srnc.pl",

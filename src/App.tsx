@@ -253,6 +253,7 @@ function App() {
           fromName: "SRNC Website",
           replyTo: formData.email,
           html: true,
+          language: currentLang,
         }),
       });
 
