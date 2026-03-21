@@ -238,7 +238,7 @@ export function Hero({ t, autoMode, setAutoMode, interactiveMode }: HeroProps) {
                 }`}
               >
                 <Sparkles className={`h-4 w-4 ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`} />
-                <span className={`text-sm font-medium ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`}>AI-Powered Research</span>
+                <span className={`text-sm font-medium ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`}>Visual Cognition Lab</span>
               </button>
             )}
 

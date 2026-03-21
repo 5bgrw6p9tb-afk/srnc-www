@@ -187,66 +187,66 @@ export const translations: Record<string, Translation> = {
       about: "About",
       services: "Services",
       innovations: "Innovations",
-      knowledgeModels: "Knowledge Models",
+      knowledgeModels: "Research Labs",
       cooperation: "Cooperation",
       contact: "Contact"
     },
     hero: {
-      title: "We Design Spaces Where Science Converges",
-      subtitle: "We create physical and digital environments where researchers from different disciplines collaborate, exchange ideas, and push the boundaries of neurocognitive science.",
+      title: "We Build Multidisciplinary Research Laboratories",
+      subtitle: "We design integrated spaces where neuroscience, psychology, physiology, and cognitive science converge to explore visual perception, attention, and human decision-making processes.",
       cta1: "Discover our solutions",
       cta2: "Contact us"
     },
     about: {
-      title: "Tomorrow comes today",
-      subtitle: "We use language models, AI agents and broadly understood artificial intelligence to revolutionize scientific research and marketing processes.",
+      title: "Where Disciplines Meet",
+      subtitle: "We create research environments that bridge neuroscience, cognitive psychology, physiology, and behavioral science—focusing on visual cognition, attention mechanisms, and multisensory integration.",
       item1: {
-        title: "AI-Driven Research",
-        description: "Application of artificial intelligence to optimize and accelerate research processes"
+        title: "Visual Cognition Research",
+        description: "Eye-tracking and gaze analysis to understand visual attention, perception patterns, and information processing"
       },
       item2: {
-        title: "Automated Research Workflows",
-        description: "Intelligent automation of complex research and laboratory procedures"
+        title: "Multisensory Integration Labs",
+        description: "Facilities combining visual, auditory, and haptic stimuli to study cross-modal perception"
       },
       item3: {
-        title: "Integrated Scientific Infrastructure",
-        description: "Our own laboratories and modern technological facilities for conducting advanced experiments"
+        title: "Integrated Research Infrastructure",
+        description: "Our own multidisciplinary laboratories equipped for neurocognitive, psychophysiological, and behavioral experiments"
       },
       item4: {
-        title: "Collaborative Innovation Networks",
-        description: "Cooperation with universities, research institutes and industrial partners"
+        title: "Cross-Disciplinary Collaboration",
+        description: "Bringing together neuroscientists, psychologists, physiologists, and UX researchers in shared research spaces"
       },
       item5: {
-        title: "Custom Model Fine-Tuning",
-        description: "Training AI models on organizational data to understand company-specific language and methodologies"
+        title: "Cognitive Process Modeling",
+        description: "Understanding decision-making, memory formation, and attention allocation through empirical research"
       },
       item6: {
-        title: "Neuromarketing Intelligence",
-        description: "AI-powered neuromarketing research – deep analysis of consumer reactions"
+        title: "Neuromarketing Science",
+        description: "Combining eye-tracking, biometric sensors, and behavioral methods to decode consumer cognition"
       },
       item7: {
-        title: "Cognitive Agent Teams",
-        description: "Teams of autonomous AI agents performing research and analytical tasks"
+        title: "Attention & Perception Studies",
+        description: "Investigating visual saliency, attentional capture, and the neural basis of conscious awareness"
       },
       item8: {
-        title: "Model Evaluation & Validation",
-        description: "Testing frameworks ensuring model accuracy, consistency, and domain-specific understanding"
+        title: "Human Factors & Ergonomics",
+        description: "Analyzing how humans interact with interfaces, environments, and complex systems"
       },
       item9: {
-        title: "Smart Experimentation Platforms",
-        description: "Platforms for remote conducting and managing research experiments using AI"
+        title: "Remote Research Platforms",
+        description: "Digital tools enabling distributed cognitive and behavioral experiments across locations"
       }
     },
     aiSection: {
       col1: {
-        subtitle: "AI & Neuroscience Convergence",
-        p1: "The convergence of artificial intelligence and neuroscience research is opening unprecedented opportunities in understanding human cognition and behavior. By combining advanced AI algorithms with neuroscientific methodologies, we can now decode complex patterns in brain activity that were previously impossible to analyze. Machine learning models can process vast amounts of neurological data in real-time, identifying subtle correlations between neural activity and cognitive processes.",
-        p2: "This synergy enables researchers to predict behavioral responses, understand decision-making mechanisms, and uncover the intricate workings of the human mind with remarkable precision. The integration of AI in neuroscience is not just accelerating research—it's fundamentally transforming our approach to understanding consciousness, memory formation, and the neural basis of learning."
+        subtitle: "Multidisciplinary Cognitive Science",
+        p1: "The convergence of multiple scientific disciplines is opening unprecedented opportunities in understanding human perception and cognition. By combining neuroscience, psychology, physiology, and behavioral research, we can now decode complex patterns in visual processing, attention mechanisms, and decision-making that were previously fragmented across isolated fields. Eye-tracking technology, combined with electrophysiological measurements and cognitive testing, reveals subtle correlations between gaze behavior, neural activity, and conscious awareness.",
+        p2: "This multidisciplinary synergy enables researchers to predict perceptual responses, understand attentional strategies, and uncover the intricate workings of visual cognition with remarkable precision. The integration of diverse methodologies is not just enriching research—it's fundamentally transforming our approach to understanding consciousness, visual awareness, and the cognitive basis of human behavior."
       },
       col2: {
-        subtitle: "AI as Exploration Tool",
-        p1: "Artificial intelligence is revolutionizing not only how we analyze data but how we explore scientific questions. Traditional research methods are being augmented by AI-powered tools that can generate hypotheses, simulate complex scenarios, and discover patterns that human researchers might overlook.",
-        p2: "Deep learning algorithms can navigate multi-dimensional data spaces, uncovering hidden relationships and suggesting novel research directions. These tools enable scientists to explore \"what-if\" scenarios at unprecedented scales, testing thousands of hypotheses simultaneously and identifying the most promising avenues for investigation. This exploratory capability transforms AI from a mere analytical instrument into a collaborative research partner, ultimately accelerating the pace of scientific discovery and innovation across all disciplines."
+        subtitle: "Visual Cognition as Research Focus",
+        p1: "Visual perception is the primary gateway through which humans process environmental information, making it a cornerstone of cognitive research. Eye-tracking methodologies reveal not only where people look, but how they allocate attention, process visual hierarchies, and make split-second decisions based on visual cues.",
+        p2: "Advanced measurement techniques allow researchers to map visual scan paths, identify attentional bottlenecks, and understand the temporal dynamics of visual information processing. By studying saccades, fixations, and pupil responses, we uncover the underlying mechanisms of visual search, object recognition, and scene comprehension. This focus on visual cognition provides actionable insights for interface design, marketing communication, and human-machine interaction—bridging fundamental science with real-world applications."
       }
     },
     services: {
@@ -284,43 +284,43 @@ export const translations: Record<string, Translation> = {
       }
     },
     knowledgeModels: {
-      title: "Organizational Knowledge Models",
-      subtitle: "Building cognitive architectures that transform how organizations capture, process, and utilize their collective intelligence",
+      title: "Multidisciplinary Research Laboratories",
+      subtitle: "Creating integrated research environments where neuroscience, psychology, physiology, and cognitive science converge to explore human perception and cognition",
       item1: {
-        title: "Corporate Ontology Architecture",
-        description: "Building structured organizational knowledge models that define entities, relationships, and business logic. We create semantic frameworks that capture your company's unique domain expertise, decision patterns, and operational rules."
+        title: "Eye-Tracking & Gaze Analysis Labs",
+        description: "State-of-the-art facilities equipped with remote and mobile eye-trackers for studying visual attention, reading patterns, interface usability, and consumer behavior in controlled and naturalistic settings."
       },
       item2: {
-        title: "Data Sourcing and Labeling",
-        description: "Professional data sourcing and annotation services for training custom AI models. We provide high-quality, domain-specific training datasets for computer vision, natural language processing, and generative AI applications. Expert labeling ensures accuracy and consistency across diverse data types."
+        title: "Psychophysiological Measurement",
+        description: "Integrated biometric systems capturing heart rate, skin conductance, facial expressions, and pupil dilation to understand emotional and cognitive responses during visual processing tasks."
       },
       item3: {
-        title: "Organizational Cognitive Models",
-        description: "Hybrid symbolic-linguistic models that function as your organization's digital brain. Not a chatbot, but a comprehensive cognitive architecture that understands context, relationships, and organizational reasoning patterns."
+        title: "Visual Perception Research Spaces",
+        description: "Controlled laboratory environments designed for presenting precisely calibrated visual stimuli while recording eye movements, neural responses, and behavioral data."
       },
       item4: {
-        title: "Custom Model Fine-Tuning",
-        description: "Training large language models on your organizational data to create AI that speaks your company's language, understands your methodologies, and follows your specific rules and terminology. Domain-specific intelligence tailored to your business context."
+        title: "Collaborative Research Infrastructure",
+        description: "Shared laboratory spaces facilitating collaboration between neuroscientists, psychologists, UX researchers, and marketing scientists working on visual cognition projects."
       },
       item5: {
-        title: "Model Evaluation & Validation",
-        description: "Rigorous testing frameworks ensuring cognitive model consistency, context understanding, and accurate domain comprehension. We validate that models maintain logical coherence and don't confuse concepts like POS with UX in your specific context."
+        title: "Cognitive Testing Environments",
+        description: "Specialized setups for investigating attention, memory, decision-making, and perceptual processes through behavioral experiments and cognitive assessments."
       },
       item6: {
-        title: "Adaptive Learning Systems",
-        description: "Cognitive architectures with memory layers (token-based and long-term) that continuously learn from new cases, adapting to evolving organizational knowledge and improving over time through real-world interactions."
+        title: "Applied Neuromarketing Facilities",
+        description: "Research labs combining eye-tracking, biometrics, and implicit association testing to decode consumer attention, preference formation, and purchasing decisions."
       },
       item7: {
-        title: "Knowledge Model Versioning",
-        description: "Enterprise-grade version control for your organizational cognitive models. Track changes, manage updates, roll back when needed, and maintain consistency across your AI infrastructure as business knowledge evolves."
+        title: "Human Factors & Usability Labs",
+        description: "Ergonomic testing environments analyzing how users interact with interfaces, products, and environments through gaze behavior and performance metrics."
       },
       item8: {
-        title: "AI-Driven Research Automation",
-        description: "Intelligent systems that optimize and accelerate research workflows – from experiment design to data analysis. Autonomous agents handle complex analytical tasks while maintaining scientific rigor and methodological consistency."
+        title: "Experimental Design Consultation",
+        description: "Expert support in designing rigorous multidisciplinary studies that integrate eye-tracking, psychophysiology, and behavioral methodologies for robust scientific findings."
       },
       item9: {
-        title: "Integrated Scientific Infrastructure",
-        description: "Our own laboratories and modern technological facilities equipped with AI-enhanced measurement systems, automated data collection, and real-time analysis capabilities for conducting advanced neurocognitive experiments."
+        title: "Mobile & Remote Research Platforms",
+        description: "Portable eye-tracking systems and online experimental platforms enabling cognitive research in real-world contexts and distributed participant populations."
       }
     },
     cooperation: {
@@ -368,10 +368,10 @@ export const translations: Record<string, Translation> = {
     },
     ourStory: {
       title: "Our Story",
-      subtitle: "From research pioneers to AI innovation leaders",
-      milestone1: "The breakthrough came in 2005 with creating an eyetracking laboratory for Telekomunikacja Polska, which opened entirely new possibilities for us. This experience transformed our approach to research and sparked systematic expansion of our offerings. Since then, we've evolved into a comprehensive research solutions provider, delivering everything from strategic consulting and infrastructure design to full implementation and professional training programs.",
-      milestone2: "Eyetracking systems delivered since 2006 to universities and companies across Poland, alongside over 400 research studies conducted for diverse clients. We've tackled extraordinary projects in unconventional environments: correctional facilities, airline cockpits, with special forces operators, air traffic controllers, and analyzing forestry machinery ergonomics. These challenging, non-standard projects have become our trademark — we eagerly anticipate the next ones.",
-      aiHighlight: "Since 2017, we've been progressively integrating artificial intelligence into research workflows, and since 2023, we've been developing our own specialized AI tools for analysis, modeling, and business process management. Today, our AI agents — handling everything from research quotations to complex UX problem analysis — function as full-fledged project team members. We're now helping clients successfully implement AI solutions across scientific research, consumer studies, marketing automation, and sales optimization processes."
+      subtitle: "From eye-tracking pioneers to multidisciplinary research leaders",
+      milestone1: "The breakthrough came in 2005 with creating Poland's first professional eye-tracking laboratory for Telekomunikacja Polska, which opened entirely new possibilities for visual cognition research. This experience transformed our approach to studying human perception and sparked systematic expansion into multidisciplinary neurocognitive science. Since then, we've evolved into a comprehensive research solutions provider, delivering everything from laboratory design and methodological consulting to full research implementation and professional training programs.",
+      milestone2: "Eye-tracking systems delivered since 2006 to universities and companies across Poland, alongside over 400 multidisciplinary research studies conducted for diverse clients. We've tackled extraordinary projects in unconventional environments: correctional facilities, airline cockpits, with special forces operators, air traffic controllers, and analyzing forestry machinery ergonomics. These challenging, non-standard projects combining visual perception, cognitive psychology, and human factors research have become our trademark.",
+      aiHighlight: "Today, we operate integrated multidisciplinary laboratories where neuroscience, psychology, physiology, and cognitive science converge. Our research spaces are designed for collaboration between disciplines, enabling comprehensive investigation of visual attention, perceptual processes, and decision-making mechanisms. We bridge fundamental cognitive research with applied questions in marketing, UX design, and human-machine interaction—creating actionable insights from rigorous scientific methodology."
     }
   },
   pl: {
@@ -379,66 +379,66 @@ export const translations: Record<string, Translation> = {
       about: "O nas",
       services: "Usługi",
       innovations: "Innowacje",
-      knowledgeModels: "Modele wiedzy",
+      knowledgeModels: "Laboratoria badawcze",
       cooperation: "Współpraca",
       contact: "Kontakt"
     },
     hero: {
-      title: "Projektujemy przestrzenie, w których nauka się przenika",
-      subtitle: "Tworzymy fizyczne i cyfrowe środowiska, gdzie badacze z różnych dyscyplin współpracują, wymieniają się pomysłami i przesuwają granice neuronauki kognitywnej.",
+      title: "Budujemy multidyscyplinarne laboratoria badawcze",
+      subtitle: "Projektujemy zintegrowane przestrzenie, w których neuronauka, psychologia, fizjologia i kognitywistyka łączą się, aby badać wzrokowe procesy percepcji, uwagi i podejmowania decyzji.",
       cta1: "Poznaj nasze rozwiązania",
       cta2: "Skontaktuj się z nami"
     },
     about: {
-      title: "Jutro zaczyna się dziś",
-      subtitle: "Wykorzystujemy modele językowe, agentów AI i szeroko pojętą sztuczną inteligencję do rewolucjonizacji badań naukowych i procesów marketingowych.",
+      title: "Tam, gdzie dyscypliny się spotykają",
+      subtitle: "Tworzymy środowiska badawcze łączące neuronaukę, psychologię kognitywną, fizjologię i nauki behawioralne—koncentrując się na poznaniu wzrokowym, mechanizmach uwagi i integracji wielozmysłowej.",
       item1: {
-        title: "AI-Driven Research",
-        description: "Zastosowanie sztucznej inteligencji do optymalizacji i przyspieszania procesów badawczych"
+        title: "Badania poznania wzrokowego",
+        description: "Eye-tracking i analiza spojrzenia do zrozumienia uwagi wzrokowej, wzorców percepcji i przetwarzania informacji"
       },
       item2: {
-        title: "Automated Research Workflows",
-        description: "Inteligentna automatyzacja złożonych procedur badawczych i laboratoryjnych"
+        title: "Laboratoria integracji wielozmysłowej",
+        description: "Obiekty łączące bodźce wzrokowe, słuchowe i dotykowe do badania percepcji międzymodalnej"
       },
       item3: {
-        title: "Integrated Scientific Infrastructure",
-        description: "Własne laboratoria i nowoczesne zaplecze technologiczne do prowadzenia zaawansowanych eksperymentów"
+        title: "Zintegrowana infrastruktura badawcza",
+        description: "Własne laboratoria multidyscyplinarne wyposażone do eksperymentów neurokognitywnych, psychofizjologicznych i behawioralnych"
       },
       item4: {
-        title: "Collaborative Innovation Networks",
-        description: "Współpraca z uczelniami, instytutami badawczymi i partnerami przemysłowymi"
+        title: "Współpraca międzydyscyplinarna",
+        description: "Łączenie neuronaukowców, psychologów, fizjologów i badaczy UX we wspólnych przestrzeniach badawczych"
       },
       item5: {
-        title: "Fine-tuning dedykowanych modeli",
-        description: "Trenowanie modeli AI na danych organizacyjnych w celu zrozumienia języka i metodologii firmy"
+        title: "Modelowanie procesów poznawczych",
+        description: "Rozumienie podejmowania decyzji, tworzenia pamięci i alokacji uwagi poprzez badania empiryczne"
       },
       item6: {
-        title: "Neuromarketing Intelligence",
-        description: "Badania neuromarketingowe wspierane przez AI – głęboka analiza reakcji konsumenckich"
+        title: "Nauka neuromarketingu",
+        description: "Łączenie eye-trackingu, sensorów biometrycznych i metod behawioralnych do dekodowania poznania konsumenckiego"
       },
       item7: {
-        title: "Cognitive Agent Teams",
-        description: "Zespoły autonomicznych agentów AI realizujących zadania badawcze i analityczne"
+        title: "Badania uwagi i percepcji",
+        description: "Analiza istotności wizualnej, przyciągania uwagi i neuronalnych podstaw świadomego postrzegania"
       },
       item8: {
-        title: "Ewaluacja i walidacja modeli",
-        description: "Frameworki testowe zapewniające dokładność, spójność i domenowe zrozumienie modeli"
+        title: "Czynniki ludzkie i ergonomia",
+        description: "Analiza interakcji ludzi z interfejsami, środowiskami i złożonymi systemami"
       },
       item9: {
-        title: "Smart Experimentation Platforms",
-        description: "Platformy do zdalnego prowadzenia i zarządzania eksperymentami badawczymi z wykorzystaniem AI"
+        title: "Platformy badań zdalnych",
+        description: "Narzędzia cyfrowe umożliwiające rozproszone eksperymenty poznawcze i behawioralne w różnych lokalizacjach"
       }
     },
     aiSection: {
       col1: {
-        subtitle: "Konwergencja AI i neuronauki",
-        p1: "Połączenie sztucznej inteligencji i badań neuronaukowych otwiera niespotykane możliwości w zrozumieniu ludzkiej kognitywności i zachowania. Łącząc zaawansowane algorytmy AI z metodologiami neuronaukowymi, możemy teraz dekodować złożone wzorce w aktywności mózgu, które wcześniej były niemożliwe do analizy. Modele uczenia maszynowego przetwarzają ogromne ilości danych neurologicznych w czasie rzeczywistym, identyfikując subtelne korelacje między aktywnością neuronalną a procesami poznawczymi.",
-        p2: "Ta synergia umożliwia naukowcom przewidywanie reakcji behawioralnych, zrozumienie mechanizmów podejmowania decyzji i odkrywanie zawiłości ludzkiego umysłu z niezwykłą precyzją. Integracja AI w neuronauce nie tylko przyspiesza badania—ale fundamentalnie transformuje nasze podejście do rozumienia świadomości, tworzenia pamięci i neuronalnych podstaw uczenia się."
+        subtitle: "Multidyscyplinarna kognitywistyka",
+        p1: "Konwergencja wielu dyscyplin naukowych otwiera niespotykane możliwości w zrozumieniu ludzkiej percepcji i poznania. Łącząc neuronaukę, psychologię, fizjologię i badania behawioralne, możemy teraz dekodować złożone wzorce przetwarzania wzrokowego, mechanizmów uwagi i podejmowania decyzji, które wcześniej były rozdrobnione między izolowanymi dziedzinami. Technologia eye-trackingu w połączeniu z pomiarami elektrofizjologicznymi i testami poznawczymi ujawnia subtelne korelacje między zachowaniami wzrokowymi, aktywnością neuronalną a świadomym postrzeganiem.",
+        p2: "Ta multidyscyplinarna synergia umożliwia naukowcom przewidywanie reakcji percepcyjnych, rozumienie strategii uwagowych i odkrywanie zawiłości poznania wzrokowego z niezwykłą precyzją. Integracja różnorodnych metodologii nie tylko wzbogaca badania—ale fundamentalnie transformuje nasze podejście do rozumienia świadomości, świadomości wzrokowej i kognitywnych podstaw ludzkich zachowań."
       },
       col2: {
-        subtitle: "AI jako narzędzie eksploracji",
-        p1: "Sztuczna inteligencja rewolucjonizuje nie tylko sposób analizy danych, ale także sposób eksploracji pytań naukowych. Tradycyjne metody badawcze są wzmacniane przez narzędzia oparte na AI, które mogą generować hipotezy, symulować złożone scenariusze i odkrywać wzorce, które badacze mogliby przeoczyć.",
-        p2: "Algorytmy głębokiego uczenia mogą nawigować po wielowymiarowych przestrzeniach danych, odkrywając ukryte relacje i sugerując nowe kierunki badań. Te narzędzia umożliwiają naukowcom eksplorację scenariuszy \"co jeśli\" na bezprecedensową skalę, testując tysiące hipotez jednocześnie i identyfikując najbardziej obiecujące kierunki badań. Ta zdolność eksploracyjna przekształca AI z prostego instrumentu analitycznego w partnera badawczego, ostatecznie przyspieszając tempo odkryć naukowych i innowacji we wszystkich dyscyplinach."
+        subtitle: "Poznanie wzrokowe jako fokus badawczy",
+        p1: "Percepcja wzrokowa to podstawowa brama, przez którą ludzie przetwarzają informacje środowiskowe, co czyni ją fundamentem badań kognitywnych. Metodologie eye-trackingowe ujawniają nie tylko to, gdzie ludzie patrzą, ale jak alokują uwagę, przetwarzają hierarchie wizualne i podejmują błyskawiczne decyzje na podstawie wskazówek wzrokowych.",
+        p2: "Zaawansowane techniki pomiarowe pozwalają badaczom mapować wzrokowe ścieżki skanowania, identyfikować wąskie gardła uwagowe i rozumieć dynamikę czasową przetwarzania informacji wzrokowej. Badając sakady, fiksacje i reakcje źrenicy, odkrywamy podstawowe mechanizmy przeszukiwania wzrokowego, rozpoznawania obiektów i rozumienia sceny. To skupienie na poznaniu wzrokowym dostarcza praktycznych wniosków dla projektowania interfejsów, komunikacji marketingowej i interakcji człowiek-maszyna—łącząc naukę fundamentalną z zastosowaniami w rzeczywistym świecie."
       }
     },
     services: {
@@ -476,31 +476,43 @@ export const translations: Record<string, Translation> = {
       }
     },
     knowledgeModels: {
-      title: "Organizacyjne modele wiedzy",
-      subtitle: "Budowa architektur kognitywnych, które transformują sposób, w jaki organizacje przechwytują, przetwarzają i wykorzystują swoją zbiorową inteligencję",
+      title: "Multidyscyplinarne laboratoria badawcze",
+      subtitle: "Tworzenie zintegrowanych środowisk badawczych, w których neuronauka, psychologia, fizjologia i kognitywistyka łączą się, aby badać ludzką percepcję i poznanie",
       item1: {
-        title: "Ontologia korporacyjna i ekstrakcja wiedzy",
-        description: "Budowa strukturalnych modeli wiedzy organizacyjnej definiujących byty, relacje i logikę biznesową. Przekształcamy nieustrukturyzowane materiały firmowe w struktury semantyczne – fakty, decyzje, reguły i procesy. Nasze frameworki semantyczne przechwytują unikalną wiedzę domenową, wzorce decyzyjne i reguły operacyjne, przetwarzając dokumentację i komunikację w maszynowo czytelną wiedzę organizacyjną."
+        title: "Laboratoria eye-trackingu i analizy spojrzenia",
+        description: "Nowoczesne obiekty wyposażone w zdalne i mobilne eye-trackery do badania uwagi wzrokowej, wzorców czytania, użyteczności interfejsów i zachowań konsumenckich w warunkach kontrolowanych i naturalnych."
       },
       item2: {
-        title: "Data Sourcing and Labeling",
-        description: "Profesjonalne usługi pozyskiwania i anotacji danych do trenowania niestandardowych modeli AI. Dostarczamy wysokiej jakości, domenowo-specyficzne zbiory treningowe dla computer vision, przetwarzania języka naturalnego i aplikacji generatywnego AI. Eksperckie etykietowanie zapewnia dokładność i spójność dla różnorodnych typów danych."
+        title: "Pomiary psychofizjologiczne",
+        description: "Zintegrowane systemy biometryczne rejestrujące tętno, przewodność skóry, ekspresje mimiczne i rozszerzenie źrenicy w celu zrozumienia reakcji emocjonalnych i poznawczych podczas zadań przetwarzania wzrokowego."
       },
       item3: {
-        title: "Fine-tuning i trening dedykowanych modeli",
-        description: "Trenowanie dużych modeli językowych na danych organizacyjnych w celu stworzenia AI mówiącego językiem firmy, rozumiejącego metodologie i przestrzegającego specyficznych reguł i terminologii. Inteligencja domenowa dostosowana do kontekstu biznesowego, zapewniająca prawdziwe zrozumienie unikalnego środowiska operacyjnego."
+        title: "Przestrzenie badań percepcji wzrokowej",
+        description: "Kontrolowane środowiska laboratoryjne zaprojektowane do prezentowania precyzyjnie skalibrowanych bodźców wzrokowych przy jednoczesnym rejestrowaniu ruchów oczu, odpowiedzi neuronalnych i danych behawioralnych."
       },
       item4: {
-        title: "Ewaluacja i walidacja modeli",
-        description: "Rygorystyczne frameworki testowe zapewniające spójność modelu kognitywnego, rozumienie kontekstu i dokładną kompresję domeny. Weryfikujemy, że modele zachowują logiczną koherencję i nie mylą pojęć jak POS z UX w Twoim specyficznym kontekście. Kompleksowe procesy ewaluacji gwarantują niezawodność i precyzję."
+        title: "Infrastruktura współpracy badawczej",
+        description: "Wspólne przestrzenie laboratoryjne ułatwiające współpracę między neuronaukowcami, psychologami, badaczami UX i naukowcami marketingu pracującymi nad projektami poznania wzrokowego."
       },
       item5: {
-        title: "Adaptacyjne uczenie i wersjonowanie",
-        description: "Architektury kognitywne z warstwami pamięci (tokenową i długoterminową), które nieustannie uczą się z nowych przypadków, adaptując się do ewoluującej wiedzy organizacyjnej. Kontrola wersji klasy enterprise śledzi zmiany, zarządza aktualizacjami i utrzymuje spójność w infrastrukturze AI w miarę ewolucji wiedzy biznesowej."
+        title: "Środowiska testów poznawczych",
+        description: "Wyspecjalizowane stanowiska do badania uwagi, pamięci, podejmowania decyzji i procesów percepcyjnych poprzez eksperymenty behawioralne i oceny kognitywne."
       },
       item6: {
-        title: "Infrastruktura badań AI",
-        description: "Zintegrowana infrastruktura naukowa i technologiczna łącząca inteligentną automatyzację badań z zaawansowanymi systemami pomiarowymi. Nasze laboratoria i platformy optymalizują przepływy badawcze od projektowania eksperymentów po analizę danych, oferując automatyczną zbiórkę danych i możliwości analizy w czasie rzeczywistym dla prowadzenia najnowocześniejszych eksperymentów neurokognitywnych."
+        title: "Obiekty stosowanego neuromarketingu",
+        description: "Laboratoria badawcze łączące eye-tracking, biometrię i testy asocjacji implicitnych do dekodowania uwagi konsumenckiej, formowania preferencji i decyzji zakupowych."
+      },
+      item7: {
+        title: "Laboratoria czynników ludzkich i użyteczności",
+        description: "Środowiska testów ergonomicznych analizujące, jak użytkownicy wchodzą w interakcję z interfejsami, produktami i środowiskami poprzez zachowania wzrokowe i metryki wydajności."
+      },
+      item8: {
+        title: "Konsultacje w zakresie projektowania eksperymentów",
+        description: "Wsparcie eksperckie w projektowaniu rygorystycznych badań multidyscyplinarnych integrujących eye-tracking, psychofizjologię i metodologie behawioralne dla solidnych wyników naukowych."
+      },
+      item9: {
+        title: "Mobilne i zdalne platformy badawcze",
+        description: "Przenośne systemy eye-trackingowe i internetowe platformy eksperymentalne umożliwiające badania kognitywne w rzeczywistych kontekstach i rozproszonych populacjach uczestników."
       }
     },
     cooperation: {
@@ -548,10 +560,10 @@ export const translations: Record<string, Translation> = {
     },
     ourStory: {
       title: "Nasza Historia",
-      subtitle: "Od pionierów badań do liderów innowacji AI",
-      milestone1: "Przełom nastąpił w 2005 roku wraz ze stworzeniem laboratorium eyetrackingowego dla Telekomunikacji Polskiej, które otworzyło przed nami zupełnie nowe możliwości. To doświadczenie przekształciło nasze podejście do badań i zapoczątkowało systematyczny rozwój naszej oferty. Od tego czasu rozwinęliśmy się w kompleksowego partnera badawczego, dostarczającego wszystko — od doradztwa strategicznego i projektowania infrastruktury, po pełne wdrożenia i profesjonalne programy szkoleniowe.",
-      milestone2: "Systemów eyetrackingowych dostarczonych od 2006 roku dla uczelni i firm w całej Polsce, wraz z ponad 400 przeprowadzonymi badaniami dla różnorodnych klientów. Realizowaliśmy niezwykłe projekty w nietypowych środowiskach: zakładach karnych, kokpitach pilotów liniowych, z operatorami sił specjalnych, kontrolerami lotów oraz przy analizie ergonomii maszyn leśnych. Te trudne, niestandardowe projekty stały się naszą wizytówką — z niecierpliwością czekamy na kolejne wyzwania.",
-      aiHighlight: "Od 2017 roku stopniowo integrujemy sztuczną inteligencję z procesami badawczymi, a od 2023 roku rozwijamy własne, wyspecjalizowane narzędzia AI do analiz, modelowania i zarządzania procesami biznesowymi. Dziś nasze agenty AI — obsługujące wszystko od wycen badań po złożone analizy problemów UX — funkcjonują jako pełnoprawni członkowie zespołów projektowych. Obecnie pomagamy klientom z sukcesem wdrażać rozwiązania AI w badaniach naukowych, konsumenckich, automatyzacji marketingu oraz optymalizacji procesów sprzedaży."
+      subtitle: "Od pionierów eye-trackingu do liderów badań multidyscyplinarnych",
+      milestone1: "Przełom nastąpił w 2005 roku wraz ze stworzeniem pierwszego profesjonalnego laboratorium eye-trackingowego w Polsce dla Telekomunikacji Polskiej, które otworzyło przed nami zupełnie nowe możliwości badań poznania wzrokowego. To doświadczenie przekształciło nasze podejście do badania ludzkiej percepcji i zapoczątkowało systematyczny rozwój w kierunku multidyscyplinarnej neuronauki kognitywnej. Od tego czasu rozwinęliśmy się w kompleksowego partnera badawczego, dostarczającego wszystko — od projektowania laboratoriów i konsultacji metodologicznych, po pełne wdrożenia badawcze i profesjonalne programy szkoleniowe.",
+      milestone2: "Systemów eye-trackingowych dostarczonych od 2006 roku dla uczelni i firm w całej Polsce, wraz z ponad 400 multidyscyplinarnymi badaniami przeprowadzonymi dla różnorodnych klientów. Realizowaliśmy niezwykłe projekty w nietypowych środowiskach: zakładach karnych, kokpitach pilotów liniowych, z operatorami sił specjalnych, kontrolerami lotów oraz przy analizie ergonomii maszyn leśnych. Te trudne, niestandardowe projekty łączące percepcję wzrokową, psychologię poznawczą i badania czynników ludzkich stały się naszą wizytówką.",
+      aiHighlight: "Dziś prowadzimy zintegrowane laboratoria multidyscyplinarne, w których neuronauka, psychologia, fizjologia i kognitywistyka się przenikają. Nasze przestrzenie badawcze są zaprojektowane do współpracy między dyscyplinami, umożliwiając kompleksowe badanie uwagi wzrokowej, procesów percepcyjnych i mechanizmów podejmowania decyzji. Łączymy fundamentalne badania kognitywne z praktycznymi pytaniami marketingu, projektowania UX i interakcji człowiek-maszyna—tworząc praktyczne wnioski z rygorystycznej metodologii naukowej."
     }
   },
   zh: {
@@ -559,66 +571,66 @@ export const translations: Record<string, Translation> = {
       about: "关于我们",
       services: "服务",
       innovations: "创新",
-      knowledgeModels: "知识模型",
+      knowledgeModels: "研究实验室",
       cooperation: "合作",
       contact: "联系"
     },
     hero: {
-      title: "神经认知研究创新",
-      subtitle: "我们将最新的人工智能技术与科学研究相结合，为科学的未来自动化研究和营销流程。",
+      title: "我们建设多学科研究实验室",
+      subtitle: "我们设计整合的空间，让神经科学、心理学、生理学和认知科学汇聚，探索视觉感知、注意力和人类决策过程。",
       cta1: "了解我们的解决方案",
       cta2: "联系我们"
     },
     about: {
-      title: "明天今天到来",
-      subtitle: "我们使用语言模型、AI代理和广义人工智能来革命化科学研究和营销流程。",
+      title: "学科交汇之处",
+      subtitle: "我们创建研究环境，连接神经科学、认知心理学、生理学和行为科学——聚焦视觉认知、注意机制和多感官整合。",
       item1: {
-        title: "AI驱动研究",
-        description: "应用人工智能优化和加速研究流程"
+        title: "视觉认知研究",
+        description: "眼动追踪和注视分析，理解视觉注意力、感知模式和信息处理"
       },
       item2: {
-        title: "自动化研究工作流",
-        description: "复杂研究和实验室程序的智能自动化"
+        title: "多感官整合实验室",
+        description: "结合视觉、听觉和触觉刺激的设施，研究跨模态感知"
       },
       item3: {
-        title: "综合科学基础设施",
-        description: "用于开展高级实验的自有实验室和现代技术设施"
+        title: "综合研究基础设施",
+        description: "我们自有的多学科实验室，配备用于神经认知、心理生理学和行为实验"
       },
       item4: {
-        title: "协作创新网络",
-        description: "与大学、研究机构和工业合作伙伴的合作"
+        title: "跨学科协作",
+        description: "在共享研究空间中汇集神经科学家、心理学家、生理学家和用户体验研究人员"
       },
       item5: {
-        title: "定制模型微调",
-        description: "在组织数据上训练AI模型以理解公司特定语言和方法论"
+        title: "认知过程建模",
+        description: "通过实证研究理解决策、记忆形成和注意力分配"
       },
       item6: {
-        title: "神经营销智能",
-        description: "AI支持的神经营销研究 - 深入分析消费者反应"
+        title: "神经营销科学",
+        description: "结合眼动追踪、生物传感器和行为方法解码消费者认知"
       },
       item7: {
-        title: "认知代理团队",
-        description: "执行研究和分析任务的自主AI代理团队"
+        title: "注意力与感知研究",
+        description: "研究视觉显著性、注意力捕获和意识感知的神经基础"
       },
       item8: {
-        title: "模型评估与验证",
-        description: "测试框架确保模型准确性、一致性和领域特定理解"
+        title: "人因工程学",
+        description: "分析人类如何与界面、环境和复杂系统交互"
       },
       item9: {
-        title: "智能实验平台",
-        description: "使用AI进行远程研究实验的平台"
+        title: "远程研究平台",
+        description: "数字工具使跨地点的分布式认知和行为实验成为可能"
       }
     },
     aiSection: {
       col1: {
-        subtitle: "AI与神经科学的融合",
-        p1: "人工智能与神经科学研究的融合正在为理解人类认知和行为开辟前所未有的机会。通过将先进的AI算法与神经科学方法论相结合，我们现在可以解码以前无法分析的大脑活动中的复杂模式。机器学习模型可以实时处理大量神经数据，识别神经活动与认知过程之间的微妙相关性。",
-        p2: "这种协同作用使研究人员能够预测行为反应，理解决策机制，并以惊人的精度揭示人类思维的复杂运作。AI在神经科学中的整合不仅加速了研究——它从根本上改变了我们理解意识、记忆形成和学习神经基础的方法。"
+        subtitle: "多学科认知科学",
+        p1: "多个科学学科的融合为理解人类感知和认知开辟了前所未有的机会。通过结合神经科学、心理学、生理学和行为研究，我们现在可以解码视觉处理、注意机制和决策中的复杂模式，这些模式以前分散在孤立的领域中。眼动追踪技术与电生理测量和认知测试相结合，揭示了注视行为、神经活动和意识感知之间的微妙相关性。",
+        p2: "这种多学科协同作用使研究人员能够预测感知反应，理解注意策略，并以惊人的精度揭示视觉认知的复杂运作。多种方法论的整合不仅丰富了研究——它从根本上改变了我们理解意识、视觉意识和人类行为认知基础的方法。"
       },
       col2: {
-        subtitle: "AI作为探索工具",
-        p1: "人工智能不仅革新了我们分析数据的方式，也革新了我们探索科学问题的方式。传统的研究方法正在被AI驱动的工具增强，这些工具可以生成假设、模拟复杂场景并发现人类研究人员可能忽略的模式。",
-        p2: "深度学习算法可以导航多维数据空间，发现隐藏的关系并建议新的研究方向。这些工具使科学家能够以前所未有的规模探索\"假设\"场景，同时测试数千个假设并识别最有前途的研究途径。这种探索能力将AI从单纯的分析工具转变为协作研究伙伴，最终加速所有学科的科学发现和创新步伐。"
+        subtitle: "视觉认知作为研究重点",
+        p1: "视觉感知是人类处理环境信息的主要门户，使其成为认知研究的基石。眼动追踪方法不仅揭示了人们看哪里，还揭示了他们如何分配注意力、处理视觉层次结构，以及基于视觉线索做出瞬间决策。",
+        p2: "先进的测量技术使研究人员能够绘制视觉扫描路径、识别注意瓶颈并理解视觉信息处理的时间动态。通过研究眼跳、注视和瞳孔反应，我们揭示了视觉搜索、物体识别和场景理解的基本机制。这种对视觉认知的关注为界面设计、营销传播和人机交互提供了可操作的见解——将基础科学与现实世界应用相连接。"
       }
     },
     services: {
@@ -656,43 +668,43 @@ export const translations: Record<string, Translation> = {
       }
     },
     knowledgeModels: {
-      title: "组织知识模型",
-      subtitle: "构建认知架构，改变组织捕获、处理和利用其集体智能的方式",
+      title: "多学科研究实验室",
+      subtitle: "创建整合的研究环境，让神经科学、心理学、生理学和认知科学汇聚，探索人类感知和认知",
       item1: {
-        title: "企业本体架构",
-        description: "构建结构化组织知识模型，定义实体、关系和业务逻辑。我们创建语义框架，捕捉公司独特的领域专业知识、决策模式和运营规则。"
+        title: "眼动追踪与注视分析实验室",
+        description: "配备远程和移动眼动追踪器的最先进设施，用于在受控和自然环境中研究视觉注意力、阅读模式、界面可用性和消费者行为。"
       },
       item2: {
-        title: "数据采购与标注",
-        description: "为训练定制AI模型提供专业的数据采购和标注服务。我们为计算机视觉、自然语言处理和生成式AI应用提供高质量、特定领域的训练数据集。专家标注确保各种数据类型的准确性和一致性。"
+        title: "心理生理测量",
+        description: "集成生物测量系统，捕获心率、皮肤电导、面部表情和瞳孔扩张，以了解视觉处理任务期间的情绪和认知反应。"
       },
       item3: {
-        title: "组织认知模型",
-        description: "混合符号-语言模型，作为组织的数字大脑。不是聊天机器人，而是理解上下文、关系和组织推理模式的综合认知架构。"
+        title: "视觉感知研究空间",
+        description: "受控实验室环境，设计用于呈现精确校准的视觉刺激，同时记录眼动、神经反应和行为数据。"
       },
       item4: {
-        title: "定制模型微调",
-        description: "在组织数据上训练大型语言模型，创建AI说公司语言，理解方法论，遵循特定规则和术语。针对业务上下文量身定制的领域智能。"
+        title: "协作研究基础设施",
+        description: "共享实验室空间，促进神经科学家、心理学家、用户体验研究人员和营销科学家之间在视觉认知项目上的合作。"
       },
       item5: {
-        title: "模型评估与验证",
-        description: "严格的测试框架确保认知模型的一致性、上下文理解和准确的领域理解。我们验证模型保持逻辑连贯性，不在特定上下文中混淆POS和UX等概念。"
+        title: "认知测试环境",
+        description: "专门设置用于通过行为实验和认知评估研究注意力、记忆、决策和感知过程。"
       },
       item6: {
-        title: "自适应学习系统",
-        description: "具有记忆层（基于令牌和长期）的认知架构，从新案例中持续学习，适应不断发展的组织知识，并通过真实世界的互动不断改进。"
+        title: "应用神经营销设施",
+        description: "结合眼动追踪、生物识别和内隐联想测试的研究实验室，解码消费者注意力、偏好形成和购买决策。"
       },
       item7: {
-        title: "知识模型版本控制",
-        description: "企业级组织认知模型的版本控制。跟踪更改，管理更新，必要时回滚，并在业务知识演变时保持AI基础设施的一致性。"
+        title: "人因工程与可用性实验室",
+        description: "人体工程学测试环境，通过注视行为和性能指标分析用户如何与界面、产品和环境交互。"
       },
       item8: {
-        title: "AI驱动研究自动化",
-        description: "优化和加速研究工作流的智能系统——从实验设计到数据分析。自主代理处理复杂分析任务，同时保持科学严谨性和方法论一致性。"
+        title: "实验设计咨询",
+        description: "在设计严格的多学科研究方面提供专家支持，整合眼动追踪、心理生理学和行为方法论，以获得可靠的科学发现。"
       },
       item9: {
-        title: "集成科学基础设施",
-        description: "我们自有的实验室和现代技术设施，配备AI增强的测量系统、自动数据收集和实时分析能力，用于开展高级神经认知实验。"
+        title: "移动和远程研究平台",
+        description: "便携式眼动追踪系统和在线实验平台，使在现实世界环境和分布式参与者群体中进行认知研究成为可能。"
       }
     },
     cooperation: {
@@ -740,10 +752,10 @@ export const translations: Record<string, Translation> = {
     },
     ourStory: {
       title: "我们的故事",
-      subtitle: "从研究先驱到AI创新领导者",
-      milestone1: "2005年的突破来自为波兰电信创建的眼动追踪实验室，这为我们打开了全新的可能性。这一经验改变了我们的研究方法，并引发了我们产品的系统性扩展。从那时起，我们已发展成为综合研究解决方案提供商，提供从战略咨询和基础设施设计到完整实施和专业培训计划的一切服务。",
-      milestone2: "自2006年以来为波兰各地的大学和公司交付的眼动追踪系统，以及为不同客户进行的400多项研究。我们在非常规环境中处理了非凡的项目：惩教设施、航空公司驾驶舱、与特种部队操作员、空中交通管制员合作，以及分析林业机械的人体工程学。这些具有挑战性的非标准项目已成为我们的标志——我们热切期待下一个项目。",
-      aiHighlight: "自2017年以来，我们一直在逐步将人工智能集成到研究工作流程中，自2023年以来，我们一直在开发自己的专业AI工具用于分析、建模和业务流程管理。今天，我们的AI代理——处理从研究报价到复杂UX问题分析的一切——作为完整的项目团队成员运作。我们现在帮助客户成功实施AI解决方案，涵盖科学研究、消费者研究、营销自动化和销售优化流程。"
+      subtitle: "从眼动追踪先驱到多学科研究领导者",
+      milestone1: "2005年的突破来自为波兰电信创建波兰首个专业眼动追踪实验室，这为视觉认知研究打开了全新的可能性。这一经验改变了我们研究人类感知的方法，并引发了向多学科神经认知科学的系统性扩展。从那时起，我们已发展成为综合研究解决方案提供商，提供从实验室设计和方法论咨询到完整研究实施和专业培训计划的一切服务。",
+      milestone2: "自2006年以来为波兰各地的大学和公司交付的眼动追踪系统，以及为不同客户进行的400多项多学科研究。我们在非常规环境中处理了非凡的项目：惩教设施、航空公司驾驶舱、与特种部队操作员、空中交通管制员合作，以及分析林业机械的人体工程学。这些结合视觉感知、认知心理学和人因研究的挑战性非标准项目已成为我们的标志。",
+      aiHighlight: "今天，我们运营整合的多学科实验室，神经科学、心理学、生理学和认知科学在这里汇聚。我们的研究空间设计用于学科间的协作，能够全面研究视觉注意力、感知过程和决策机制。我们将基础认知研究与营销、用户体验设计和人机交互中的应用问题相连接——从严格的科学方法论中创造可操作的见解。"
     }
   }
 };

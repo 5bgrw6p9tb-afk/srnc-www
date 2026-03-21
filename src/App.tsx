@@ -47,12 +47,12 @@ function App() {
       <Navigation currentLang={currentLang} t={t} changeLanguage={changeLanguage} />
       <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} interactiveMode={interactiveMode} />
 
-      {/* We Inspire Science CTA Section */}
+      {/* Visual Cognition Research CTA Section */}
       <section className="relative h-[65vh] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/specialist-researcher-doctor-monitoring-brain-acti-2025-02-19-15-16-15-utc.JPG"
-            alt="We Inspire Science"
+            alt="Multidisciplinary Research"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
@@ -61,7 +61,7 @@ function App() {
         <div className="relative h-full flex items-center justify-center">
           <div className="text-center max-w-[900px] mx-auto px-8">
             <h2 className="text-[48px] sm:text-[56px] lg:text-[64px] font-[800] leading-[1.1] tracking-tight text-white mb-8">
-              We Inspire Science
+              {currentLang === 'pl' ? 'Łączymy dyscypliny naukowe' : currentLang === 'zh' ? '融合科学学科' : 'Bridging Scientific Disciplines'}
             </h2>
             <button className="group px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[16px] inline-flex items-center justify-center gap-2">
               {t.hero.cta1}
@@ -71,7 +71,7 @@ function App() {
         </div>
       </section>
 
-      {/* AI & Neuroscience Section */}
+      {/* Multidisciplinary Cognitive Science Section */}
       <section className="relative py-24 border-t border-white/[0.08]">
         <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -242,10 +242,10 @@ function App() {
             <div className="p-8 rounded-2xl bg-gradient-to-br from-[#2E455C]/30 via-zinc-900/50 to-[#DB1500]/20 border border-white/[0.1] backdrop-blur-sm">
               <div className="flex items-start gap-5">
                 <div className="h-12 w-12 rounded-xl bg-[#DB1500]/20 flex items-center justify-center flex-shrink-0">
-                  <Bot className="h-6 w-6 text-[#DB1500]" />
+                  <Eye className="h-6 w-6 text-[#DB1500]" />
                 </div>
                 <div>
-                  <h3 className="text-[20px] font-[600] mb-2.5 leading-tight">AI-Powered Innovation</h3>
+                  <h3 className="text-[20px] font-[600] mb-2.5 leading-tight">{currentLang === 'pl' ? 'Multidyscyplinarne laboratoria dzisiaj' : currentLang === 'zh' ? '今日的多学科实验室' : 'Multidisciplinary Labs Today'}</h3>
                   <p className="text-[15px] leading-[1.7] text-zinc-400">
                     {t.ourStory.aiHighlight}
                   </p>
