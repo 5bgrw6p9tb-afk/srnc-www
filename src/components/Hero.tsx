@@ -6,12 +6,15 @@ interface HeroProps {
   t: Translation;
   autoMode: boolean;
   setAutoMode: (mode: boolean) => void;
+  interactiveMode: boolean;
 }
 
-export function Hero({ t, autoMode, setAutoMode }: HeroProps) {
+export function Hero({ t, autoMode, setAutoMode, interactiveMode }: HeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (!interactiveMode) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -207,46 +210,53 @@ export function Hero({ t, autoMode, setAutoMode }: HeroProps) {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
     };
-  }, [autoMode]);
+  }, [autoMode, interactiveMode]);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-12">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-      />
+    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+      {interactiveMode && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full"
+        />
+      )}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(219,21,0,0.15),rgba(0,0,0,0))] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_30%_50%,rgba(46,69,92,0.08),transparent)] pointer-events-none"></div>
+      <div className="absolute top-20 left-0 w-96 h-96 bg-[#DB1500]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#2E455C]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
           <div className="space-y-8 lg:space-y-10">
-            <button
-              onClick={() => setAutoMode(!autoMode)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-sm transition-all cursor-pointer ${
-                autoMode
-                  ? 'bg-[#DB1500]/10 border border-[#DB1500]/20 hover:bg-[#DB1500]/20 hover:border-[#DB1500]/30'
-                  : 'bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-800/70 hover:border-zinc-700/70'
-              }`}
-            >
-              <Sparkles className={`h-4 w-4 ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`} />
-              <span className={`text-sm font-medium ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`}>AI-Powered Research</span>
-            </button>
+            {interactiveMode && (
+              <button
+                onClick={() => setAutoMode(!autoMode)}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-sm transition-all cursor-pointer ${
+                  autoMode
+                    ? 'bg-[#DB1500]/10 border border-[#DB1500]/20 hover:bg-[#DB1500]/20 hover:border-[#DB1500]/30'
+                    : 'bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-800/70 hover:border-zinc-700/70'
+                }`}
+              >
+                <Sparkles className={`h-4 w-4 ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`} />
+                <span className={`text-sm font-medium ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`}>AI-Powered Research</span>
+              </button>
+            )}
 
             <div className="space-y-5 lg:space-y-6">
-              <h1 className="text-[36px] sm:text-[48px] lg:text-[72px] font-[800] leading-[1.15] tracking-tight">
+              <h1 className="text-[36px] sm:text-[48px] lg:text-[72px] font-[800] leading-[1.15] tracking-tight opacity-0 animate-fadeIn" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
                 {t.hero.title}
               </h1>
-              <p className="text-[16px] sm:text-[17px] lg:text-[19px] leading-[1.6] text-zinc-400 max-w-[580px] font-normal">
+              <p className="text-[16px] sm:text-[17px] lg:text-[19px] leading-[1.6] text-zinc-400 max-w-[580px] font-normal opacity-0 animate-fadeIn" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
                 {t.hero.subtitle}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] inline-flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fadeIn" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+              <button className="group px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] inline-flex items-center justify-center gap-2 hover:scale-105 hover:shadow-xl">
                 {t.hero.cta1}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
-              <button className="px-7 py-3.5 border border-white/20 text-white bg-black hover:bg-white/5 transition-all rounded-full font-medium text-[15px]">
+              <button className="px-7 py-3.5 border border-white/20 text-white bg-black hover:bg-white/5 transition-all rounded-full font-medium text-[15px] hover:scale-105 hover:border-white/40">
                 {t.hero.cta2}
               </button>
             </div>

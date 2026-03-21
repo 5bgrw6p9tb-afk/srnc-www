@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight, Sparkles } from 'lucide-react';
 import { translations, Translation } from './translations';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -10,15 +10,42 @@ function App() {
   const [currentLang, setCurrentLang] = useState<string>('en');
   const t: Translation = translations[currentLang];
   const [autoMode, setAutoMode] = useState<boolean>(true);
+  const [interactiveMode, setInteractiveMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('interactiveMode');
+    return saved === 'true' ? true : false;
+  });
 
   const changeLanguage = (lang: string) => {
     setCurrentLang(lang);
   };
 
+  useEffect(() => {
+    localStorage.setItem('interactiveMode', String(interactiveMode));
+  }, [interactiveMode]);
+
+  const toggleInteractiveMode = () => {
+    setInteractiveMode(!interactiveMode);
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white selection:bg-[#DB1500]/20">
+      <button
+        onClick={toggleInteractiveMode}
+        className={`fixed top-24 right-6 z-40 px-5 py-3 rounded-full backdrop-blur-md transition-all duration-300 shadow-lg ${
+          interactiveMode
+            ? 'bg-[#DB1500]/90 border border-[#DB1500] text-white hover:bg-[#DB1500]'
+            : 'bg-zinc-800/80 border border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white'
+        }`}
+      >
+        <div className="flex items-center gap-2">
+          <Sparkles className={`h-4 w-4 ${interactiveMode ? 'animate-pulse' : ''}`} />
+          <span className="text-sm font-semibold">
+            {interactiveMode ? 'Interactive ON' : 'Interactive OFF'}
+          </span>
+        </div>
+      </button>
       <Navigation currentLang={currentLang} t={t} changeLanguage={changeLanguage} />
-      <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} />
+      <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} interactiveMode={interactiveMode} />
 
       {/* We Inspire Science CTA Section */}
       <section className="relative h-[65vh] overflow-hidden">
@@ -72,9 +99,9 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-32 pb-40 bg-zinc-950">
+      <section id="about" className="relative py-32 pb-40 bg-zinc-950 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <div className="max-w-[800px] mx-auto text-center mb-20">
+          <div className="max-w-[800px] mx-auto text-center mb-20 opacity-0 animate-fadeIn" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
             <h2 className="text-[48px] font-[700] leading-[1.15] tracking-tight mb-6">{t.about.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400 font-normal">
               {t.about.subtitle}
@@ -82,7 +109,7 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Bot className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -92,7 +119,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Microscope className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -102,7 +129,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Building2 className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -112,7 +139,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -122,7 +149,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
@@ -134,7 +161,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Eye className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -144,7 +171,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V11h2.5c.83 0 1.5.67 1.5 1.5V18h2v-5.5c0-1.1-.9-2-2-2H13v-.5c0-1.93-1.57-3.5-3.5-3.5S6 8.07 6 10v8h-2z"/>
@@ -156,7 +183,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-[#2E455C]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -168,7 +195,7 @@ function App() {
               </p>
             </div>
 
-            <div className="group p-6 pt-4 hover:bg-white/[0.02] transition-all duration-300">
+            <div className={`group p-6 pt-4 rounded-lg border border-transparent hover:border-white/10 transition-all duration-500 ${interactiveMode ? 'hover:bg-white/[0.04] hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.02]'}`}>
               <div className="h-12 w-12 flex items-center justify-center mb-4">
                 <Cloud className="h-6 w-6 text-[#2E455C]" />
               </div>
@@ -241,7 +268,7 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Eyetracking Solutions */}
-            <div className="group p-8 rounded-lg hover:bg-white/[0.04] transition-all duration-300 flex flex-col">
+            <div className={`group p-8 rounded-lg border border-white/5 transition-all duration-500 flex flex-col ${interactiveMode ? 'hover:bg-gradient-to-br hover:from-[#2E455C]/20 hover:to-[#DB1500]/5 hover:border-[#DB1500]/30 hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/20' : 'hover:bg-white/[0.04]'}`}>
               <div className="h-16 w-full flex items-center justify-center mb-6">
                 <img src="https://eyetracking.pl/wp-content/uploads/2024/03/ETS-logo-trans-white.png" alt="Eyetracking Solutions" className="max-h-12 w-auto object-contain" />
               </div>
@@ -271,7 +298,7 @@ function App() {
             </div>
 
             {/* Digital Force */}
-            <div className="group p-8 rounded-lg hover:bg-white/[0.04] transition-all duration-300 flex flex-col">
+            <div className={`group p-8 rounded-lg border border-white/5 transition-all duration-500 flex flex-col ${interactiveMode ? 'hover:bg-gradient-to-br hover:from-[#2E455C]/20 hover:to-[#DB1500]/5 hover:border-[#DB1500]/30 hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/20' : 'hover:bg-white/[0.04]'}`}>
               <div className="h-16 w-full flex items-center justify-center mb-6">
                 <img src="/df.png" alt="Digital Force" className="max-h-16 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
               </div>
@@ -301,7 +328,7 @@ function App() {
             </div>
 
             {/* Mindcloud One */}
-            <div className="group p-8 rounded-lg hover:bg-white/[0.04] transition-all duration-300 flex flex-col md:col-span-2 lg:col-span-1">
+            <div className={`group p-8 rounded-lg border border-white/5 transition-all duration-500 flex flex-col md:col-span-2 lg:col-span-1 ${interactiveMode ? 'hover:bg-gradient-to-br hover:from-[#2E455C]/20 hover:to-[#DB1500]/5 hover:border-[#DB1500]/30 hover:scale-105 hover:shadow-2xl hover:shadow-[#DB1500]/20' : 'hover:bg-white/[0.04]'}`}>
               <div className="h-16 w-full flex items-center justify-center mb-6">
                 <img src="/MC1 logo.png" alt="Mindcloud One" className="max-h-16 w-auto object-contain" style={{ mixBlendMode: 'screen' }} />
               </div>
@@ -395,7 +422,7 @@ function App() {
             {[1, 2, 3, 4, 5, 6].map((num) => {
               const item = t.knowledgeModels[`item${num}` as keyof typeof t.knowledgeModels] as { title: string; description: string };
               return (
-                <div key={num} className="group relative p-8 rounded-lg bg-white/[0.02] border border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.15] transition-all">
+                <div key={num} className={`group relative p-8 rounded-lg bg-white/[0.02] border border-white/[0.08] transition-all duration-500 ${interactiveMode ? 'hover:bg-gradient-to-br hover:from-[#DB1500]/10 hover:to-transparent hover:border-[#DB1500]/40 hover:scale-105 hover:shadow-xl hover:shadow-[#DB1500]/10' : 'hover:bg-white/[0.04] hover:border-white/[0.15]'}`}>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#DB1500]/10 flex items-center justify-center">
                       <span className="text-[#DB1500] font-bold text-[15px]">{num}</span>
