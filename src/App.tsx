@@ -72,27 +72,106 @@ function App() {
       </section>
 
       {/* Multidisciplinary Cognitive Science Section */}
-      <section className="relative py-24 border-t border-white/[0.08]">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-5">
-              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col1.subtitle}</h4>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
+      <section className="relative py-32 border-t border-white/[0.08] bg-gradient-to-b from-zinc-950 via-zinc-900/30 to-zinc-950">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-[42px] font-[700] leading-[1.15] tracking-tight mb-5">
+              {currentLang === 'pl' ? 'Nasze podejście' : currentLang === 'zh' ? '我们的方法' : 'Our Approach'}
+            </h2>
+            <p className="text-[16px] leading-[1.6] text-zinc-400 max-w-[800px] mx-auto">
+              {currentLang === 'pl'
+                ? 'Łączymy badania multidyscyplinarne z zaawansowanymi narzędziami analitycznymi, tworząc kompleksowe rozwiązania badawcze'
+                : currentLang === 'zh'
+                ? '我们将多学科研究与先进的分析工具相结合，创建综合研究解决方案'
+                : 'Combining multidisciplinary research with advanced analytical tools to create comprehensive research solutions'}
+            </p>
+          </div>
+
+          {/* Three Column Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Column 1: Multidisciplinary */}
+            <div className="p-8 rounded-xl bg-gradient-to-br from-[#2E455C]/20 to-transparent border border-white/[0.08] hover:border-white/[0.15] transition-all">
+              <div className="h-14 w-14 rounded-xl bg-[#2E455C]/30 flex items-center justify-center mb-6">
+                <Microscope className="h-7 w-7 text-[#2E455C]" />
+              </div>
+              <h4 className="text-[18px] font-[600] text-zinc-200 mb-4">{t.aiSection.col1.subtitle}</h4>
+              <p className="text-[14px] leading-[1.7] text-zinc-400 mb-3">
                 {t.aiSection.col1.p1}
               </p>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
+              <p className="text-[14px] leading-[1.7] text-zinc-400">
                 {t.aiSection.col1.p2}
               </p>
             </div>
 
-            <div className="space-y-5">
-              <h4 className="text-[14px] font-[600] text-zinc-300 mb-3">{t.aiSection.col2.subtitle}</h4>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
+            {/* Column 2: Visual Cognition */}
+            <div className="p-8 rounded-xl bg-gradient-to-br from-[#DB1500]/10 to-transparent border border-white/[0.08] hover:border-[#DB1500]/30 transition-all">
+              <div className="h-14 w-14 rounded-xl bg-[#DB1500]/20 flex items-center justify-center mb-6">
+                <Eye className="h-7 w-7 text-[#DB1500]" />
+              </div>
+              <h4 className="text-[18px] font-[600] text-zinc-200 mb-4">{t.aiSection.col2.subtitle}</h4>
+              <p className="text-[14px] leading-[1.7] text-zinc-400 mb-3">
                 {t.aiSection.col2.p1}
               </p>
-              <p className="text-[14px] leading-[1.8] text-zinc-400">
+              <p className="text-[14px] leading-[1.7] text-zinc-400">
                 {t.aiSection.col2.p2}
               </p>
+            </div>
+
+            {/* Column 3: AI-Powered Analysis */}
+            <div className="p-8 rounded-xl bg-gradient-to-br from-zinc-800/30 to-transparent border border-white/[0.08] hover:border-white/[0.15] transition-all">
+              <div className="h-14 w-14 rounded-xl bg-zinc-800/50 flex items-center justify-center mb-6">
+                <Bot className="h-7 w-7 text-zinc-400" />
+              </div>
+              <h4 className="text-[18px] font-[600] text-zinc-200 mb-4">{t.aiSection.col3.subtitle}</h4>
+              <p className="text-[14px] leading-[1.7] text-zinc-400 mb-3">
+                {t.aiSection.col3.p1}
+              </p>
+              <p className="text-[14px] leading-[1.7] text-zinc-400">
+                {t.aiSection.col3.p2}
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Stats/Highlights */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+              <div className="text-[14px] font-semibold text-[#2E455C] mb-2">
+                {currentLang === 'pl' ? 'Metodologie' : currentLang === 'zh' ? '方法论' : 'Methodologies'}
+              </div>
+              <div className="text-[13px] text-zinc-500">
+                {currentLang === 'pl'
+                  ? 'Eye-tracking, EEG, GSR, EMG, badania behawioralne'
+                  : currentLang === 'zh'
+                  ? '眼动追踪、EEG、GSR、EMG、行为研究'
+                  : 'Eye-tracking, EEG, GSR, EMG, Behavioral studies'}
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+              <div className="text-[14px] font-semibold text-[#DB1500] mb-2">
+                {currentLang === 'pl' ? 'Obszary badań' : currentLang === 'zh' ? '研究领域' : 'Research Areas'}
+              </div>
+              <div className="text-[13px] text-zinc-500">
+                {currentLang === 'pl'
+                  ? 'Uwaga, percepcja, pamięć, podejmowanie decyzji'
+                  : currentLang === 'zh'
+                  ? '注意力、感知、记忆、决策'
+                  : 'Attention, Perception, Memory, Decision-making'}
+              </div>
+            </div>
+
+            <div className="p-6 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+              <div className="text-[14px] font-semibold text-zinc-400 mb-2">
+                {currentLang === 'pl' ? 'Narzędzia AI' : currentLang === 'zh' ? 'AI工具' : 'AI Tools'}
+              </div>
+              <div className="text-[13px] text-zinc-500">
+                {currentLang === 'pl'
+                  ? 'Analiza danych, modelowanie, automatyzacja'
+                  : currentLang === 'zh'
+                  ? '数据分析、建模、自动化'
+                  : 'Data analysis, Modeling, Automation'}
+              </div>
             </div>
           </div>
         </div>

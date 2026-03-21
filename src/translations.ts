@@ -240,13 +240,18 @@ export const translations: Record<string, Translation> = {
     aiSection: {
       col1: {
         subtitle: "Multidisciplinary Cognitive Science",
-        p1: "The convergence of multiple scientific disciplines is opening unprecedented opportunities in understanding human perception and cognition. By combining neuroscience, psychology, physiology, and behavioral research, we can now decode complex patterns in visual processing, attention mechanisms, and decision-making that were previously fragmented across isolated fields. Eye-tracking technology, combined with electrophysiological measurements and cognitive testing, reveals subtle correlations between gaze behavior, neural activity, and conscious awareness.",
-        p2: "This multidisciplinary synergy enables researchers to predict perceptual responses, understand attentional strategies, and uncover the intricate workings of visual cognition with remarkable precision. The integration of diverse methodologies is not just enriching research—it's fundamentally transforming our approach to understanding consciousness, visual awareness, and the cognitive basis of human behavior."
+        p1: "The convergence of multiple scientific disciplines is opening unprecedented opportunities in understanding human perception and cognition. By combining neuroscience, psychology, physiology, and behavioral research, we can now decode complex patterns in visual processing, attention mechanisms, and decision-making that were previously fragmented across isolated fields.",
+        p2: "Eye-tracking technology, combined with electrophysiological measurements and cognitive testing, reveals subtle correlations between gaze behavior, neural activity, and conscious awareness. This multidisciplinary synergy enables researchers to predict perceptual responses and understand attentional strategies with remarkable precision."
       },
       col2: {
         subtitle: "Visual Cognition as Research Focus",
         p1: "Visual perception is the primary gateway through which humans process environmental information, making it a cornerstone of cognitive research. Eye-tracking methodologies reveal not only where people look, but how they allocate attention, process visual hierarchies, and make split-second decisions based on visual cues.",
-        p2: "Advanced measurement techniques allow researchers to map visual scan paths, identify attentional bottlenecks, and understand the temporal dynamics of visual information processing. By studying saccades, fixations, and pupil responses, we uncover the underlying mechanisms of visual search, object recognition, and scene comprehension. This focus on visual cognition provides actionable insights for interface design, marketing communication, and human-machine interaction—bridging fundamental science with real-world applications."
+        p2: "Advanced measurement techniques allow researchers to map visual scan paths, identify attentional bottlenecks, and understand the temporal dynamics of visual information processing. This focus on visual cognition provides actionable insights for interface design, marketing communication, and human-machine interaction."
+      },
+      col3: {
+        subtitle: "AI-Powered Analysis & Knowledge Models",
+        p1: "We leverage artificial intelligence to analyze complex multidimensional data from eye-tracking, biometrics, and behavioral experiments. Machine learning models help us identify patterns invisible to traditional statistical methods, building comprehensive knowledge models of cognitive processes and consumer behavior.",
+        p2: "Our AI tools automate data processing, accelerate hypothesis testing, and enable real-time experimental adjustments. By combining rigorous scientific methodology with advanced computational analysis, we transform raw research data into actionable insights and predictive models for business applications."
       }
     },
     services: {
@@ -432,13 +437,18 @@ export const translations: Record<string, Translation> = {
     aiSection: {
       col1: {
         subtitle: "Multidyscyplinarna kognitywistyka",
-        p1: "Konwergencja wielu dyscyplin naukowych otwiera niespotykane możliwości w zrozumieniu ludzkiej percepcji i poznania. Łącząc neuronaukę, psychologię, fizjologię i badania behawioralne, możemy teraz dekodować złożone wzorce przetwarzania wzrokowego, mechanizmów uwagi i podejmowania decyzji, które wcześniej były rozdrobnione między izolowanymi dziedzinami. Technologia eye-trackingu w połączeniu z pomiarami elektrofizjologicznymi i testami poznawczymi ujawnia subtelne korelacje między zachowaniami wzrokowymi, aktywnością neuronalną a świadomym postrzeganiem.",
-        p2: "Ta multidyscyplinarna synergia umożliwia naukowcom przewidywanie reakcji percepcyjnych, rozumienie strategii uwagowych i odkrywanie zawiłości poznania wzrokowego z niezwykłą precyzją. Integracja różnorodnych metodologii nie tylko wzbogaca badania—ale fundamentalnie transformuje nasze podejście do rozumienia świadomości, świadomości wzrokowej i kognitywnych podstaw ludzkich zachowań."
+        p1: "Konwergencja wielu dyscyplin naukowych otwiera niespotykane możliwości w zrozumieniu ludzkiej percepcji i poznania. Łącząc neuronaukę, psychologię, fizjologię i badania behawioralne, możemy teraz dekodować złożone wzorce przetwarzania wzrokowego, mechanizmów uwagi i podejmowania decyzji, które wcześniej były rozdrobnione między izolowanymi dziedzinami.",
+        p2: "Technologia eye-trackingu w połączeniu z pomiarami elektrofizjologicznymi i testami poznawczymi ujawnia subtelne korelacje między zachowaniami wzrokowymi, aktywnością neuronalną a świadomym postrzeganiem. Ta multidyscyplinarna synergia umożliwia naukowcom przewidywanie reakcji percepcyjnych i rozumienie strategii uwagowych z niezwykłą precyzją."
       },
       col2: {
         subtitle: "Poznanie wzrokowe jako fokus badawczy",
         p1: "Percepcja wzrokowa to podstawowa brama, przez którą ludzie przetwarzają informacje środowiskowe, co czyni ją fundamentem badań kognitywnych. Metodologie eye-trackingowe ujawniają nie tylko to, gdzie ludzie patrzą, ale jak alokują uwagę, przetwarzają hierarchie wizualne i podejmują błyskawiczne decyzje na podstawie wskazówek wzrokowych.",
-        p2: "Zaawansowane techniki pomiarowe pozwalają badaczom mapować wzrokowe ścieżki skanowania, identyfikować wąskie gardła uwagowe i rozumieć dynamikę czasową przetwarzania informacji wzrokowej. Badając sakady, fiksacje i reakcje źrenicy, odkrywamy podstawowe mechanizmy przeszukiwania wzrokowego, rozpoznawania obiektów i rozumienia sceny. To skupienie na poznaniu wzrokowym dostarcza praktycznych wniosków dla projektowania interfejsów, komunikacji marketingowej i interakcji człowiek-maszyna—łącząc naukę fundamentalną z zastosowaniami w rzeczywistym świecie."
+        p2: "Zaawansowane techniki pomiarowe pozwalają badaczom mapować wzrokowe ścieżki skanowania, identyfikować wąskie gardła uwagowe i rozumieć dynamikę czasową przetwarzania informacji wzrokowej. To skupienie na poznaniu wzrokowym dostarcza praktycznych wniosków dla projektowania interfejsów, komunikacji marketingowej i interakcji człowiek-maszyna."
+      },
+      col3: {
+        subtitle: "Analiza AI i modele wiedzy",
+        p1: "Wykorzystujemy sztuczną inteligencję do analizy złożonych wielowymiarowych danych z eye-trackingu, biometrii i eksperymentów behawioralnych. Modele uczenia maszynowego pomagają nam identyfikować wzorce niewidoczne dla tradycyjnych metod statystycznych, budując kompleksowe modele wiedzy o procesach poznawczych i zachowaniach konsumenckich.",
+        p2: "Nasze narzędzia AI automatyzują przetwarzanie danych, przyspieszają testowanie hipotez i umożliwiają dostosowywanie eksperymentów w czasie rzeczywistym. Łącząc rygorystyczną metodologię naukową z zaawansowaną analizą obliczeniową, przekształcamy surowe dane badawcze w praktyczne wnioski i modele predykcyjne dla zastosowań biznesowych."
       }
     },
     services: {
@@ -624,13 +634,18 @@ export const translations: Record<string, Translation> = {
     aiSection: {
       col1: {
         subtitle: "多学科认知科学",
-        p1: "多个科学学科的融合为理解人类感知和认知开辟了前所未有的机会。通过结合神经科学、心理学、生理学和行为研究，我们现在可以解码视觉处理、注意机制和决策中的复杂模式，这些模式以前分散在孤立的领域中。眼动追踪技术与电生理测量和认知测试相结合，揭示了注视行为、神经活动和意识感知之间的微妙相关性。",
-        p2: "这种多学科协同作用使研究人员能够预测感知反应，理解注意策略，并以惊人的精度揭示视觉认知的复杂运作。多种方法论的整合不仅丰富了研究——它从根本上改变了我们理解意识、视觉意识和人类行为认知基础的方法。"
+        p1: "多个科学学科的融合为理解人类感知和认知开辟了前所未有的机会。通过结合神经科学、心理学、生理学和行为研究，我们现在可以解码视觉处理、注意机制和决策中的复杂模式，这些模式以前分散在孤立的领域中。",
+        p2: "眼动追踪技术与电生理测量和认知测试相结合，揭示了注视行为、神经活动和意识感知之间的微妙相关性。这种多学科协同作用使研究人员能够以惊人的精度预测感知反应和理解注意策略。"
       },
       col2: {
         subtitle: "视觉认知作为研究重点",
         p1: "视觉感知是人类处理环境信息的主要门户，使其成为认知研究的基石。眼动追踪方法不仅揭示了人们看哪里，还揭示了他们如何分配注意力、处理视觉层次结构，以及基于视觉线索做出瞬间决策。",
-        p2: "先进的测量技术使研究人员能够绘制视觉扫描路径、识别注意瓶颈并理解视觉信息处理的时间动态。通过研究眼跳、注视和瞳孔反应，我们揭示了视觉搜索、物体识别和场景理解的基本机制。这种对视觉认知的关注为界面设计、营销传播和人机交互提供了可操作的见解——将基础科学与现实世界应用相连接。"
+        p2: "先进的测量技术使研究人员能够绘制视觉扫描路径、识别注意瓶颈并理解视觉信息处理的时间动态。这种对视觉认知的关注为界面设计、营销传播和人机交互提供了可操作的见解。"
+      },
+      col3: {
+        subtitle: "AI分析与知识模型",
+        p1: "我们利用人工智能分析来自眼动追踪、生物识别和行为实验的复杂多维数据。机器学习模型帮助我们识别传统统计方法无法看到的模式，构建关于认知过程和消费者行为的综合知识模型。",
+        p2: "我们的AI工具自动化数据处理，加速假设测试，并实现实时实验调整。通过将严格的科学方法论与先进的计算分析相结合，我们将原始研究数据转化为可操作的见解和业务应用的预测模型。"
       }
     },
     services: {
