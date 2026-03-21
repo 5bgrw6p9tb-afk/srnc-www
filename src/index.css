@@ -1,20 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 200;
+  * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    background-color: #09090b;
+    color: #fff;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: rgba(219, 21, 0, 0.3);
+    color: #fff;
   }
 }
 
@@ -26,13 +37,13 @@
 
 @layer components {
   [class*="border-white"] {
-    border-width: 0.5px !important;
+    border-width: 1px !important;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(24px);
     }
     to {
       opacity: 1;
@@ -40,10 +51,21 @@
     }
   }
 
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
   @keyframes slideInLeft {
     from {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateX(-32px);
     }
     to {
       opacity: 1;
@@ -54,7 +76,7 @@
   @keyframes slideInRight {
     from {
       opacity: 0;
-      transform: translateX(30px);
+      transform: translateX(32px);
     }
     to {
       opacity: 1;
@@ -65,7 +87,7 @@
   @keyframes scaleIn {
     from {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.92);
     }
     to {
       opacity: 1;
@@ -73,19 +95,108 @@
     }
   }
 
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
   .animate-fadeIn {
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fadeInScale {
+    animation: fadeInScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slideInLeft {
-    animation: slideInLeft 0.8s ease-out;
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slideInRight {
-    animation: slideInRight 0.8s ease-out;
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-scaleIn {
-    animation: scaleIn 0.6s ease-out;
+    animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #DB1500 0%, #ff4d3a 50%, #DB1500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
 }

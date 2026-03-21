@@ -1,207 +1,164 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Translation } from '../translations';
 
 interface HeroProps {
   t: Translation;
   autoMode: boolean;
   setAutoMode: (mode: boolean) => void;
-  interactiveMode: boolean;
 }
 
-export function Hero({ t, autoMode, setAutoMode, interactiveMode }: HeroProps) {
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  opacity: number;
+  pulse: number;
+  pulseSpeed: number;
+}
+
+export function Hero({ t }: HeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!interactiveMode) return;
+    setIsVisible(true);
+  }, []);
 
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    let animationId: number;
+    let particles: Particle[] = [];
+    let mouseX = -1000;
+    let mouseY = -1000;
+    let time = 0;
+
     const updateCanvasSize = () => {
       const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
       return { width: rect.width, height: rect.height };
     };
 
     const { width, height } = updateCanvasSize();
 
-    const gridSize = 40;
-    const nodeRadius = 2;
-    const nodes: Array<{ x: number; y: number; originalX: number; originalY: number; vx: number; vy: number }> = [];
+    const initParticles = (w: number, h: number) => {
+      particles = [];
+      const particleCount = Math.floor((w * h) / 8000);
 
-    for (let y = 0; y <= height; y += gridSize) {
-      for (let x = 0; x <= width; x += gridSize) {
-        nodes.push({ x, y, originalX: x, originalY: y, vx: 0, vy: 0 });
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.2,
+          pulse: Math.random() * Math.PI * 2,
+          pulseSpeed: Math.random() * 0.02 + 0.01
+        });
       }
-    }
+    };
 
-    let mouseX = -1000;
-    let mouseY = -1000;
-    let prevMouseX = -1000;
-    let prevMouseY = -1000;
-    let mouseVelocity = 0;
-
-    let autoMouseX = width / 2;
-    let autoMouseY = height / 2;
-    let autoMouseTargetX = width / 2;
-    let autoMouseTargetY = height / 2;
+    initParticles(width, height);
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
-      prevMouseX = mouseX;
-      prevMouseY = mouseY;
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
+    };
 
-      const dx = mouseX - prevMouseX;
-      const dy = mouseY - prevMouseY;
-      mouseVelocity = Math.sqrt(dx * dx + dy * dy);
+    const handleMouseLeave = () => {
+      mouseX = -1000;
+      mouseY = -1000;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseleave', handleMouseLeave);
 
-    let time = 0;
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      time += 0.02;
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
 
-      mouseVelocity *= 0.95;
+      ctx.clearRect(0, 0, w, h);
+      time += 0.016;
 
-      let effectiveMouseX = mouseX;
-      let effectiveMouseY = mouseY;
-      let effectiveVelocity = mouseVelocity;
+      particles.forEach((p, i) => {
+        p.pulse += p.pulseSpeed;
+        const pulseFactor = Math.sin(p.pulse) * 0.3 + 0.7;
 
-      if (autoMode) {
-        const infinityScale = Math.min(width, height) * 0.45;
-        const centerX = width / 2;
-        const centerY = height / 2;
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-        const rotationX = Math.PI / 4.5;
-        const rotationY = Math.PI / 3.5;
-        const rotationZ = Math.PI / 12;
-
-        const baseX = Math.sin(time) * Math.cos(time);
-        const baseY = Math.sin(time * 2) / 2;
-        const baseZ = Math.cos(time) * 0.8;
-
-        const y1 = baseY * Math.cos(rotationX) - baseZ * Math.sin(rotationX);
-        const z1 = baseY * Math.sin(rotationX) + baseZ * Math.cos(rotationX);
-
-        const x2 = baseX * Math.cos(rotationY) + z1 * Math.sin(rotationY);
-        const z2 = -baseX * Math.sin(rotationY) + z1 * Math.cos(rotationY);
-
-        const x3 = x2 * Math.cos(rotationZ) - y1 * Math.sin(rotationZ);
-        const y3 = x2 * Math.sin(rotationZ) + y1 * Math.cos(rotationZ);
-
-        const perspective = 1 / (1 - z2 * 0.5);
-
-        autoMouseX = centerX + infinityScale * x3 * perspective;
-        autoMouseY = centerY + infinityScale * y3 * perspective;
-
-        const dx = infinityScale * 0.3 * Math.cos(time * 0.3) * Math.cos(time * 0.3) - infinityScale * 0.3 * Math.sin(time * 0.3) * Math.sin(time * 0.3);
-        const dy = infinityScale * 0.6 * Math.cos(time * 0.6) / 2;
-        const autoVelocity = Math.sqrt(dx * dx + dy * dy) * 0.3;
-
-        if (mouseVelocity > 1) {
-          effectiveMouseX = mouseX;
-          effectiveMouseY = mouseY;
-          effectiveVelocity = mouseVelocity;
-        } else {
-          effectiveMouseX = autoMouseX;
-          effectiveMouseY = autoMouseY;
-          effectiveVelocity = autoVelocity;
-        }
-      }
-
-      nodes.forEach(node => {
-        const dx = effectiveMouseX - node.x;
-        const dy = effectiveMouseY - node.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = 500;
-
-        if (distance > 0 && effectiveVelocity > 0.5) {
-          const force = Math.max(0, (maxDistance - distance) / maxDistance);
-          const angle = Math.atan2(dy, dx);
-          const velocityMultiplier = Math.min(1, effectiveVelocity * 0.1);
-
-          node.vx += Math.cos(angle) * force * 3.5 * velocityMultiplier;
-          node.vy += Math.sin(angle) * force * 3.5 * velocityMultiplier;
+        if (dist < 150 && dist > 0) {
+          const force = (150 - dist) / 150;
+          p.vx -= (dx / dist) * force * 0.02;
+          p.vy -= (dy / dist) * force * 0.02;
         }
 
-        const targetX = node.originalX;
-        const targetY = node.originalY;
+        p.vx += (Math.random() - 0.5) * 0.01;
+        p.vy += (Math.random() - 0.5) * 0.01;
 
-        node.vx += (targetX - node.x) * 0.015;
-        node.vy += (targetY - node.y) * 0.015;
+        p.vx *= 0.99;
+        p.vy *= 0.99;
 
-        node.vx *= 0.95;
-        node.vy *= 0.95;
+        p.x += p.vx;
+        p.y += p.vy;
 
-        node.x += node.vx;
-        node.y += node.vy;
-      });
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
 
-      for (let i = 0; i < nodes.length; i++) {
-        const node = nodes[i];
-
-        const distFromMouse = Math.sqrt(Math.pow(effectiveMouseX - node.x, 2) + Math.pow(effectiveMouseY - node.y, 2));
-        const velocity = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
-        const isNearMouse = distFromMouse < 200;
-
-        const waveDepth = Math.sin(time * 0.7 + node.originalX * 0.02) * 0.4 +
-                          Math.cos(time * 1.2 + node.originalY * 0.025) * 0.4 +
-                          Math.sin(time * 1.8 + (node.originalX + node.originalY) * 0.015) * 0.2;
-        const depthScale = 0.5 + waveDepth * 0.5;
-
-        const dynamicRadius = (nodeRadius + (isNearMouse ? velocity * 0.4 : 0)) * (0.7 + depthScale * 0.6);
-        const baseOpacity = 0.15 + depthScale * 0.15;
-        const distanceFactor = isNearMouse ? Math.pow(1 - (distFromMouse / 200), 2) : 0;
-        const brightnessBoost = distanceFactor * Math.min(0.6, velocity * 0.08);
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3);
+        gradient.addColorStop(0, `rgba(219, 21, 0, ${p.opacity * pulseFactor})`);
+        gradient.addColorStop(0.5, `rgba(219, 21, 0, ${p.opacity * pulseFactor * 0.3})`);
+        gradient.addColorStop(1, 'rgba(219, 21, 0, 0)');
 
         ctx.beginPath();
-        ctx.arc(node.x, node.y, dynamicRadius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(219, 21, 0, ${baseOpacity + brightnessBoost})`;
+        ctx.arc(p.x, p.y, p.radius * pulseFactor * 3, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
         ctx.fill();
 
-        for (let j = i + 1; j < nodes.length; j++) {
-          const other = nodes[j];
-          const dx = other.x - node.x;
-          const dy = other.y - node.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx2 = p2.x - p.x;
+          const dy2 = p2.y - p.y;
+          const dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
-          if (distance < gridSize * 1.8) {
+          if (dist2 < 120) {
+            const opacity = (1 - dist2 / 120) * 0.15;
             ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(other.x, other.y);
-            const opacity = 0.15 * (1 - distance / (gridSize * 1.8));
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = `rgba(219, 21, 0, ${opacity})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
-      }
+      });
 
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
     animate();
 
     const handleResize = () => {
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-
-      nodes.length = 0;
-      for (let y = 0; y <= canvas.height; y += gridSize) {
-        for (let x = 0; x <= canvas.width; x += gridSize) {
-          nodes.push({ x, y, originalX: x, originalY: y, vx: 0, vy: 0 });
-        }
-      }
+      const { width: w, height: h } = updateCanvasSize();
+      initParticles(w, h);
     };
 
     window.addEventListener('resize', handleResize);
@@ -209,59 +166,88 @@ export function Hero({ t, autoMode, setAutoMode, interactiveMode }: HeroProps) {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
+      canvas.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationId);
     };
-  }, [autoMode, interactiveMode]);
+  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
-      {interactiveMode && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full"
-        />
-      )}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(219,21,0,0.15),rgba(0,0,0,0))] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_30%_50%,rgba(46,69,92,0.08),transparent)] pointer-events-none"></div>
-      <div className="absolute top-20 left-0 w-96 h-96 bg-[#DB1500]/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#2E455C]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full pointer-events-auto"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/95 to-zinc-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(219,21,0,0.12),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(46,69,92,0.08),transparent)] pointer-events-none" />
+
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#DB1500]/[0.03] rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#2E455C]/[0.05] rounded-full blur-[80px] pointer-events-none animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
-          <div className="space-y-8 lg:space-y-10">
-            {interactiveMode && (
-              <button
-                onClick={() => setAutoMode(!autoMode)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-sm transition-all cursor-pointer ${
-                  autoMode
-                    ? 'bg-[#DB1500]/10 border border-[#DB1500]/20 hover:bg-[#DB1500]/20 hover:border-[#DB1500]/30'
-                    : 'bg-zinc-800/50 border border-zinc-700/50 hover:bg-zinc-800/70 hover:border-zinc-700/70'
-                }`}
-              >
-                <Sparkles className={`h-4 w-4 ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`} />
-                <span className={`text-sm font-medium ${autoMode ? 'text-[#DB1500]' : 'text-zinc-500'}`}>Visual Cognition Lab</span>
-              </button>
-            )}
-
-            <div className="space-y-5 lg:space-y-6">
-              <h1 className="text-[36px] sm:text-[48px] lg:text-[72px] font-[800] leading-[1.15] tracking-tight opacity-0 animate-fadeIn" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-                {t.hero.title}
-              </h1>
-              <p className="text-[16px] sm:text-[17px] lg:text-[19px] leading-[1.6] text-zinc-400 max-w-[580px] font-normal opacity-0 animate-fadeIn" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-                {t.hero.subtitle}
-              </p>
+        <div className="max-w-4xl">
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm">
+              <div className="w-2 h-2 rounded-full bg-[#DB1500] animate-pulse" />
+              <span className="text-[13px] text-zinc-400 font-medium tracking-wide">Visual Cognition Research Center</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fadeIn" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-              <button className="group px-7 py-3.5 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] inline-flex items-center justify-center gap-2 hover:scale-105 hover:shadow-xl">
-                {t.hero.cta1}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+            <h1
+              className={`text-[42px] sm:text-[56px] lg:text-[80px] font-[800] leading-[1.05] tracking-[-0.02em] transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <span className="block text-white">{t.hero.title.split('.')[0]}.</span>
+              <span className="block bg-gradient-to-r from-[#DB1500] via-[#ff4d3a] to-[#DB1500] bg-clip-text text-transparent">{t.hero.title.split('.').slice(1).join('.')}</span>
+            </h1>
+
+            <p
+              className={`text-[17px] sm:text-[19px] lg:text-[21px] leading-[1.7] text-zinc-400 max-w-[600px] font-light transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              {t.hero.subtitle}
+            </p>
+
+            <div
+              className={`flex flex-col sm:flex-row gap-4 pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <button className="group relative px-8 py-4 bg-white text-zinc-950 rounded-full font-semibold text-[15px] inline-flex items-center justify-center gap-2 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+                <span className="relative z-10 flex items-center gap-2">
+                  {t.hero.cta1}
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-zinc-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
-              <button className="px-7 py-3.5 border border-white/20 text-white bg-black hover:bg-white/5 transition-all rounded-full font-medium text-[15px] hover:scale-105 hover:border-white/40">
-                {t.hero.cta2}
+
+              <button className="group px-8 py-4 border border-white/20 text-white rounded-full font-medium text-[15px] transition-all duration-300 hover:border-white/40 hover:bg-white/[0.03]">
+                <span className="flex items-center justify-center gap-2">
+                  {t.hero.cta2}
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DB1500] group-hover:scale-150 transition-transform" />
+                </span>
               </button>
             </div>
           </div>
+
+          <div
+            className={`mt-20 grid grid-cols-3 gap-8 max-w-xl transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <div className="space-y-2">
+              <div className="text-[36px] sm:text-[42px] font-[800] text-white">300+</div>
+              <div className="text-[13px] text-zinc-500 uppercase tracking-wider">Projects</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-[36px] sm:text-[42px] font-[800] text-white">20+</div>
+              <div className="text-[13px] text-zinc-500 uppercase tracking-wider">Years</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-[36px] sm:text-[42px] font-[800] text-white">50+</div>
+              <div className="text-[13px] text-zinc-500 uppercase tracking-wider">Partners</div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" style={{ animationDuration: '2s' }}>
+        <span className="text-[11px] text-zinc-600 uppercase tracking-widest">Scroll</span>
+        <div className="w-[1px] h-8 bg-gradient-to-b from-zinc-600 to-transparent" />
       </div>
     </section>
   );
