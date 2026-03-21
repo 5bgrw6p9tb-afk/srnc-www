@@ -192,8 +192,8 @@ export const translations: Record<string, Translation> = {
       contact: "Contact"
     },
     hero: {
-      title: "Innovations in Neurocognitive Research",
-      subtitle: "We combine the latest AI technologies with scientific research, automating research and marketing processes for the future of science.",
+      title: "We Design Spaces Where Science Converges",
+      subtitle: "We create physical and digital environments where researchers from different disciplines collaborate, exchange ideas, and push the boundaries of neurocognitive science.",
       cta1: "Discover our solutions",
       cta2: "Contact us"
     },
@@ -384,8 +384,8 @@ export const translations: Record<string, Translation> = {
       contact: "Kontakt"
     },
     hero: {
-      title: "Innowacje w badaniach neurokognitywnych",
-      subtitle: "Łączymy najnowsze technologie AI z badaniami naukowymi, automatyzując procesy badawcze i marketingowe dla przyszłości nauki.",
+      title: "Projektujemy przestrzenie, w których nauka się przenika",
+      subtitle: "Tworzymy fizyczne i cyfrowe środowiska, gdzie badacze z różnych dyscyplin współpracują, wymieniają się pomysłami i przesuwają granice neuronauki kognitywnej.",
       cta1: "Poznaj nasze rozwiązania",
       cta2: "Skontaktuj się z nami"
     },
