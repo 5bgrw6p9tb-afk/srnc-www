@@ -1,50 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight } from 'lucide-react';
 import { translations, Translation } from './translations';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
+import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 
 function App() {
   const [currentLang, setCurrentLang] = useState<string>('en');
   const t: Translation = translations[currentLang];
   const [autoMode, setAutoMode] = useState<boolean>(true);
-  const [interactiveMode, setInteractiveMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem('interactiveMode');
-    return saved === 'true' ? true : false;
-  });
 
   const changeLanguage = (lang: string) => {
     setCurrentLang(lang);
   };
 
-  useEffect(() => {
-    localStorage.setItem('interactiveMode', String(interactiveMode));
-  }, [interactiveMode]);
-
-  const toggleInteractiveMode = () => {
-    setInteractiveMode(!interactiveMode);
-  };
-
   return (
     <div className="min-h-screen bg-zinc-950 text-white selection:bg-[#DB1500]/20">
-      <button
-        onClick={toggleInteractiveMode}
-        className={`fixed top-24 right-6 z-40 px-5 py-3 rounded-full backdrop-blur-md transition-all duration-300 shadow-lg ${
-          interactiveMode
-            ? 'bg-[#DB1500]/90 border border-[#DB1500] text-white hover:bg-[#DB1500]'
-            : 'bg-zinc-800/80 border border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white'
-        }`}
-      >
-        <div className="flex items-center gap-2">
-          <Sparkles className={`h-4 w-4 ${interactiveMode ? 'animate-pulse' : ''}`} />
-          <span className="text-sm font-semibold">
-            {interactiveMode ? 'Interactive ON' : 'Interactive OFF'}
-          </span>
-        </div>
-      </button>
       <Navigation currentLang={currentLang} t={t} changeLanguage={changeLanguage} />
-      <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} interactiveMode={interactiveMode} />
+      <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} interactiveMode={false} />
 
       {/* Visual Cognition Research CTA Section */}
       <section className="relative h-[65vh] overflow-hidden">
@@ -628,6 +602,7 @@ function App() {
         </div>
       </section>
 
+      <ContactForm t={t} currentLang={currentLang} />
       <Footer t={t} autoMode={autoMode} setAutoMode={setAutoMode} />
     </div>
   );
