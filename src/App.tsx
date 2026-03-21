@@ -3,7 +3,6 @@ import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight
 import { translations, Translation } from './translations';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -629,7 +628,6 @@ function App() {
         </div>
       </section>
 
-      <ContactForm t={t} currentLang={currentLang} />
       <Footer t={t} autoMode={autoMode} setAutoMode={setAutoMode} />
     </div>
   );
