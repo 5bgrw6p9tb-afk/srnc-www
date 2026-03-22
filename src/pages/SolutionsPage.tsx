@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Microscope, Eye, Building2, GraduationCap, Users, Lightbulb, FlaskConical, MonitorCheck, Package, ShoppingCart, LayoutDashboard, Network, BookOpen, Presentation, Award } from 'lucide-react';
 import { Translation } from '../translations';
+import { SEOHead } from '../components/SEOHead';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface SolutionsPageProps {
@@ -293,11 +294,41 @@ const solutionsData = {
   }
 };
 
+const seoContent: Record<string, { title: string; description: string; keywords: string }> = {
+  en: {
+    title: 'Research Solutions | Eye Tracking | Neuromarketing | Laboratory Development | SRNC',
+    description: 'Comprehensive research solutions: scientific research & project management, neuromarketing studies (advertising, shopper, UX/CX, packaging), research laboratory development, and professional eye tracking training.',
+    keywords: 'eye tracking solutions, neuromarketing research, research laboratory development, eye tracking training, scientific research services, shopper research, UX research, advertising research, packaging research, cognitive science research, visual attention studies, EEG research services, biometric research, consumer behavior research'
+  },
+  pl: {
+    title: 'Rozwiazania Badawcze | Eye Tracking | Neuromarketing | Budowa Laboratoriow | SRNC',
+    description: 'Kompleksowe rozwiazania badawcze: badania naukowe i zarzadzanie projektami, badania neuromarketingowe (reklama, shopper, UX/CX, opakowania), budowa laboratoriow badawczych oraz szkolenia z eye trackingu.',
+    keywords: 'rozwiazania eye tracking, badania neuromarketingowe, budowa laboratorium badawczego, szkolenia eye tracking, uslugi badawcze, badania shopper, badania UX, badania reklam, badania opakowan, badania kognitywne, badania uwagi wzrokowej, badania EEG, badania biometryczne'
+  },
+  zh: {
+    title: '研究解决方案 | 眼动追踪 | 神经营销 | 实验室建设 | SRNC',
+    description: '全面的研究解决方案：科学研究与项目管理、神经营销研究（广告、购物者、用户体验、包装）、研究实验室建设和专业眼动追踪培训。',
+    keywords: '眼动追踪解决方案, 神经营销研究, 研究实验室建设, 眼动追踪培训, 科学研究服务, 购物者研究, 用户体验研究, 广告研究, 包装研究'
+  },
+  ja: {
+    title: '研究ソリューション | アイトラッキング | ニューロマーケティング | ラボ開発 | SRNC',
+    description: '包括的な研究ソリューション：科学研究とプロジェクト管理、ニューロマーケティング研究（広告、ショッパー、UX/CX、パッケージ）、研究ラボ開発、専門的なアイトラッキングトレーニング。',
+    keywords: 'アイトラッキングソリューション, ニューロマーケティング研究, 研究ラボ開発, アイトラッキングトレーニング, 科学研究サービス, ショッパー研究, UX研究, 広告研究, パッケージ研究'
+  }
+};
+
 export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
   const data = solutionsData[currentLang as keyof typeof solutionsData] || solutionsData.en;
+  const seo = seoContent[currentLang] || seoContent.en;
 
   return (
     <div className="pt-20">
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalPath="/solutions"
+      />
       <section className="relative py-24 bg-zinc-950 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(219,21,0,0.15),transparent)]" />
 

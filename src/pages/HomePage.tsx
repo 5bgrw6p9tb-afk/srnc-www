@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight } from 'lucide-react';
 import { Translation } from '../translations';
 import { Hero } from '../components/Hero';
+import { SEOHead } from '../components/SEOHead';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface HomePageProps {
@@ -25,9 +26,35 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
   );
 }
 
+const seoContent: Record<string, { title: string; description: string }> = {
+  en: {
+    title: 'SRNC - Eye Tracking Research | Cognitive Science | Neuromarketing Laboratory',
+    description: 'SRNC specializes in eye tracking research, cognitive science, visual cognition, and neuromarketing studies. Scientific research services, EEG analysis, attention measurement, and research laboratory development for universities and corporations.'
+  },
+  pl: {
+    title: 'SRNC - Badania Eye Tracking | Neuronauka | Laboratorium Neuromarketingowe',
+    description: 'SRNC specjalizuje sie w badaniach eye tracking, neuronauce poznawczej, percepcji wizualnej i neuromarketingu. Uslugi badawcze, analiza EEG, pomiar uwagi i budowa laboratoriow badawczych dla uczelni i korporacji.'
+  },
+  zh: {
+    title: 'SRNC - 眼动追踪研究 | 认知科学 | 神经营销实验室',
+    description: 'SRNC专注于眼动追踪研究、认知科学、视觉认知和神经营销研究。为大学和企业提供科学研究服务、脑电图分析、注意力测量和研究实验室建设。'
+  },
+  ja: {
+    title: 'SRNC - アイトラッキング研究 | 認知科学 | ニューロマーケティング研究所',
+    description: 'SRNCはアイトラッキング研究、認知科学、視覚認知、ニューロマーケティング研究を専門としています。大学や企業向けの科学研究サービス、脳波分析、注意測定、研究ラボ開発を提供しています。'
+  }
+};
+
 export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProps) {
+  const seo = seoContent[currentLang] || seoContent.en;
+
   return (
     <>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        canonicalPath="/"
+      />
       <Hero t={t} autoMode={autoMode} setAutoMode={setAutoMode} />
 
       <section className="relative h-[70vh] overflow-hidden">

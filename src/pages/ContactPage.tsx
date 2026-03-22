@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Translation } from '../translations';
+import { SEOHead } from '../components/SEOHead';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface ContactPageProps {
@@ -114,8 +115,34 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
     ja: '送信中...'
   };
 
+  const seoContent: Record<string, { title: string; description: string }> = {
+    en: {
+      title: 'Contact SRNC | Eye Tracking Research & Neuromarketing Consultation',
+      description: 'Contact SRNC for eye tracking research, neuromarketing studies, research laboratory development, or professional training. Located in Warsaw, Poland. Email: hello@srnc.pl'
+    },
+    pl: {
+      title: 'Kontakt SRNC | Badania Eye Tracking i Konsultacje Neuromarketingowe',
+      description: 'Skontaktuj sie z SRNC w sprawie badan eye tracking, neuromarketingu, budowy laboratoriow badawczych lub szkolen. Lokalizacja: Warszawa. Email: hello@srnc.pl'
+    },
+    zh: {
+      title: '联系SRNC | 眼动追踪研究与神经营销咨询',
+      description: '联系SRNC进行眼动追踪研究、神经营销研究、研究实验室建设或专业培训咨询。地点：波兰华沙。邮箱：hello@srnc.pl'
+    },
+    ja: {
+      title: 'SRNC お問い合わせ | アイトラッキング研究・ニューロマーケティング相談',
+      description: 'アイトラッキング研究、ニューロマーケティング研究、研究ラボ開発、専門トレーニングについてSRNCにお問い合わせください。所在地：ポーランド・ワルシャワ。メール：hello@srnc.pl'
+    }
+  };
+
+  const seo = seoContent[currentLang] || seoContent.en;
+
   return (
     <div className="pt-20">
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        canonicalPath="/contact"
+      />
       <section className="relative py-24 bg-zinc-950 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(219,21,0,0.15),transparent)]" />
 
