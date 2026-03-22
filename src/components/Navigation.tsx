@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronDown, Globe } from 'lucide-react';
 import { Translation } from '../translations';
 
 interface NavigationProps {
@@ -7,7 +8,35 @@ interface NavigationProps {
   changeLanguage: (lang: string) => void;
 }
 
+const languages = [
+  { code: 'en', label: 'English', flag: 'EN' },
+  { code: 'pl', label: 'Polski', flag: 'PL' },
+  { code: 'zh', label: '中文', flag: '中' },
+  { code: 'ja', label: '日本語', flag: '日' },
+];
+
 export function Navigation({ currentLang, t, changeLanguage }: NavigationProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const currentLanguage = languages.find(l => l.code === currentLang) || languages[0];
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleLanguageChange = (code: string) => {
+    changeLanguage(code);
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-xl z-50 border-b border-white/[0.08]">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
@@ -26,25 +55,38 @@ export function Navigation({ currentLang, t, changeLanguage }: NavigationProps) 
             <a href="#knowledge-models" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.knowledgeModels}</a>
             <a href="#cooperation" className="px-4 py-2 text-[15px] font-medium text-zinc-400 hover:text-white transition-colors">{t.nav.cooperation}</a>
             <a href="#contact" className="ml-3 px-5 py-2 text-[15px] font-semibold bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full">{t.nav.contact}</a>
-            <div className="flex items-center gap-1 ml-4 pl-4 border-l border-white/10">
+
+            <div className="relative ml-4 pl-4 border-l border-white/10" ref={dropdownRef}>
               <button
-                onClick={() => changeLanguage('en')}
-                className={`px-3 py-1.5 text-[13px] font-medium rounded transition-colors ${currentLang === 'en' ? 'bg-white/10 text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2 px-3 py-2 text-[13px] font-medium text-zinc-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
               >
-                EN
+                <Globe className="w-4 h-4" />
+                <span>{currentLanguage.flag}</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </button>
-              <button
-                onClick={() => changeLanguage('pl')}
-                className={`px-3 py-1.5 text-[13px] font-medium rounded transition-colors ${currentLang === 'pl' ? 'bg-white/10 text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
-              >
-                PL
-              </button>
-              <button
-                onClick={() => changeLanguage('zh')}
-                className={`px-3 py-1.5 text-[13px] font-medium rounded transition-colors ${currentLang === 'zh' ? 'bg-white/10 text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
-              >
-                中文
-              </button>
+
+              {isOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-zinc-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`w-full flex items-center gap-3 px-4 py-3 text-[13px] font-medium transition-colors ${
+                        currentLang === lang.code
+                          ? 'bg-white/10 text-white'
+                          : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <span className="w-6 text-center font-semibold">{lang.flag}</span>
+                      <span>{lang.label}</span>
+                      {currentLang === lang.code && (
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#DB1500]" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
