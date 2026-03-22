@@ -11,10 +11,15 @@ interface HeroProps {
 export function Hero({ t }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-zinc-950">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(219,21,0,0.12),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_80%,rgba(46,69,92,0.08),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(219,21,0,0.18),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_90%_90%,rgba(46,69,92,0.15),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_10%_60%,rgba(219,21,0,0.08),transparent)]" />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950/80 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#DB1500]/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#2E455C]/15 rounded-full blur-[100px]" />
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#DB1500]/5 rounded-full blur-[80px]" />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/30 via-transparent to-zinc-950 pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
         <div className="max-w-4xl">
