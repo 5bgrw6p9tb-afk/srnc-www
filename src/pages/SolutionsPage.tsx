@@ -3,24 +3,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Microscope, Eye, Building2, GraduationCap, Users, Lightbulb, FlaskConical, MonitorCheck, Package, ShoppingCart, LayoutDashboard, Network, BookOpen, Presentation, Award } from 'lucide-react';
 import { Translation } from '../translations';
 import { SEOHead } from '../components/SEOHead';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface SolutionsPageProps {
   t: Translation;
   currentLang: string;
 }
 
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={className}>{children}</div>;
 }
 
 const solutionsData = {
@@ -333,7 +323,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(219,21,0,0.15),transparent)]" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12 relative">
-          <AnimatedSection className="max-w-[900px] mx-auto text-center">
+          <Section className="max-w-[900px] mx-auto text-center">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Solutions</span>
             <h1 className="text-[48px] sm:text-[64px] lg:text-[72px] font-[800] leading-[1.05] tracking-tight mb-6">
               {data.pageTitle}
@@ -341,7 +331,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
             <p className="text-[18px] sm:text-[20px] leading-[1.6] text-zinc-400">
               {data.pageSubtitle}
             </p>
-          </AnimatedSection>
+          </Section>
         </div>
       </section>
 
@@ -355,7 +345,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
 
           <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-              <AnimatedSection>
+              <Section>
                 <div className="flex items-center gap-4 mb-6">
                   <div
                     className="h-16 w-16 rounded-2xl flex items-center justify-center"
@@ -369,9 +359,9 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
                 </div>
                 <p className="text-[17px] leading-[1.5] text-zinc-300 mb-4">{section.subtitle}</p>
                 <p className="text-[15px] leading-[1.8] text-zinc-500">{section.description}</p>
-              </AnimatedSection>
+              </Section>
 
-              <AnimatedSection delay={200}>
+              <Section delay={200}>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {section.features.map((feature, i) => (
                     <div
@@ -389,7 +379,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
                     </div>
                   ))}
                 </div>
-              </AnimatedSection>
+              </Section>
             </div>
           </div>
         </section>
@@ -399,7 +389,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="text-center">
+          <Section className="text-center">
             <h2 className="text-[36px] sm:text-[48px] font-[700] leading-[1.1] tracking-tight mb-4">{data.cta.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400 max-w-[600px] mx-auto mb-8">{data.cta.subtitle}</p>
             <Link
@@ -409,7 +399,7 @@ export function SolutionsPage({ t, currentLang }: SolutionsPageProps) {
               {data.cta.button}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </AnimatedSection>
+          </Section>
         </div>
       </section>
     </div>

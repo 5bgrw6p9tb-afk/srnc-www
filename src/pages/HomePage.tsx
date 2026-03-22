@@ -4,7 +4,6 @@ import { Eye, Building2, Cloud, ArrowRight, Users, Microscope, Bot, ArrowUpRight
 import { Translation } from '../translations';
 import { Hero } from '../components/Hero';
 import { SEOHead } from '../components/SEOHead';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface HomePageProps {
   t: Translation;
@@ -13,17 +12,8 @@ interface HomePageProps {
   setAutoMode: (mode: boolean) => void;
 }
 
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={className}>{children}</div>;
 }
 
 const seoContent: Record<string, { title: string; description: string }> = {
@@ -70,7 +60,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
 
         <div className="relative h-full flex items-center">
           <div className="max-w-[1400px] mx-auto px-8 lg:px-12 w-full">
-            <AnimatedSection className="max-w-2xl">
+            <Section className="max-w-2xl">
               <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-6">Research Excellence</span>
               <h2 className="text-[40px] sm:text-[52px] lg:text-[64px] font-[800] leading-[1.05] tracking-tight text-white mb-8">
                 {currentLang === 'pl' ? 'Laczymy dyscypliny naukowe' : currentLang === 'zh' ? '融合科学学科' : currentLang === 'ja' ? '科学分野を融合' : 'Bridging Scientific Disciplines'}
@@ -79,7 +69,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                 {t.hero.cta1}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </AnimatedSection>
+            </Section>
           </div>
         </div>
       </section>
@@ -88,7 +78,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(219,21,0,0.03),transparent)]" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12 relative">
-          <AnimatedSection className="text-center mb-20">
+          <Section className="text-center mb-20">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Our Methodology</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-6">
               {currentLang === 'pl' ? 'Nasze podejscie' : currentLang === 'zh' ? '我们的方法' : currentLang === 'ja' ? '私たちのアプローチ' : 'Our Approach'}
@@ -102,7 +92,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                 ? '学際的研究と高度な分析ツールを組み合わせています'
                 : 'Combining multidisciplinary research with advanced analytical tools'}
             </p>
-          </AnimatedSection>
+          </Section>
 
           <div className="grid lg:grid-cols-3 gap-6">
             {[
@@ -110,7 +100,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
               { icon: Eye, color: '#DB1500', title: t.aiSection.col2.subtitle, p1: t.aiSection.col2.p1, p2: t.aiSection.col2.p2 },
               { icon: Bot, color: '#71717a', title: t.aiSection.col3.subtitle, p1: t.aiSection.col3.p1, p2: t.aiSection.col3.p2 }
             ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 150}>
+              <Section key={i} delay={i * 150}>
                 <div className="group h-full p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 hover:translate-y-[-4px]">
                   <div
                     className="h-14 w-14 rounded-xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110"
@@ -122,7 +112,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                   <p className="text-[14px] leading-[1.8] text-zinc-400 mb-3">{item.p1}</p>
                   <p className="text-[14px] leading-[1.8] text-zinc-500">{item.p2}</p>
                 </div>
-              </AnimatedSection>
+              </Section>
             ))}
           </div>
 
@@ -132,12 +122,12 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
               { label: currentLang === 'pl' ? 'Obszary badan' : currentLang === 'ja' ? '研究分野' : 'Research Areas', value: 'Attention, Perception, Memory', color: '#DB1500' },
               { label: currentLang === 'pl' ? 'Narzedzia AI' : currentLang === 'ja' ? 'AIツール' : 'AI Tools', value: 'Data analysis, Modeling', color: '#71717a' }
             ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 100 + 300}>
+              <Section key={i} delay={i * 100 + 300}>
                 <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors">
                   <div className="text-[13px] font-semibold mb-2" style={{ color: item.color }}>{item.label}</div>
                   <div className="text-[12px] text-zinc-500">{item.value}</div>
                 </div>
-              </AnimatedSection>
+              </Section>
             ))}
           </div>
         </div>
@@ -147,11 +137,11 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="max-w-[800px] mx-auto text-center mb-20">
+          <Section className="max-w-[800px] mx-auto text-center mb-20">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">About SRNC</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-6">{t.about.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400">{t.about.subtitle}</p>
-          </AnimatedSection>
+          </Section>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -165,7 +155,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
               { icon: null, svg: 'check', title: t.about.item8.title, desc: t.about.item8.description },
               { icon: Cloud, title: t.about.item9.title, desc: t.about.item9.description }
             ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 80}>
+              <Section key={i} delay={i * 80}>
                 <div className="group h-full p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300">
                   <div className="h-11 w-11 rounded-lg bg-[#2E455C]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     {item.icon ? (
@@ -187,7 +177,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                   <h3 className="text-[17px] font-semibold mb-3 leading-tight group-hover:text-white transition-colors">{item.title}</h3>
                   <p className="text-[14px] leading-[1.7] text-zinc-500">{item.desc}</p>
                 </div>
-              </AnimatedSection>
+              </Section>
             ))}
           </div>
         </div>
@@ -198,31 +188,31 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
           <div className="max-w-[1100px] mx-auto">
-            <AnimatedSection className="mb-16">
+            <Section className="mb-16">
               <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Our Journey</span>
               <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-4">{t.ourStory.title}</h2>
               <p className="text-[19px] leading-[1.4] text-zinc-400 font-light">{t.ourStory.subtitle}</p>
-            </AnimatedSection>
+            </Section>
 
             <div className="grid md:grid-cols-2 gap-12 mb-12">
-              <AnimatedSection delay={100}>
+              <Section delay={100}>
                 <div className="relative pl-8 border-l-2 border-[#DB1500]/30">
                   <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-[#DB1500]" />
                   <div className="text-[64px] font-[900] text-[#DB1500]/20 leading-none mb-2">2005</div>
                   <p className="text-[15px] leading-[1.8] text-zinc-400">{t.ourStory.milestone1}</p>
                 </div>
-              </AnimatedSection>
+              </Section>
 
-              <AnimatedSection delay={200}>
+              <Section delay={200}>
                 <div className="relative pl-8 border-l-2 border-[#2E455C]/30">
                   <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-[#2E455C]" />
                   <div className="text-[64px] font-[900] text-[#2E455C]/20 leading-none mb-2">300+</div>
                   <p className="text-[15px] leading-[1.8] text-zinc-400">{t.ourStory.milestone2}</p>
                 </div>
-              </AnimatedSection>
+              </Section>
             </div>
 
-            <AnimatedSection delay={300}>
+            <Section delay={300}>
               <div className="p-8 rounded-2xl bg-gradient-to-br from-[#DB1500]/10 via-zinc-900/50 to-[#2E455C]/10 border border-white/[0.08] backdrop-blur-sm">
                 <div className="flex items-start gap-6">
                   <div className="h-14 w-14 rounded-xl bg-[#DB1500]/20 flex items-center justify-center flex-shrink-0">
@@ -236,7 +226,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </Section>
           </div>
         </div>
       </section>
@@ -245,11 +235,11 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="max-w-[800px] mx-auto text-center mb-20">
+          <Section className="max-w-[800px] mx-auto text-center mb-20">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Our Services</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-6">{t.services.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400">{t.services.subtitle}</p>
-          </AnimatedSection>
+          </Section>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -257,7 +247,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
               { logo: '/df.png', title: t.services.digitalForce.title, desc: t.services.digitalForce.description, features: t.services.digitalForce.features, url: 'https://www.digitalforce.pl' },
               { logo: '/MC1 logo.png', title: t.services.mindcloud.title, desc: t.services.mindcloud.description, features: t.services.mindcloud.features, url: 'https://www.mindcloud.one', span: 'md:col-span-2 lg:col-span-1' }
             ].map((service, i) => (
-              <AnimatedSection key={i} delay={i * 150} className={service.span || ''}>
+              <Section key={i} delay={i * 150} className={service.span || ''}>
                 <div className="group h-full p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 flex flex-col">
                   <div className="h-16 w-full flex items-center justify-center mb-8">
                     <img src={service.logo} alt={service.title} className="max-h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity" style={{ mixBlendMode: 'screen' }} />
@@ -282,7 +272,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                     <ArrowUpRight className="h-4 w-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
-              </AnimatedSection>
+              </Section>
             ))}
           </div>
         </div>
@@ -292,28 +282,28 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
+          <Section className="text-center mb-16">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Partnerships</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-6">{t.cooperation.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400 max-w-[700px] mx-auto">{t.cooperation.subtitle}</p>
-          </AnimatedSection>
+          </Section>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-[900px] mx-auto">
-            <AnimatedSection delay={100}>
+            <Section delay={100}>
               <div className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05]">
                 <h3 className="text-[16px] font-semibold mb-3">{t.cooperation.columns.technology.title}</h3>
                 <p className="text-[14px] leading-[1.7] text-zinc-400">{t.cooperation.columns.technology.description}</p>
               </div>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
+            </Section>
+            <Section delay={200}>
               <div className="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05]">
                 <h3 className="text-[16px] font-semibold mb-3">{t.cooperation.columns.commercialization.title}</h3>
                 <p className="text-[14px] leading-[1.7] text-zinc-400">{t.cooperation.columns.commercialization.description}</p>
               </div>
-            </AnimatedSection>
+            </Section>
           </div>
 
-          <AnimatedSection delay={300}>
+          <Section delay={300}>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
                 { value: '50+', label: t.cooperation.stats.partnerships },
@@ -327,13 +317,13 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                 </div>
               ))}
             </div>
-          </AnimatedSection>
+          </Section>
 
-          <AnimatedSection delay={400} className="text-center">
+          <Section delay={400} className="text-center">
             <Link to="/contact" className="px-8 py-4 bg-white text-zinc-950 hover:bg-zinc-100 transition-all rounded-full font-semibold text-[15px] inline-block">
               {t.cooperation.cta}
             </Link>
-          </AnimatedSection>
+          </Section>
         </div>
       </section>
 
@@ -341,17 +331,17 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="text-center mb-16">
+          <Section className="text-center mb-16">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Research Focus</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight mb-6">{t.knowledgeModels.title}</h2>
             <p className="text-[17px] leading-[1.7] text-zinc-400 max-w-[800px] mx-auto">{t.knowledgeModels.subtitle}</p>
-          </AnimatedSection>
+          </Section>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[1, 2, 3, 4, 5, 6].map((num) => {
               const item = t.knowledgeModels[`item${num}` as keyof typeof t.knowledgeModels] as { title: string; description: string };
               return (
-                <AnimatedSection key={num} delay={num * 100}>
+                <Section key={num} delay={num * 100}>
                   <div className="group h-full p-7 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12] transition-all duration-300">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#DB1500]/10 flex items-center justify-center group-hover:bg-[#DB1500]/20 transition-colors">
@@ -361,7 +351,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                     </div>
                     <p className="text-[14px] leading-[1.8] text-zinc-500">{item.description}</p>
                   </div>
-                </AnimatedSection>
+                </Section>
               );
             })}
           </div>
@@ -372,12 +362,12 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-          <AnimatedSection className="text-center mb-20">
+          <Section className="text-center mb-20">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Our Network</span>
             <h2 className="text-[42px] sm:text-[52px] font-[700] leading-[1.1] tracking-tight">{t.partners.title}</h2>
-          </AnimatedSection>
+          </Section>
 
-          <AnimatedSection delay={100}>
+          <Section delay={100}>
             <div className="mb-16">
               <h3 className="text-[16px] font-semibold text-center mb-10 text-zinc-500">{t.partners.business}</h3>
               <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
@@ -400,9 +390,9 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </Section>
 
-          <AnimatedSection delay={200}>
+          <Section delay={200}>
             <div>
               <h3 className="text-[16px] font-semibold text-center mb-10 text-zinc-500">{t.partners.academic}</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-items-center">
@@ -413,7 +403,7 @@ export function HomePage({ t, currentLang, autoMode, setAutoMode }: HomePageProp
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </Section>
         </div>
       </section>
     </>

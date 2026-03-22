@@ -2,24 +2,14 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Translation } from '../translations';
 import { SEOHead } from '../components/SEOHead';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface ContactPageProps {
   t: Translation;
   currentLang: string;
 }
 
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
+function Section({ children, className = '' }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={className}>{children}</div>;
 }
 
 export function ContactPage({ t, currentLang }: ContactPageProps) {
@@ -147,7 +137,7 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(219,21,0,0.15),transparent)]" />
 
         <div className="max-w-[1400px] mx-auto px-8 lg:px-12 relative">
-          <AnimatedSection className="max-w-[900px] mx-auto text-center">
+          <Section className="max-w-[900px] mx-auto text-center">
             <span className="inline-block text-[13px] text-[#DB1500] font-semibold tracking-wider uppercase mb-4">Contact</span>
             <h1 className="text-[48px] sm:text-[64px] lg:text-[72px] font-[800] leading-[1.05] tracking-tight mb-6">
               {t.contact.title}
@@ -155,7 +145,7 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
             <p className="text-[18px] sm:text-[20px] leading-[1.6] text-zinc-400">
               {t.contact.subtitle}
             </p>
-          </AnimatedSection>
+          </Section>
         </div>
       </section>
 
@@ -164,7 +154,7 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
 
         <div className="max-w-[1100px] mx-auto px-8 lg:px-12">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-16">
-            <AnimatedSection>
+            <Section>
               <div className="space-y-8">
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 p-6 rounded-xl bg-white/[0.02] border border-white/[0.06]">
@@ -207,9 +197,9 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </Section>
 
-            <AnimatedSection delay={200}>
+            <Section delay={200}>
               <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
@@ -274,7 +264,7 @@ export function ContactPage({ t, currentLang }: ContactPageProps) {
                   )}
                 </form>
               </div>
-            </AnimatedSection>
+            </Section>
           </div>
         </div>
       </section>
